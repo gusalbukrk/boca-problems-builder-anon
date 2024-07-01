@@ -3,7 +3,12 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "bundler",
+
+    // had to change from `bundler` to `node`
+    // otherwise, error importing `vite-plugin-eslint` at `vite.config.js`
+    // https://github.com/vitejs/vite/discussions/14159#discussioncomment-9138046
+    "moduleResolution": "node",
+
     "allowSyntheticDefaultImports": true,
     "strict": true
   },

@@ -1,0 +1,29 @@
+[
+  {
+    "baseName": "ProblemaA",
+    "fullName": "Robô de Fazenda",
+    "author": "SBC",
+    "timeLimit": "1",
+    "description": "Para desencorajar aves, como corvos e pardais, de se alimentarem de suas colheitas, um fazendeiro precisava colocar alguns espantalhos em seu campo de milho. Seu sobrinho gosta bastante de robôs e sugeriu que ele deveria usar um espantalho robô em vez disso: \"Um único espantalho robô pode proteger melhor todo o campo de milho e durará muito mais do que dez espantalhos tradicionais!\", ele disse.",
+    "input": "5 4 1\n1 1 1 1",
+    "output": "1"
+  },
+  {
+    "baseName": "ProblemaB",
+    "fullName": "Rosquinhas Não Inteiras",
+    "author": "SBC",
+    "timeLimit": "1",
+    "description": "Neil é um advogado muito importante com uma conta bancária muito importante. Como Neil é um advogado tão bem-sucedido com muitos clientes, ele deposita dinheiro em sua conta todas as manhãs.",
+    "input": "1\n$1.57\n$3.14",
+    "output": "1"
+  },
+  {
+    "baseName": "ProblemaC",
+    "fullName": "Hora da corrida",
+    "author": "SBC",
+    "timeLimit": "1",
+    "description": "Vinicius leva muito a sério seu condicionamento físico e, diariamente às 6h da manhã, chova ou faça sol, no verão e no inverno, ele corre no entorno de uma lagoa. Ao longo da pista de corrida existem N placas igualmente espaçadas. Para não desanimar do exercício, Vinicius conta o número de placas pelas quais ele já passou e verifica se ele já correu pelo menos 10%, pelo menos 20%, . . . , pelo menos 90% do percurso.",
+    "input": "3\n17",
+    "output": "6 11 16"
+  }
+]
