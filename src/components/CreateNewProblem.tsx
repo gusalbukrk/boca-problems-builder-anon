@@ -30,6 +30,14 @@ function ProblemForm({
 
     console.log('Form data:', problem);
     addProblem(problem);
+
+    setBaseName('');
+    setFullName('');
+    setAuthor('');
+    setTimeLimit(1);
+    setDescription('');
+    setInput('');
+    setOutput('');
   };
 
   return (
@@ -81,6 +89,7 @@ function ProblemForm({
             onChange={(e) => {
               setTimeLimit(Number(e.target.value));
             }}
+            min={1}
             // required
           />
         </div>
