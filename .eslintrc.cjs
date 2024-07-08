@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
@@ -17,8 +18,16 @@ module.exports = {
     // needed so you don't have to import React in files with JSX — a React 17 feature
     // https://github.com/jsx-eslint/eslint-plugin-react#configuration-legacy-eslintrc-
     'plugin:react/jsx-runtime',
+
+    // sets up both `eslint-plugin-prettier` & `eslint-config-prettier`
+    // should be the last item in the `extends` array
+    'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: [
+    'dist',
+    '!.*', // don't ignore dotfiles
+    '/node_modules/*', // otherwise, won't ignore dotfiles and directories in node_modules
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -32,6 +41,26 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc' },
+        groups: [
+          // 'builtin',
+          // 'external',
+          // 'internal',
+          // 'unknown',
+          // 'parent',
+          // 'sibling',
+          // 'index',
+          // 'object',
+          // 'type',
+          "builtin", "external", "internal", "parent", "sibling", "index", "object", "type",
+        ],
+        'newlines-between': 'always',
+      },
+    ],
   },
   settings: {
     react: {
@@ -44,4 +73,5 @@ module.exports = {
       node: true,
     },
   },
-}
+};
+/* eslint-enable no-undef */
