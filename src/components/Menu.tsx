@@ -3,21 +3,25 @@ import {
   faClone,
   faDownload,
   faBars,
-  faMagnifyingGlass,
   faPenToSquare,
   faTrashCan,
+  faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useLiveQuery } from 'dexie-react-hooks';
 
-import type { problem } from '../shared';
+// import type { problem } from '../shared';
+import db from '../db';
 
 function Menu({
-  problems,
   setSelectedComponent,
+  setSelectedProblemID,
 }: {
-  problems: problem[];
   setSelectedComponent: (component: string) => void;
+  setSelectedProblemID: (id: string) => void;
 }) {
+  const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
+
   return (
     <aside className="flex-shrink-0 p-4">
       <p className="fw-bold">Problems</p>
@@ -25,39 +29,38 @@ function Menu({
         <p>No problems yet.</p>
       ) : (
         <ul className="">
-          {problems.map((problem, i) => (
+          {problems.map((problem) => (
             <li
-              key={i}
+              key={problem.id}
               style={{ listStyleType: 'none' }}
               className="d-flex column-gap-3 align-items-center justify-content-between"
             >
               <span className="d-flex column-gap-3 align-items-center">
-                <FontAwesomeIcon
-                  icon={faBars}
-                  // style={{ fontSize: '.9rem' }}
-                  className="text-secondary"
-                />
+                <FontAwesomeIcon icon={faBars} className="text-secondary" />
                 <span>
-                  <strong>{problem.baseName}</strong> – {problem.fullName}
+                  <strong>{problem.baseName}</strong> –{' '}
+                  {problem.fullName.length <= 15
+                    ? problem.fullName
+                    : problem.fullName.slice(0, 15) + '...'}
                 </span>
               </span>
               <span>
                 <button className="btn btn-link btn-sm">
                   <FontAwesomeIcon
-                    icon={faMagnifyingGlass}
-                    // style={{ fontSize: '.9rem' }}
-                  />
-                </button>
-                <button className="btn btn-link btn-sm">
-                  <FontAwesomeIcon
                     icon={faPenToSquare}
-                    // style={{ fontSize: '.9rem' }}
+                    onClick={() => {
+                      setSelectedComponent('update');
+                      setSelectedProblemID(problem.id);
+                    }}
                   />
                 </button>
                 <button className="btn btn-link btn-sm">
                   <FontAwesomeIcon
                     icon={faTrashCan}
-                    // style={{ fontSize: '.9rem' }}
+                    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+                    onClick={async () => {
+                      await db.problems.delete(problem.id);
+                    }}
                   />
                 </button>
               </span>
@@ -65,11 +68,11 @@ function Menu({
           ))}
         </ul>
       )}
-      <hr />
+      <hr className="my-4" />
       <p className="fw-bold">Actions</p>
       <button
         className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.2rem' }}
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
         onClick={() => {
           setSelectedComponent('create');
         }}
@@ -79,7 +82,7 @@ function Menu({
       </button>
       <button
         className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.2rem' }}
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
         onClick={() => {
           setSelectedComponent('select');
         }}
@@ -89,7 +92,7 @@ function Menu({
       </button>
       <button
         className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.2rem' }}
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
         onClick={() => {
           setSelectedComponent('download');
         }}
@@ -97,6 +100,17 @@ function Menu({
         <FontAwesomeIcon icon={faDownload} />
         Download problems
       </button>
+      <hr className="my-4" />
+      <p
+        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+        onClick={() => {
+          setSelectedComponent('instructions');
+        }}
+      >
+        <FontAwesomeIcon icon={faTriangleExclamation} />
+        Instructions
+      </p>
     </aside>
   );
 }

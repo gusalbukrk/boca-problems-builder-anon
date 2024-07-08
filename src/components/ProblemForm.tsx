@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import { nanoid } from 'nanoid';
+import { useEffect, useRef, useState } from 'react';
 
+import db from '../db';
 import { problem } from '../shared';
 
-function ProblemForm({
-  addProblem,
-}: {
-  addProblem: (problem: problem) => void;
-}) {
+function ProblemForm({ selectedProblemID }: { selectedProblemID?: string }) {
   const [baseName, setBaseName] = useState<string>('');
   const [fullName, setFullName] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
@@ -14,8 +12,50 @@ function ProblemForm({
   const [description, setDescription] = useState<string>('');
   const [input, setInput] = useState<string>('');
   const [output, setOutput] = useState<string>('');
+  const baseNameInputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    (async () => {
+      if (selectedProblemID !== undefined) {
+        const problem = await db.problems.get(selectedProblemID);
+        if (problem !== undefined) {
+          setBaseName(problem.baseName);
+          setFullName(problem.fullName);
+          setAuthor(problem.author);
+          setTimeLimit(problem.timeLimit);
+          setDescription(problem.description);
+          setInput(problem.input);
+          setOutput(problem.output);
+        }
+      }
+    })();
+  }, [selectedProblemID]);
+
+  const createProblem = async (problem: Omit<problem, 'id'>) => {
+    await db.problems.add({
+      id: nanoid(),
+      ...problem,
+    });
+
+    setBaseName('');
+    setFullName('');
+    setAuthor('');
+    setTimeLimit(1);
+    setDescription('');
+    setInput('');
+    setOutput('');
+  };
+
+  const updateProblem = async (problem: Omit<problem, 'id'>) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    await db.problems.update(selectedProblemID!, problem);
+
+    baseNameInputRef.current?.focus();
+    window.scroll({ top: 0 });
+  };
+
+  const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const problem = {
@@ -28,22 +68,28 @@ function ProblemForm({
       output,
     };
 
-    console.log('Form data:', problem);
-    addProblem(problem);
+    console.log('Problem:', problem);
 
-    setBaseName('');
-    setFullName('');
-    setAuthor('');
-    setTimeLimit(1);
-    setDescription('');
-    setInput('');
-    setOutput('');
+    selectedProblemID === undefined
+      ? await createProblem(problem)
+      : await updateProblem(problem);
+
+    baseNameInputRef.current?.focus();
+    window.scroll({ top: 0 });
   };
 
   return (
     <>
-      <h3 className="mb-4">Create new problem</h3>
-      <form onSubmit={handleSubmit} className="container mt-4">
+      <h3 className="mb-4">
+        {selectedProblemID === undefined
+          ? 'Create new problem'
+          : 'Update problem'}
+      </h3>
+      <form
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        onSubmit={handleClick}
+        className="container mt-4"
+      >
         <div className="form-group mb-4">
           <label className="mb-2">Base Name</label>
           <input
@@ -53,6 +99,7 @@ function ProblemForm({
             onChange={(e) => {
               setBaseName(e.target.value);
             }}
+            ref={baseNameInputRef}
             // required
           />
         </div>
@@ -130,7 +177,7 @@ function ProblemForm({
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Create
+          {selectedProblemID === undefined ? 'Create' : 'Update'}
         </button>
       </form>
     </>

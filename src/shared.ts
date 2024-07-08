@@ -1,4 +1,5 @@
 export interface problem {
+  id: string;
   baseName: string;
   fullName: string;
   author: string;
