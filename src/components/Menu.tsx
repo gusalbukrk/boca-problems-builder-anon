@@ -9,9 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
+import { List, arrayMove } from 'react-movable';
 
-// import type { problem } from '../shared';
 import db from '../db';
+
+import type { problem } from '../shared';
 
 function Menu({
   setSelectedComponent,
@@ -20,23 +22,118 @@ function Menu({
   setSelectedComponent: (component: string) => void;
   setSelectedProblemID: (id: string) => void;
 }) {
-  const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
-
   return (
     <aside className="flex-shrink-0 p-4">
-      <p className="fw-bold">Problems</p>
-      {problems.length === 0 ? (
+      <Problems
+        setSelectedComponent={setSelectedComponent}
+        setSelectedProblemID={setSelectedProblemID}
+      />
+      <hr className="my-4" />
+      <h6 className="fw-bold">Actions</h6>
+      <div className="ps-4">
+        <button
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
+          style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+          onClick={() => {
+            setSelectedComponent('create');
+          }}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+          Create new problem
+        </button>
+        <button
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
+          style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+          onClick={() => {
+            setSelectedComponent('select');
+          }}
+        >
+          <FontAwesomeIcon icon={faClone} />
+          Select existing problem
+        </button>
+        <button
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
+          style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+          onClick={() => {
+            setSelectedComponent('download');
+          }}
+        >
+          <FontAwesomeIcon icon={faDownload} />
+          Download problems
+        </button>
+      </div>
+      <hr className="my-4" />
+      <p
+        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+        onClick={() => {
+          setSelectedComponent('instructions');
+        }}
+      >
+        <FontAwesomeIcon icon={faTriangleExclamation} />
+        Instructions
+      </p>
+    </aside>
+  );
+}
+
+function Problems({
+  setSelectedComponent,
+  setSelectedProblemID,
+}: {
+  setSelectedComponent: (component: string) => void;
+  setSelectedProblemID: (id: string) => void;
+}) {
+  // `useLiveQuery` is used to observe IndexedDB data in a React component, it makes the component
+  // re-render when the observed data changes; the data is not loaded immediately at the first
+  // rendering, but the component will re-render when the data is loaded
+  const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
+  const problemsOrder = (
+    useLiveQuery(() => db.miscellaneous.get({ name: 'problemsOrder' })) ?? {
+      value: [],
+    }
+  ).value as string[];
+  const orderedProblems = problemsOrder.map((id) =>
+    problems.find((problem) => problem.id === id),
+  ) as problem[];
+
+  return (
+    <>
+      <h6 className="fw-bold">Problems</h6>
+      {orderedProblems.length === 0 ? (
         <p>No problems yet.</p>
       ) : (
-        <ul className="">
-          {problems.map((problem) => (
+        <List
+          values={orderedProblems}
+          // eslint-disable-next-line @typescript-eslint/no-misused-promises
+          onChange={async ({ oldIndex, newIndex }) => {
+            await db.miscellaneous.update('problemsOrder', {
+              value: arrayMove(problemsOrder, oldIndex, newIndex),
+            });
+          }}
+          renderList={({ children, props }) => (
+            <ul {...props} className="ps-4">
+              {children}
+            </ul>
+          )}
+          renderItem={({ value: problem, props, isDragged }) => (
+            // must not use spread to assign `key`, otherwise
+            // `Warning: A props object containing a "key" prop is being spread into JSX`
             <li
-              key={problem.id}
-              style={{ listStyleType: 'none' }}
+              {...props}
+              // eslint-disable-next-line react/prop-types
+              key={props.key}
+              // eslint-disable-next-line react/prop-types
+              style={{ ...props.style, listStyleType: 'none' }}
               className="d-flex column-gap-3 align-items-center justify-content-between"
             >
               <span className="d-flex column-gap-3 align-items-center">
-                <FontAwesomeIcon icon={faBars} className="text-secondary" />
+                <FontAwesomeIcon
+                  icon={faBars}
+                  className="text-secondary"
+                  style={{ cursor: isDragged ? 'grabbing' : 'grab' }}
+                  data-movable-handle
+                />
                 <span>
                   <strong>{problem.baseName}</strong> –{' '}
                   {problem.fullName.length <= 15
@@ -65,53 +162,10 @@ function Menu({
                 </button>
               </span>
             </li>
-          ))}
-        </ul>
+          )}
+        />
       )}
-      <hr className="my-4" />
-      <p className="fw-bold">Actions</p>
-      <button
-        className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-        onClick={() => {
-          setSelectedComponent('create');
-        }}
-      >
-        <FontAwesomeIcon icon={faPlus} />
-        Create new problem
-      </button>
-      <button
-        className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-        onClick={() => {
-          setSelectedComponent('select');
-        }}
-      >
-        <FontAwesomeIcon icon={faClone} />
-        Select existing problem
-      </button>
-      <button
-        className="btn btn-link d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-        onClick={() => {
-          setSelectedComponent('download');
-        }}
-      >
-        <FontAwesomeIcon icon={faDownload} />
-        Download problems
-      </button>
-      <hr className="my-4" />
-      <p
-        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-        onClick={() => {
-          setSelectedComponent('instructions');
-        }}
-      >
-        <FontAwesomeIcon icon={faTriangleExclamation} />
-        Instructions
-      </p>
-    </aside>
+    </>
   );
 }
 

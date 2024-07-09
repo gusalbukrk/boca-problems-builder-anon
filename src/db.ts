@@ -7,12 +7,21 @@ const db = new Dexie('Database') as Dexie & {
     problem,
     'id' // primary key "id" (for the typings only)
   >;
+  miscellaneous: EntityTable<{ name: string; value: unknown }, 'name'>;
 };
 
 // Schema declaration:
 db.version(1).stores({
   problems:
     'id, baseName, fullName, author, timeLimit, description, input, output', // primary key "id" (for the runtime!)
+  miscellaneous: 'name',
 });
+
+if ((await db.miscellaneous.get({ name: 'problemsOrder' })) === undefined) {
+  await db.miscellaneous.add({
+    name: 'problemsOrder',
+    value: [],
+  });
+}
 
 export default db;
