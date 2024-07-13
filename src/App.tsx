@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <h1 className="mb-4 fw-semibold">BOCA Problems Packages Builder</h1>
+      <h1 className="h2 mb-3 fw-semibold">BOCA Problems Packages Builder</h1>
       <div id="wrapper" className="d-flex" style={{ gap: '1.5rem' }}>
         <Menu
           setSelectedComponent={setSelectedComponent}
@@ -39,7 +39,24 @@ function App() {
             </>
           )}
 
-          {selectedComponent === 'select' && <SelectExistingProblem />}
+          {selectedComponent === 'view' && (
+            <>
+              <ProblemForm
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                selectedProblemID={selectedProblemID!}
+                readonly={true}
+              />
+            </>
+          )}
+
+          {selectedComponent === 'select' && (
+            <SelectExistingProblem
+              setSelectedProblemID={(id) => {
+                setSelectedComponent('view');
+                setSelectedProblemID(id);
+              }}
+            />
+          )}
 
           {selectedComponent === 'download' && <DownloadProblems />}
         </main>

@@ -34,6 +34,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
+    extraFileExtensions: ['.json'], // needed for linting JSON files
   },
   plugins: ['react-refresh'],
   rules: {
@@ -68,6 +69,7 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+    '@typescript-eslint/no-unused-vars': ['warn'],
   },
   settings: {
     react: {

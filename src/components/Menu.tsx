@@ -6,10 +6,11 @@ import {
   faPenToSquare,
   faTrashCan,
   faTriangleExclamation,
+  faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { List, arrayMove } from 'react-movable';
+import { List, arrayMove, arrayRemove } from 'react-movable';
 
 import db from '../db';
 
@@ -24,12 +25,23 @@ function Menu({
 }) {
   return (
     <aside className="flex-shrink-0 p-4">
+      <p
+        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
+        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+        onClick={() => {
+          setSelectedComponent('instructions');
+        }}
+      >
+        <FontAwesomeIcon icon={faTriangleExclamation} />
+        Instructions
+      </p>
+      <hr className="my-4" />
       <Problems
         setSelectedComponent={setSelectedComponent}
         setSelectedProblemID={setSelectedProblemID}
       />
       <hr className="my-4" />
-      <h6 className="fw-bold">Actions</h6>
+      <h3 className="h6 fw-bold">Actions</h3>
       <div className="ps-4">
         <button
           className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
@@ -62,17 +74,6 @@ function Menu({
           Download problems
         </button>
       </div>
-      <hr className="my-4" />
-      <p
-        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
-        style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-        onClick={() => {
-          setSelectedComponent('instructions');
-        }}
-      >
-        <FontAwesomeIcon icon={faTriangleExclamation} />
-        Instructions
-      </p>
     </aside>
   );
 }
@@ -99,9 +100,9 @@ function Problems({
 
   return (
     <>
-      <h6 className="fw-bold">Problems</h6>
+      <h3 className="h6 fw-bold">Problems</h3>
       {orderedProblems.length === 0 ? (
-        <p>No problems yet.</p>
+        <p className="mt-3">No problems yet.</p>
       ) : (
         <List
           values={orderedProblems}
@@ -142,7 +143,16 @@ function Problems({
                 </span>
               </span>
               <span>
-                <button className="btn btn-link btn-sm">
+                <button className="btn btn-link">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    onClick={() => {
+                      setSelectedComponent('view');
+                      setSelectedProblemID(problem.id);
+                    }}
+                  />
+                </button>
+                <button className="btn btn-link">
                   <FontAwesomeIcon
                     icon={faPenToSquare}
                     onClick={() => {
@@ -151,11 +161,19 @@ function Problems({
                     }}
                   />
                 </button>
-                <button className="btn btn-link btn-sm">
+                <button className="btn btn-link">
                   <FontAwesomeIcon
                     icon={faTrashCan}
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises
                     onClick={async () => {
+                      await db.miscellaneous.update('problemsOrder', {
+                        value: arrayRemove(
+                          problemsOrder,
+                          problemsOrder.findIndex(
+                            (problemId) => problemId === problem.id,
+                          ),
+                        ),
+                      });
                       await db.problems.delete(problem.id);
                     }}
                   />

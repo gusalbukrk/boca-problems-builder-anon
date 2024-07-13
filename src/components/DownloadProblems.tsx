@@ -1,7 +1,7 @@
 function DownloadProblems() {
   return (
     <>
-      <h3>Download problems</h3>
+      <h2 className="h4">Download problems</h2>
     </>
   );
 }
