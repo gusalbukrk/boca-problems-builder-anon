@@ -7,3 +7,11 @@ body {
 aside {
   background-color: hsl(0, 0%, 95%);
 }
+
+.mb-4dot5 {
+  margin-bottom: 2.25rem !important;
+}
+
+.list-separators li:not(:last-of-type)::after {
+  content: "・";
+}
