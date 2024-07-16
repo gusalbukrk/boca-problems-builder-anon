@@ -15,9 +15,11 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@types/pdfmake": "^0.2.9",
     "dexie": "^4.0.7",
     "dexie-react-hooks": "^1.1.7",
     "nanoid": "^5.0.7",
+    "pdfmake": "^0.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-movable": "^3.2.0"
