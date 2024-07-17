@@ -94,9 +94,13 @@ function Problems({
       value: [],
     }
   ).value as string[];
-  const orderedProblems = problemsOrder.map((id) =>
-    problems.find((problem) => problem.id === id),
-  ) as problem[];
+  // ternary is needed because problems takes longer to load than problemsOrder (because it's larger)
+  const orderedProblems =
+    problems.length === 0
+      ? []
+      : (problemsOrder.map((id) =>
+          problems.find((problem) => problem.id === id),
+        ) as Required<problem>[]);
 
   return (
     <>
@@ -137,9 +141,9 @@ function Problems({
                 />
                 <span>
                   <strong>{problem.baseName}</strong> –{' '}
-                  {problem.fullName.length <= 15
-                    ? problem.fullName
-                    : problem.fullName.slice(0, 15) + '...'}
+                  {problem.name.length <= 15
+                    ? problem.name
+                    : problem.name.slice(0, 15) + '...'}
                 </span>
               </span>
               <span>

@@ -12,7 +12,8 @@ const db = new Dexie('Database') as Dexie & {
 
 // Schema declaration:
 db.version(1).stores({
-  problems: 'id, baseName, fullName, author, timeLimit, description, samples', // primary key "id" (for the runtime!)
+  problems:
+    'id, baseName, name, author, timeLimit, description, images, samples', // primary key "id" (for the runtime!)
   miscellaneous: 'name',
 });
 

@@ -30,7 +30,7 @@ function SelectExistingProblem({
                 <button
                   className="btn btn-link"
                   onClick={() => {
-                    setSelectedProblemID(problem.name);
+                    setSelectedProblemID(problem.name); // using existing problem's name as ID
                   }}
                 >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -42,12 +42,9 @@ function SelectExistingProblem({
                   // eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={async () => {
                     const newProblem = {
+                      ...problem,
+                      samples: problem.samples as [string, string][], // otherwise, type error
                       baseName: problem.name.replace(/ /g, '-'),
-                      fullName: problem.name,
-                      author: problem.author,
-                      timeLimit: problem.timeLimit,
-                      description: problem.description,
-                      samples: problem.samples as [string, string][],
                     };
                     await createProblem(newProblem);
                   }}

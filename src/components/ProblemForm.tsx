@@ -1,4 +1,8 @@
-import { faPlus, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlus,
+  faTrashCan,
+  faImages,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
 
@@ -18,12 +22,14 @@ function ProblemForm({
   readonly?: boolean;
 }) {
   const [baseName, setBaseName] = useState<string>('');
-  const [fullName, setFullName] = useState<string>('');
+  const [name, setName] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
   const [timeLimit, setTimeLimit] = useState<number>(1);
   const [description, setDescription] = useState<string>('');
   const [samples, setSamples] = useState<[string, string][]>([['', '']]);
+  const [images, setImages] = useState([] as string[]);
   const baseNameInputRef = useRef<HTMLInputElement>(null);
+  const imagesInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -31,26 +37,28 @@ function ProblemForm({
       if (selectedProblemID !== undefined) {
         const problem =
           (await db.problems.get(selectedProblemID)) ??
-          existingProblems.find(
+          (existingProblems.find(
             (problem) => problem.name === selectedProblemID,
-          );
+          ) as problem | undefined);
 
         if (problem !== undefined) {
-          if ('baseName' in problem) setBaseName(problem.baseName);
-          setFullName('fullName' in problem ? problem.fullName : problem.name);
+          setName(problem.name);
           setAuthor(problem.author);
           setTimeLimit(problem.timeLimit);
           setDescription(problem.description);
-          setSamples(problem.samples as [string, string][]);
+          setImages(problem.images);
+          setSamples(problem.samples);
+
+          if (problem.baseName !== undefined) setBaseName(problem.baseName);
         }
       }
     })();
   }, [selectedProblemID]);
 
-  const updateProblem = async (problem: Omit<problem, 'id'>) => {
+  const updateProblem = async (problem: problem) => {
     // @ts-expect-error Argument of type 'Omit<problem, "id">' is not assignable to parameter of type ...
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    await db.problems.update(selectedProblemID!, problem); // @ts
+    await db.problems.update(selectedProblemID, problem);
     // await db.problems.put({ id: selectedProblemID, ...problem });
 
     baseNameInputRef.current?.focus();
@@ -61,12 +69,14 @@ function ProblemForm({
     e.preventDefault();
 
     const problem = {
-      baseName,
-      fullName,
+      name,
       author,
       timeLimit,
       description,
+      images,
       samples,
+
+      baseName,
     };
 
     console.log('Problem:', problem);
@@ -74,12 +84,15 @@ function ProblemForm({
     if (selectedProblemID === undefined) {
       await createProblem(problem);
 
-      setBaseName('');
-      setFullName('');
+      setName('');
       setAuthor('');
       setTimeLimit(1);
       setDescription('');
+      setImages([]);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      imagesInputRef.current!.value = '';
       setSamples([['', '']]);
+      setBaseName('');
     } else {
       await updateProblem(problem);
     }
@@ -103,7 +116,7 @@ function ProblemForm({
         className="container mt-4"
       >
         <div className="mb-4">
-          <label htmlFor="baseName" className="mb-1 fw-medium">
+          <label htmlFor="baseName" className="form-label fw-medium">
             Base Name
           </label>
           <input
@@ -120,23 +133,23 @@ function ProblemForm({
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="fullName" className="mb-1 fw-medium">
-            Full Name
+          <label htmlFor="name" className="form-label fw-medium">
+            Name
           </label>
           <input
-            id="fullName"
+            id="name"
             type="text"
             className="form-control"
-            value={fullName}
+            value={name}
             onChange={(e) => {
-              setFullName(e.target.value);
+              setName(e.target.value);
             }}
             readOnly={readonly}
             // required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="author" className="mb-1 fw-medium">
+          <label htmlFor="author" className="form-label fw-medium">
             Author
           </label>
           <input
@@ -152,7 +165,7 @@ function ProblemForm({
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="timeLimit" className="mb-1 fw-medium">
+          <label htmlFor="timeLimit" className="form-label fw-medium">
             Time Limit (in seconds)
           </label>
           <input
@@ -169,7 +182,7 @@ function ProblemForm({
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="description" className="mb-1 fw-medium">
+          <label htmlFor="description" className="form-label fw-medium">
             Description
           </label>
           <textarea
@@ -184,7 +197,57 @@ function ProblemForm({
             // required
           />
         </div>
-        <p className="mb-3 fw-medium">Samples</p>
+        <div className="mb-4">
+          <label htmlFor="images" className="form-label fw-medium d-block">
+            Images
+          </label>
+          {/* https://stackoverflow.com/a/17949302 */}
+          {!readonly && (
+            <label htmlFor="images" className="btn btn-outline-primary btn-sm">
+              <FontAwesomeIcon icon={faImages} className="me-2" />
+              Choose images
+            </label>
+          )}
+          <input
+            id="images"
+            type="file"
+            ref={imagesInputRef}
+            accept="image/*"
+            className="form-control form-control-sm"
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onChange={async (e) => {
+              const images = await Promise.all(
+                [...(e.target.files ?? [])].map((file) => {
+                  return new Promise((res, rej) => {
+                    const reader = new FileReader();
+
+                    reader.onload = () => {
+                      res(reader.result);
+                    };
+
+                    reader.onerror = () => {
+                      // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
+                      rej(reader.error);
+                    };
+
+                    reader.readAsDataURL(file);
+                  });
+                }),
+              );
+              setImages(images as string[]);
+            }}
+            multiple
+            hidden
+            disabled={readonly}
+            // required
+          />
+          <div className="d-flex column-gap-3 mt-3 align-items-center">
+            {images.map((image, index) => {
+              return <img key={index} width="150" src={image} />;
+            })}
+          </div>
+        </div>
+        <p className="form-label mb-3 fw-medium">Samples</p>
         <div className="mb-4">
           {samples.map(([input, output], index) => (
             <div key={index} className="mb-3 row">

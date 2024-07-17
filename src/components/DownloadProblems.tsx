@@ -13,43 +13,43 @@ import db from '../db';
 import { problem, createProblemPDF } from '../shared';
 
 // console.log(createProblemPDF(existingProblems[0]));
-console.log(await createProblemPDF(existingProblems[0]));
+// console.log(await createProblemPDF(existingProblems[0]));
 
-try {
-  const response = await fetch('/problemtemplate.zip', {
-    method: 'GET',
-  });
-  const data = response.arrayBuffer();
+// try {
+//   const response = await fetch('/problemtemplate.zip', {
+//     method: 'GET',
+//   });
+//   const data = response.arrayBuffer();
 
-  const zip = await JSZip.loadAsync(data);
-  // console.log(zip);
+//   const zip = await JSZip.loadAsync(data);
+//   // console.log(zip);
 
-  // read existing file
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  // const problemInfo = await zip
-  //   .file('description/problem.info')!
-  //   .async('string');
-  // console.log(problemInfo);
+//   // read existing file
+//   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+//   // const problemInfo = await zip
+//   //   .file('description/problem.info')!
+//   //   .async('string');
+//   // console.log(problemInfo);
 
-  // delete file
-  zip.remove('description/desc.txt');
+//   // delete file
+//   zip.remove('description/desc.txt');
 
-  // replace existing file contents
-  zip.file(
-    'description/problem.info',
-    'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
-  );
+//   // replace existing file contents
+//   zip.file(
+//     'description/problem.info',
+//     'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
+//   );
 
-  zip.file(
-    'description/ProblemaA.pdf',
-    await createProblemPDF(existingProblems[0]),
-  );
+//   zip.file(
+//     'description/ProblemaA.pdf',
+//     await createProblemPDF(existingProblems[0]),
+//   );
 
-  const content = await zip.generateAsync({ type: 'blob' });
-  saveAs(content, 'problem.zip');
-} catch (error) {
-  console.error('Error:', error);
-}
+//   const content = await zip.generateAsync({ type: 'blob' });
+//   saveAs(content, 'problem.zip');
+// } catch (error) {
+//   console.error('Error:', error);
+// }
 
 function DownloadProblems() {
   const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
@@ -58,9 +58,12 @@ function DownloadProblems() {
       value: [],
     }
   ).value as string[];
-  const orderedProblems = problemsOrder.map((id) =>
-    problems.find((problem) => problem.id === id),
-  ) as problem[];
+  const orderedProblems =
+    problems.length === 0
+      ? []
+      : (problemsOrder.map((id) =>
+          problems.find((problem) => problem.id === id),
+        ) as Required<problem>[]);
 
   return (
     <>
@@ -128,7 +131,7 @@ function DownloadProblems() {
                     console.log(problem);
                   }}
                 >
-                  {problem.fullName}
+                  {problem.name}
                 </button>
               </li>
             ))}

@@ -7,16 +7,20 @@ import problems from './assets/problems.json';
 import db from './db';
 
 export interface problem {
-  id: string;
-  baseName: string;
-  fullName: string;
+  name: string;
   author: string;
   timeLimit: number;
   description: string;
   samples: [string, string][];
+  images: string[];
+
+  // the following properties are present only on the problems stored
+  // in the indexedDB database but not in the JSON file
+  id?: string;
+  baseName?: string;
 }
 
-export const createProblem = async (problem: Omit<problem, 'id'>) => {
+export const createProblem = async (problem: problem) => {
   const id = nanoid();
 
   await db.problems.add({
@@ -92,7 +96,7 @@ export function createProblemPDF(p: (typeof problems)[0]): Promise<Buffer> {
       },
       {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        image: p.images![0],
+        image: p.images[0],
         width: 250,
         margin: [0, 0, 0, 18] as Margins,
         alignment: 'center' as Alignment,
