@@ -18,6 +18,8 @@
     "@types/pdfmake": "^0.2.9",
     "dexie": "^4.0.7",
     "dexie-react-hooks": "^1.1.7",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "nanoid": "^5.0.7",
     "pdfmake": "^0.2.10",
     "react": "^18.2.0",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@types/file-saver": "^2.0.7",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

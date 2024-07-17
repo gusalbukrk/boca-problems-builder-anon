@@ -5,82 +5,51 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
-import * as pdfMake from 'pdfmake/build/pdfmake';
-import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
 
+import existingProblems from '../assets/problems.json';
 import db from '../db';
+import { problem, createProblemPDF } from '../shared';
 
-import type { problem } from '../shared';
+// console.log(createProblemPDF(existingProblems[0]));
+console.log(await createProblemPDF(existingProblems[0]));
 
-console.log(pdfMake);
-console.log(pdfFonts);
+try {
+  const response = await fetch('/problemtemplate.zip', {
+    method: 'GET',
+  });
+  const data = response.arrayBuffer();
 
-// https://pdfmake.github.io/docs/0.1/fonts/custom-fonts-client-side/url/
-const fonts = {
-  Roboto: {
-    normal:
-      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
-    bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
-    italics:
-      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
-    bolditalics:
-      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf',
-  },
-};
+  const zip = await JSZip.loadAsync(data);
+  // console.log(zip);
 
-// simple example
-// const docDefinition = {
-//   content: [
-//     'First paragraph',
-//     'Another paragraph, this time a little bit longer to make sure, this line will be divided into at least two lines',
-//   ],
-// };
+  // read existing file
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // const problemInfo = await zip
+  //   .file('description/problem.info')!
+  //   .async('string');
+  // console.log(problemInfo);
 
-// advanced example
-const docDefinition = {
-  content: [
-    {
-      text: 'This is a header, using header style',
-      style: 'header',
-    },
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Confectum ponit legam, perferendis nomine miserum, animi. Moveat nesciunt triari naturam.\n\n',
-    {
-      text: 'Subheader 1 - using subheader style',
-      style: 'subheader',
-    },
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Confectum ponit legam, perferendis nomine miserum, animi. Moveat nesciunt triari naturam posset, eveniunt specie deorsus efficiat sermone instituendarum fuisse veniat, eademque mutat debeo.',
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    'Confectum ponit legam, perferendis nomine miserum, animi. Moveat nesciunt triari naturam posset, eveniunt specie deorsus efficiat sermone instituendarum fuisse veniat, eademque mutat debeo.',
-    {
-      text: 'Subheader 2 - using subheader style',
-      style: 'subheader',
-    },
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Confectum ponit legam, perferendis nomine miserum, animi. Moveat nesciunt triari naturam posset, eveniunt specie deorsus efficiat sermone instituendarum fuisse veniat, eademque mutat debeo. Delectet plerique protervi diogenem dixerit logikh levius probabo adipiscuntur afficitur, factis magistra inprobitatem aliquo andriam obiecta, religionis.',
-    {
-      text: 'It is possible to apply multiple styles, by passing an array. This paragraph uses two styles: quote and small. When multiple styles are provided, they are evaluated in the specified order which is important in case they define the same properties',
-      style: ['quote', 'small'],
-    },
-  ],
-  styles: {
-    header: {
-      fontSize: 18,
-      bold: true,
-    },
-    subheader: {
-      fontSize: 15,
-      bold: true,
-    },
-    quote: {
-      italics: true,
-    },
-    small: {
-      fontSize: 8,
-    },
-  },
-};
+  // delete file
+  zip.remove('description/desc.txt');
 
-// pdfMake.createPdf(docDefinition, undefined, fonts).print();
-// pdfMake.createPdf(docDefinition, undefined, fonts).download('problem.pdf');
+  // replace existing file contents
+  zip.file(
+    'description/problem.info',
+    'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
+  );
+
+  zip.file(
+    'description/ProblemaA.pdf',
+    await createProblemPDF(existingProblems[0]),
+  );
+
+  const content = await zip.generateAsync({ type: 'blob' });
+  saveAs(content, 'problem.zip');
+} catch (error) {
+  console.error('Error:', error);
+}
 
 function DownloadProblems() {
   const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
@@ -96,6 +65,7 @@ function DownloadProblems() {
   return (
     <>
       <h2 className="h4 mb-4dot5">Download problems</h2>
+      <a href="../assets/problemtemplate.zip">zip</a>
       <div className="mb-4dot5">
         <h4 className="h5">Backup in JSON format</h4>
         <p className="mb-2 text-secondary fw-medium">
