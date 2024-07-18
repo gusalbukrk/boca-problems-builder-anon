@@ -1,5 +1,4 @@
 import {
-  faPlus,
   faClone,
   faDownload,
   faBars,
@@ -7,6 +6,7 @@ import {
   faTrashCan,
   faTriangleExclamation,
   faMagnifyingGlass,
+  faSquarePlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -50,7 +50,7 @@ function Menu({
             setSelectedComponent('create');
           }}
         >
-          <FontAwesomeIcon icon={faPlus} />
+          <FontAwesomeIcon icon={faSquarePlus} />
           Create new problem
         </button>
         <button

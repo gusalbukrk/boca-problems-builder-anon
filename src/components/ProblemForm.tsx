@@ -1,14 +1,18 @@
+import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import {
   faPlus,
   faTrashCan,
   faImages,
+  faPenToSquare,
+  faFilePdf,
+  // faSquarePlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
 
 import existingProblems from '../assets/problems.json';
 import db from '../db';
-import { problem, createProblem } from '../shared';
+import { problem, createProblem, generateProblemPDF } from '../shared';
 
 function calcTextareaRows(str: string) {
   return (str.match(/\n/g) ?? []).length + 1;
@@ -49,7 +53,7 @@ function ProblemForm({
           setImages(problem.images);
           setSamples(problem.samples);
 
-          if (problem.baseName !== undefined) setBaseName(problem.baseName);
+          setBaseName(problem.baseName ?? '');
         }
       }
     })();
@@ -242,9 +246,13 @@ function ProblemForm({
             // required
           />
           <div className="d-flex column-gap-3 mt-3 align-items-center">
-            {images.map((image, index) => {
-              return <img key={index} width="150" src={image} />;
-            })}
+            {images.length === 0 ? (
+              <p>No images yet.</p>
+            ) : (
+              images.map((image, index) => {
+                return <img key={index} width="150" src={image} />;
+              })
+            )}
           </div>
         </div>
         <p className="form-label mb-3 fw-medium">Samples</p>
@@ -302,7 +310,29 @@ function ProblemForm({
             </div>
           ))}
         </div>
-        {!readonly && (
+        {readonly ? (
+          <button
+            type="button"
+            className="btn btn-primary fw-medium"
+            onClick={() => {
+              const problem = {
+                name,
+                author,
+                timeLimit,
+                description,
+                images,
+                samples,
+                baseName,
+              };
+
+              // eslint-disable-next-line @typescript-eslint/no-floating-promises
+              generateProblemPDF(problem, true);
+            }}
+          >
+            <FontAwesomeIcon icon={faFilePdf} className="me-2" />
+            View PDF
+          </button>
+        ) : (
           <>
             <button
               type="button"
@@ -316,6 +346,12 @@ function ProblemForm({
             </button>
             <br />
             <button type="submit" className="btn btn-primary fw-medium">
+              <FontAwesomeIcon
+                icon={
+                  selectedProblemID === undefined ? faSquarePlus : faPenToSquare
+                }
+                className="me-2"
+              />
               {selectedProblemID === undefined ? 'Create' : 'Update'}
             </button>
           </>

@@ -1,9 +1,10 @@
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
 import { nanoid } from 'nanoid';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 // import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { Alignment, CanvasLine, Content, Margins } from 'pdfmake/interfaces'; // eslint-disable-line import/no-unresolved
 
-import problems from './assets/problems.json';
 import db from './db';
 
 export interface problem {
@@ -38,7 +39,7 @@ export const createProblem = async (problem: problem) => {
   });
 };
 
-export function createProblemPDF(p: (typeof problems)[0]): Promise<Buffer> {
+export function generateProblemPDF(problem: problem, open = false) {
   // https://pdfmake.github.io/docs/0.1/fonts/custom-fonts-client-side/url/
   const fonts = {
     Roboto: {
@@ -90,23 +91,23 @@ export function createProblemPDF(p: (typeof problems)[0]): Promise<Buffer> {
     },
     content: [
       {
-        text: p.name,
+        text: problem.name,
         style: 'header',
         margin: [0, 0, 0, 18] as Margins,
       },
-      {
+      ...problem.images.map((image) => ({
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        image: p.images[0],
+        image: image,
         width: 250,
         margin: [0, 0, 0, 18] as Margins,
         alignment: 'center' as Alignment,
         //
-        // couldn't make it work by placing image in `src/assets/` or `public/`
-        // it may be necessary to convert it to base64
+        // couldn't make it work by storing image files in `src/assets/` or `public/`
+        // it may be that converting it to base64 (as it is being done right now) is the only way
         // https://stackoverflow.com/a/68010094
         // image: '../assets/problem-image.png',
-      },
-      ...p.description
+      })),
+      ...problem.description
         .split('\n')
         .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
         .map((obj) =>
@@ -129,14 +130,28 @@ export function createProblemPDF(p: (typeof problems)[0]): Promise<Buffer> {
           dontBreakRows: true,
 
           // widths: ['*', 'auto', 100, '*'],
-          widths: ['*', '*'],
+          widths: [20, '*', '*'],
 
           body: [
             [
+              { text: '#', alignment: 'center' },
               { text: 'Input', bold: true },
               { text: 'Output', bold: true },
             ],
-            ...p.samples,
+            // deep copying samples because they're for some unknown reason being mutated when used here
+            // `["10","100"]` => `[ { "text": "10", ... } ] }, { "text": "100", ...} ] } ]`
+            ...(
+              JSON.parse(JSON.stringify(problem.samples)) as [string, string][]
+            ).map(([input, output], index) => [
+              {
+                text: index + 1,
+                alignment: 'center',
+                color: '#696969',
+                bold: true,
+              },
+              input,
+              output,
+            ]),
           ],
         },
       },
@@ -158,13 +173,72 @@ export function createProblemPDF(p: (typeof problems)[0]): Promise<Buffer> {
     },
   };
 
-  // pdfMake.createPdf(docDefinition, undefined, fonts).open();
-  return new Promise((res) => {
-    pdfMake.createPdf(docDefinition, undefined, fonts).getBuffer((buffer) => {
-      res(buffer);
+  const pdf = pdfMake.createPdf(docDefinition, undefined, fonts);
+
+  if (open) {
+    pdf.open();
+  } else {
+    return new Promise<Buffer>((res) => {
+      pdfMake.createPdf(docDefinition, undefined, fonts).getBuffer((buffer) => {
+        res(buffer);
+      });
     });
+  }
+}
+
+export async function generateProblemZip(
+  problem: Required<problem>,
+  download = false,
+) {
+  const response = await fetch('/problemtemplate.zip', {
+    method: 'GET',
   });
-  // pdfMake.createPdf(docDefinition, undefined, fonts).getBuffer((buffer) => {
-  //   // console.log('b:', buffer);
-  // });
+  const data = response.arrayBuffer();
+
+  const zip = await JSZip.loadAsync(data);
+
+  // read existing file
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // const problemInfo = await zip
+  //   .file('description/problem.info')!
+  //   .async('string');
+  // console.log(problemInfo);
+
+  const descfile = `${problem.baseName}.pdf`;
+
+  // replace existing file contents
+  zip.file(
+    'description/problem.info',
+    // 'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
+    `basename=${problem.baseName}\nfullname=${problem.name}\ndescfile=${descfile}\n`,
+  );
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  zip.file(`description/${descfile}`, (await generateProblemPDF(problem))!);
+
+  problem.samples.forEach(([input, output], index) => {
+    const filename = `X_${(index + 1).toString()}`;
+
+    zip.file(`input/${filename}`, input.endsWith('\n') ? input : `${input}\n`);
+    zip.file(
+      `output/${filename}`,
+      output.endsWith('\n') ? output : `${output}\n`,
+    );
+  });
+
+  const content = await zip.generateAsync({ type: 'blob' });
+  if (download) saveAs(content, `${problem.baseName}.zip`);
+  return content;
+}
+
+export async function generateAllProblemsZip(problems: Required<problem>[]) {
+  const zip = new JSZip();
+
+  for (const problem of problems) {
+    const problemZip = await generateProblemZip(problem);
+    zip.file(`${problem.baseName}.zip`, problemZip);
+  }
+
+  const content = await zip.generateAsync({ type: 'blob' });
+  saveAs(content, 'problems.zip');
 }

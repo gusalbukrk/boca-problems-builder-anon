@@ -5,51 +5,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { saveAs } from 'file-saver';
-import JSZip from 'jszip';
 
-import existingProblems from '../assets/problems.json';
 import db from '../db';
-import { problem, createProblemPDF } from '../shared';
-
-// console.log(createProblemPDF(existingProblems[0]));
-// console.log(await createProblemPDF(existingProblems[0]));
-
-// try {
-//   const response = await fetch('/problemtemplate.zip', {
-//     method: 'GET',
-//   });
-//   const data = response.arrayBuffer();
-
-//   const zip = await JSZip.loadAsync(data);
-//   // console.log(zip);
-
-//   // read existing file
-//   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-//   // const problemInfo = await zip
-//   //   .file('description/problem.info')!
-//   //   .async('string');
-//   // console.log(problemInfo);
-
-//   // delete file
-//   zip.remove('description/desc.txt');
-
-//   // replace existing file contents
-//   zip.file(
-//     'description/problem.info',
-//     'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
-//   );
-
-//   zip.file(
-//     'description/ProblemaA.pdf',
-//     await createProblemPDF(existingProblems[0]),
-//   );
-
-//   const content = await zip.generateAsync({ type: 'blob' });
-//   saveAs(content, 'problem.zip');
-// } catch (error) {
-//   console.error('Error:', error);
-// }
+import { problem, generateProblemZip, generateAllProblemsZip } from '../shared';
 
 function DownloadProblems() {
   const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
@@ -68,7 +26,6 @@ function DownloadProblems() {
   return (
     <>
       <h2 className="h4 mb-4dot5">Download problems</h2>
-      <a href="../assets/problemtemplate.zip">zip</a>
       <div className="mb-4dot5">
         <h4 className="h5">Backup in JSON format</h4>
         <p className="mb-2 text-secondary fw-medium">
@@ -106,8 +63,9 @@ function DownloadProblems() {
           <p className="mb-1">
             <button
               className="btn btn-link text-decoration-none fw-medium"
-              onClick={() => {
-                console.log('all');
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onClick={async () => {
+                await generateAllProblemsZip(orderedProblems);
               }}
             >
               <FontAwesomeIcon
@@ -127,8 +85,9 @@ function DownloadProblems() {
               <li key={problem.id}>
                 <button
                   className="btn btn-link text-decoration-none fw-medium"
-                  onClick={() => {
-                    console.log(problem);
+                  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+                  onClick={async () => {
+                    await generateProblemZip(problem, true);
                   }}
                 >
                   {problem.name}
