@@ -2,7 +2,7 @@ import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import existingProblems from '../assets/problems.json';
-import { createProblem } from '../shared';
+import { problem, createProblem } from '../shared';
 
 function SelectExistingProblem({
   setSelectedProblemID,
@@ -41,12 +41,7 @@ function SelectExistingProblem({
                   className="btn btn-link"
                   // eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={async () => {
-                    const newProblem = {
-                      ...problem,
-                      samples: problem.samples as [string, string][], // otherwise, type error
-                      baseName: problem.name.replace(/ /g, '-'),
-                    };
-                    await createProblem(newProblem);
+                    await createProblem(problem as problem);
                   }}
                 >
                   <FontAwesomeIcon icon={faPlus} />

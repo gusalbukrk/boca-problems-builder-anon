@@ -18,7 +18,6 @@ export interface problem {
   // the following properties are present only on the problems stored
   // in the indexedDB database but not in the JSON file
   id?: string;
-  baseName?: string;
 }
 
 export const createProblem = async (problem: problem) => {
@@ -186,8 +185,18 @@ export function generateProblemPDF(problem: problem, open = false) {
   }
 }
 
+/** used for generate problem shortName; 0 => A, 1 => B, ... */
+export const numberToLetter = (n: number) => {
+  if (n < 0 || n > 25)
+    throw new Error(
+      'numberToLetter function only supports numbers between 0 and 25',
+    );
+  return String.fromCharCode(65 + n);
+};
+
 export async function generateProblemZip(
-  problem: Required<problem>,
+  problem: problem,
+  index: number,
   download = false,
 ) {
   const response = await fetch('/problemtemplate.zip', {
@@ -204,13 +213,19 @@ export async function generateProblemZip(
   //   .async('string');
   // console.log(problemInfo);
 
-  const descfile = `${problem.baseName}.pdf`;
+  // shortName is “usually a letter, no spaces” and it’s defined during problem registration
+  // (`/admin/problem.php`); baseName is the “name of the class expected to have the main“,
+  // it’s set in the problem package's `description/problem.info` and it must be at least 3
+  // chars long, otherwise may there be an error when compiling solutions in Java
+  // https://github.com/gusalbukrk/boca/tree/main/tutorial#o-basename-dos-problemas-deve-ter-no-m%C3%ADnimo-3-caracteres
+  const shortName = numberToLetter(index);
+  const baseName = `Problem${shortName}`;
+  const descfile = `${shortName}.pdf`;
 
   // replace existing file contents
   zip.file(
     'description/problem.info',
-    // 'basename=ProblemaA\nfullname=Nome do Problema\ndescfile=ProblemaA.pdf\n',
-    `basename=${problem.baseName}\nfullname=${problem.name}\ndescfile=${descfile}\n`,
+    `basename=${baseName}\nfullname=${problem.name}\ndescfile=${descfile}\n`,
   );
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -227,16 +242,16 @@ export async function generateProblemZip(
   });
 
   const content = await zip.generateAsync({ type: 'blob' });
-  if (download) saveAs(content, `${problem.baseName}.zip`);
+  if (download) saveAs(content, `${shortName}.zip`);
   return content;
 }
 
-export async function generateAllProblemsZip(problems: Required<problem>[]) {
+export async function generateAllProblemsZip(problems: problem[]) {
   const zip = new JSZip();
 
-  for (const problem of problems) {
-    const problemZip = await generateProblemZip(problem);
-    zip.file(`${problem.baseName}.zip`, problemZip);
+  for (const [index, problem] of problems.entries()) {
+    const problemZip = await generateProblemZip(problem, index);
+    zip.file(`${numberToLetter(index)}.zip`, problemZip);
   }
 
   const content = await zip.generateAsync({ type: 'blob' });

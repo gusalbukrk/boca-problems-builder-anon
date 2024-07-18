@@ -13,8 +13,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { List, arrayMove, arrayRemove } from 'react-movable';
 
 import db from '../db';
-
-import type { problem } from '../shared';
+import { numberToLetter, type problem } from '../shared';
 
 function Menu({
   setSelectedComponent,
@@ -121,7 +120,7 @@ function Problems({
               {children}
             </ul>
           )}
-          renderItem={({ value: problem, props, isDragged }) => (
+          renderItem={({ value: problem, props, index, isDragged }) => (
             // must not use spread to assign `key`, otherwise
             // `Warning: A props object containing a "key" prop is being spread into JSX`
             <li
@@ -140,7 +139,8 @@ function Problems({
                   data-movable-handle
                 />
                 <span>
-                  <strong>{problem.baseName}</strong> –{' '}
+                  {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                  <strong>{numberToLetter(index!)}</strong> –{' '}
                   {problem.name.length <= 15
                     ? problem.name
                     : problem.name.slice(0, 15) + '...'}

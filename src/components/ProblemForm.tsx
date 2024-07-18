@@ -25,14 +25,13 @@ function ProblemForm({
   selectedProblemID?: string;
   readonly?: boolean;
 }) {
-  const [baseName, setBaseName] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
   const [timeLimit, setTimeLimit] = useState<number>(1);
   const [description, setDescription] = useState<string>('');
   const [samples, setSamples] = useState<[string, string][]>([['', '']]);
   const [images, setImages] = useState([] as string[]);
-  const baseNameInputRef = useRef<HTMLInputElement>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
   const imagesInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -52,8 +51,6 @@ function ProblemForm({
           setDescription(problem.description);
           setImages(problem.images);
           setSamples(problem.samples);
-
-          setBaseName(problem.baseName ?? '');
         }
       }
     })();
@@ -64,9 +61,6 @@ function ProblemForm({
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await db.problems.update(selectedProblemID, problem);
     // await db.problems.put({ id: selectedProblemID, ...problem });
-
-    baseNameInputRef.current?.focus();
-    window.scroll({ top: 0 });
   };
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -79,8 +73,6 @@ function ProblemForm({
       description,
       images,
       samples,
-
-      baseName,
     };
 
     console.log('Problem:', problem);
@@ -96,12 +88,11 @@ function ProblemForm({
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       imagesInputRef.current!.value = '';
       setSamples([['', '']]);
-      setBaseName('');
     } else {
       await updateProblem(problem);
     }
 
-    baseNameInputRef.current?.focus();
+    nameInputRef.current?.focus();
     window.scroll({ top: 0 });
   };
 
@@ -120,23 +111,6 @@ function ProblemForm({
         className="container mt-4"
       >
         <div className="mb-4">
-          <label htmlFor="baseName" className="form-label fw-medium">
-            Base Name
-          </label>
-          <input
-            id="baseName"
-            type="text"
-            className="form-control"
-            value={baseName}
-            onChange={(e) => {
-              setBaseName(e.target.value);
-            }}
-            ref={baseNameInputRef}
-            readOnly={readonly}
-            // required
-          />
-        </div>
-        <div className="mb-4">
           <label htmlFor="name" className="form-label fw-medium">
             Name
           </label>
@@ -144,6 +118,7 @@ function ProblemForm({
             id="name"
             type="text"
             className="form-control"
+            ref={nameInputRef}
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -322,7 +297,6 @@ function ProblemForm({
                 description,
                 images,
                 samples,
-                baseName,
               };
 
               // eslint-disable-next-line @typescript-eslint/no-floating-promises

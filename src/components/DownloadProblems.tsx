@@ -7,7 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import db from '../db';
-import { problem, generateProblemZip, generateAllProblemsZip } from '../shared';
+import {
+  problem,
+  generateProblemZip,
+  generateAllProblemsZip,
+  numberToLetter,
+} from '../shared';
 
 function DownloadProblems() {
   const problems = useLiveQuery(() => db.problems.toArray()) ?? [];
@@ -21,7 +26,7 @@ function DownloadProblems() {
       ? []
       : (problemsOrder.map((id) =>
           problems.find((problem) => problem.id === id),
-        ) as Required<problem>[]);
+        ) as problem[]);
 
   return (
     <>
@@ -77,20 +82,17 @@ function DownloadProblems() {
             </button>
             or download each problem individually
           </p>
-          <ul
-            className="ps-0 d-flex flex-wrap align-items-center list-separators"
-            style={{ listStyle: 'none' }}
-          >
-            {orderedProblems.map((problem) => (
+          <ul className="ps-0" style={{ listStyle: 'none' }}>
+            {orderedProblems.map((problem, index) => (
               <li key={problem.id}>
                 <button
                   className="btn btn-link text-decoration-none fw-medium"
                   // eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={async () => {
-                    await generateProblemZip(problem, true);
+                    await generateProblemZip(problem, index, true);
                   }}
                 >
-                  {problem.name}
+                  {numberToLetter(index)} – {problem.name}
                 </button>
               </li>
             ))}
