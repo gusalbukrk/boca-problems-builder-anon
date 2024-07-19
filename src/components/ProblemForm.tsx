@@ -9,14 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import existingProblems from '../assets/problems.json';
 import db from '../db';
 import { problem, createProblem, generateProblemPDF } from '../shared';
-
-function calcTextareaRows(str: string) {
-  return (str.match(/\n/g) ?? []).length + 1;
-}
 
 function ProblemForm({
   selectedProblemID,
@@ -230,7 +227,9 @@ function ProblemForm({
             )}
           </div>
         </div>
-        <p className="form-label mb-3 fw-medium">Samples</p>
+        <label htmlFor="sample-input-1" className="form-label mb-3 fw-medium">
+          Samples
+        </label>
         <div className="mb-4">
           {samples.map(([input, output], index) => (
             <div key={index} className="mb-3 row">
@@ -238,8 +237,8 @@ function ProblemForm({
                 {index + 1}
               </p>
               <div className="col">
-                <textarea
-                  rows={calcTextareaRows(input)}
+                <TextareaAutosize
+                  id={index === 0 ? 'sample-input-1' : undefined}
                   className="form-control"
                   style={{ resize: 'none' }}
                   value={input}
@@ -253,8 +252,7 @@ function ProblemForm({
                 />
               </div>
               <div className="col">
-                <textarea
-                  rows={calcTextareaRows(output)}
+                <TextareaAutosize
                   className="form-control"
                   style={{ resize: 'none' }}
                   value={output}
