@@ -41,7 +41,7 @@ function ContestSettings() {
 
   return (
     <>
-      <h2 className="h4 mb-4">Edit contest settings</h2>
+      <h2 className="h4 mb-4">Contest settings</h2>
       <form
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit}

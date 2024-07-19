@@ -12,7 +12,7 @@ function SelectExistingProblem({
   return (
     <>
       <h2 className="h4 mb-4">Select existing problem</h2>
-      <table className="table table-hover">
+      <table className="table table-hover align-middle">
         <thead>
           <tr>
             <th>Name</th>

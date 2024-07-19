@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import './App.css';
 import ContestSettings from './components/ContestSettings';
-import DownloadProblems from './components/DownloadProblems';
+import DataManagement from './components/DataManagement';
 import Instructions from './components/Instructions';
 import Menu from './components/Menu';
 import ProblemForm from './components/ProblemForm';
@@ -61,7 +61,7 @@ function App() {
             />
           )}
 
-          {selectedComponent === 'download' && <DownloadProblems />}
+          {selectedComponent === 'dataManagement' && <DataManagement />}
         </main>
       </div>
     </>

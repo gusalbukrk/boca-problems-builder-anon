@@ -41,7 +41,7 @@ function Menu({
         setSelectedProblemID={setSelectedProblemID}
       />
       <hr className="my-4" />
-      <h3 className="h6 fw-bold">Actions</h3>
+      <h3 className="h6 fw-bold">Menu</h3>
       <div className="ps-4">
         <button
           className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
@@ -51,7 +51,7 @@ function Menu({
           }}
         >
           <FontAwesomeIcon icon={faGear} />
-          Edit contest settings
+          Contest settings
         </button>
         <button
           className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
@@ -77,11 +77,11 @@ function Menu({
           className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
-            setSelectedComponent('download');
+            setSelectedComponent('dataManagement');
           }}
         >
           <FontAwesomeIcon icon={faDownload} />
-          Download problems
+          Data management
         </button>
       </div>
     </aside>
