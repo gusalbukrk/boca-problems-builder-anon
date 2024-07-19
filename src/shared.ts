@@ -3,7 +3,15 @@ import JSZip from 'jszip';
 import { nanoid } from 'nanoid';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 // import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Alignment, CanvasLine, Content, Margins } from 'pdfmake/interfaces'; // eslint-disable-line import/no-unresolved
+import {
+  Alignment,
+  CanvasLine,
+  Content,
+  ContentOrderedList,
+  ContentText,
+  Margins,
+  PageBreak,
+} from 'pdfmake/interfaces'; // eslint-disable-line import/no-unresolved
 
 import db from './db';
 
@@ -38,138 +46,232 @@ export const createProblem = async (problem: problem) => {
   });
 };
 
-export function generateProblemPDF(problem: problem, open = false) {
-  // https://pdfmake.github.io/docs/0.1/fonts/custom-fonts-client-side/url/
-  const fonts = {
-    Roboto: {
-      normal:
-        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
-      bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
-      italics:
-        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
-      bolditalics:
-        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf',
-    },
-  };
+// https://pdfmake.github.io/docs/0.1/fonts/custom-fonts-client-side/url/
+const fonts = {
+  Roboto: {
+    normal:
+      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
+    bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+    italics:
+      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+    bolditalics:
+      'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf',
+  },
+};
 
-  const docDefinition = {
-    pageMargins: 56,
-    header: (currentPage: number) => {
-      return [
-        {
-          columns: [
-            {
-              text: '1º Minimaratona de Programação do IF Goiano Catalão',
-              marginLeft: 56,
-              width: 'auto',
-            },
-            {
-              text: currentPage,
-              alignment: 'right' as Alignment,
-              marginRight: 56,
-            },
-          ],
-          marginTop: 18,
-          color: '#101010',
-          fontSize: 10,
-        },
-        {
-          canvas: [
-            {
-              type: 'line',
-              x1: 56,
-              y1: 9,
-              x2: 540,
-              y2: 9,
-              lineWidth: 2,
-              lineColor: '#7e7e7e',
-            } as CanvasLine,
-          ],
-        },
-      ] as Content;
-    },
-    content: [
-      {
-        text: problem.name,
-        style: 'header',
-        margin: [0, 0, 0, 18] as Margins,
-      },
-      ...problem.images.map((image) => ({
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        image: image,
-        width: 250,
-        margin: [0, 0, 0, 18] as Margins,
-        alignment: 'center' as Alignment,
-        //
-        // couldn't make it work by storing image files in `src/assets/` or `public/`
-        // it may be that converting it to base64 (as it is being done right now) is the only way
-        // https://stackoverflow.com/a/68010094
-        // image: '../assets/problem-image.png',
-      })),
-      ...problem.description
-        .split('\n')
-        .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
-        .map((obj) =>
-          ['Entrada', 'Saída'].includes(obj.text)
-            ? { ...obj, style: 'subheader' }
-            : obj,
-        ),
-      {
-        text: 'Exemplos',
-        style: 'subheader',
-        margin: [0, 0, 0, 12] as Margins,
-      },
-      {
-        table: {
-          // headers are automatically repeated if the table spans over multiple pages
-          // you can declare how many rows should be treated as headers
-          headerRows: 0,
-
-          // keep together on the same page
-          dontBreakRows: true,
-
-          // widths: ['*', 'auto', 100, '*'],
-          widths: [20, '*', '*'],
-
-          body: [
-            [
-              { text: '#', alignment: 'center' },
-              { text: 'Input', bold: true },
-              { text: 'Output', bold: true },
-            ],
-            // deep copying samples because they're for some unknown reason being mutated when used here
-            // `["10","100"]` => `[ { "text": "10", ... } ] }, { "text": "100", ...} ] } ]`
-            ...(
-              JSON.parse(JSON.stringify(problem.samples)) as [string, string][]
-            ).map(([input, output], index) => [
+const docDefinitionGeneralSettings = {
+  pageMargins: [56, 70, 56, 56] as Margins,
+  header: (currentPage: number) => {
+    return currentPage === 1
+      ? []
+      : ([
+          {
+            columns: [
               {
-                text: index + 1,
-                alignment: 'center',
-                color: '#696969',
-                bold: true,
+                text: '1º Minimaratona de Programação do IF Goiano Catalão',
+                marginLeft: 56,
+                width: 'auto',
               },
-              input,
-              output,
-            ]),
-          ],
-        },
-      },
-    ],
+              {
+                text: currentPage,
+                alignment: 'right' as Alignment,
+                marginRight: 56,
+              },
+            ],
+            marginTop: 18,
+            color: '#101010',
+            fontSize: 10,
+          },
+          {
+            canvas: [
+              {
+                type: 'line',
+                x1: 56,
+                y1: 9,
+                x2: 540,
+                y2: 9,
+                lineWidth: 2,
+                lineColor: '#7e7e7e',
+              } as CanvasLine,
+            ],
+          },
+        ] as Content);
+  },
+  defaultStyle: {
+    // fontSize: 12, // default
+    alignment: 'justify' as Alignment,
+    lineHeight: 1.2,
+  },
+  styles: {
+    header: {
+      alignment: 'center' as Alignment,
+      fontSize: 18,
+      bold: true,
+    },
+    subheader: {
+      bold: true,
+    },
+  },
+};
 
-    defaultStyle: {
-      // fontSize: 12, // default
-      alignment: 'justify' as Alignment,
+const generateDocDefinitionCoverPageContent = async (problemsQuant: number) => {
+  const generateListItem = (items: string[]) =>
+    ({
+      type: 'lower-alpha',
+      separator: ['(', ') '],
+      ol: items.map((item) => ({ text: item, margin: [0, 0, 0, 8] })),
+    }) as ContentOrderedList;
+
+  const contestName = ((await db.miscellaneous.get('contestName'))?.value ??
+    '') as string;
+  const logo = ((await db.miscellaneous.get('logo'))?.value ?? '') as string;
+
+  return [
+    {
+      image: logo,
+      // width: 150,
+      fit: [500, 120] as [number, number], // max height 120px
+      margin: [0, 0, 0, 8] as Margins,
+      alignment: 'center' as Alignment,
     },
-    styles: {
-      header: {
-        alignment: 'center' as Alignment,
-        fontSize: 18,
-        bold: true,
-      },
-      subheader: {
-        bold: true,
+    {
+      text: contestName,
+      alignment: 'center' as Alignment,
+      margin: [0, 0, 0, 36] as Margins,
+      fontSize: 12,
+    },
+    {
+      text: 'Informações Gerais',
+      bold: true,
+      alignment: 'center',
+      margin: [0, 0, 0, 12] as Margins,
+    },
+    {
+      text: `Este caderno contém ${problemsQuant.toString()} problemas. Verifique se o caderno está completo.`,
+      margin: [0, 0, 0, 16] as Margins,
+    },
+    {
+      stack: [
+        { text: '1. Sobre os nomes dos programas', bold: true },
+        generateListItem([
+          'Para soluções em C/C++ e Python 3, o nome do arquivo-fonte não é significativo, pode ser qualquer nome desde que tenha as extensões .c, .cc, .py3.',
+          'Para linguagem Java, sua solução deve ter o nome de ProblemX.java, onde X é a letra maiúscula que identifica o problema. Lembre que em Java o nome da classe principal deve ser igual ao nome do arquivo.',
+        ]),
+        { text: '2. Sobre a entrada', bold: true },
+        generateListItem([
+          'A entrada de seu programa deve ser lida da entrada padrão.',
+          'A entrada é composta de um único caso de teste, descrito em um número de linhas que depende do problema.',
+          'Quando uma linha da entrada contém vários valores, estes são separados por um único espaço em branco; a entrada não contém nenhum outro espaço em branco.',
+          'Cada linha, incluindo a última, contém exatamente um caractere final-de-linha.',
+          'O final da entrada coincide com o final do arquivo.',
+        ]),
+        { text: '3. Sobre a saída', bold: true },
+        generateListItem([
+          'A saída de seu programa deve ser escrita na saída padrão.',
+          'Quando uma linha da saída contém vários valores, estes devem ser separados por um único espaço em branco; a saída não deve conter nenhum outro espaço em branco.',
+          'Cada linha, incluindo a última, deve conter exatamente um caractere final-de-linha.',
+        ]),
+      ].map((p) => {
+        const obj = typeof p === 'string' ? { text: p } : p;
+        return {
+          ...obj,
+          // @ts-expect-error Property 'ol' does not exist on type
+          margin: [obj.ol !== undefined ? 18 : 0, 0, 0, 8] as Margins,
+        };
+      }),
+    },
+    {
+      text: '',
+      pageBreak: 'after' as PageBreak,
+    },
+  ];
+};
+
+const generateDocDefinitionProblemContent = (
+  problem: problem,
+  index?: number,
+) => {
+  return [
+    {
+      text:
+        index === undefined
+          ? problem.name
+          : `${numberToLetter(index)} – ${problem.name}`,
+      style: 'header',
+      margin: [0, 0, 0, 18] as Margins,
+    },
+    ...problem.images.map((image) => ({
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      image: image,
+      width: 250,
+      margin: [0, 0, 0, 18] as Margins,
+      alignment: 'center' as Alignment,
+      //
+      // couldn't make it work by storing image files in `src/assets/` or `public/`
+      // it may be that converting it to base64 (as it is being done right now) is the only way
+      // https://stackoverflow.com/a/68010094
+      // image: '../assets/problem-image.png',
+    })),
+    ...problem.description
+      .split('\n')
+      .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
+      .map((obj) =>
+        ['Entrada', 'Saída', 'Restrições'].includes(obj.text)
+          ? { ...obj, style: 'subheader' }
+          : obj,
+      ),
+    {
+      text: 'Exemplos',
+      style: 'subheader',
+      margin: [0, 0, 0, 12] as Margins,
+    },
+    {
+      table: {
+        // headers are automatically repeated if the table spans over multiple pages
+        // you can declare how many rows should be treated as headers
+        headerRows: 0,
+
+        // keep together on the same page
+        dontBreakRows: true,
+
+        // widths: ['*', 'auto', 100, '*'],
+        widths: [20, '*', '*'],
+
+        body: [
+          [
+            { text: '#', alignment: 'center' },
+            { text: 'Input', bold: true },
+            { text: 'Output', bold: true },
+          ],
+          // deep copying samples because they're for some unknown reason being mutated when used here
+          // `["10","100"]` => `[ { "text": "10", ... } ] }, { "text": "100", ...} ] } ]`
+          ...(
+            JSON.parse(JSON.stringify(problem.samples)) as [string, string][]
+          ).map(([input, output], index) => [
+            {
+              text: index + 1,
+              alignment: 'center',
+              color: '#696969',
+              bold: true,
+            },
+            input,
+            output,
+          ]),
+        ],
       },
     },
+  ];
+};
+
+export function generateProblemPDF(
+  problem: problem,
+  index?: number,
+  open = false,
+) {
+  const docDefinition = {
+    ...docDefinitionGeneralSettings,
+
+    content: generateDocDefinitionProblemContent(problem, index),
   };
 
   const pdf = pdfMake.createPdf(docDefinition, undefined, fonts);
@@ -183,6 +285,30 @@ export function generateProblemPDF(problem: problem, open = false) {
       });
     });
   }
+}
+
+export async function generateProblemsBookletPDF(problems: problem[]) {
+  const docDefinition = {
+    ...docDefinitionGeneralSettings,
+
+    content: [
+      ...(await generateDocDefinitionCoverPageContent(problems.length)),
+
+      ...problems
+        .map((problem, index) => {
+          const content = generateDocDefinitionProblemContent(problem, index);
+          if (index !== 0) (content[0] as ContentText).pageBreak = 'before';
+          return content;
+        })
+        .flat(),
+    ],
+  };
+
+  return new Promise<Buffer>((res) => {
+    pdfMake.createPdf(docDefinition, undefined, fonts).getBuffer((buffer) => {
+      res(buffer);
+    });
+  });
 }
 
 /** used for generate problem shortName; 0 => A, 1 => B, ... */
@@ -228,8 +354,11 @@ export async function generateProblemZip(
     `basename=${baseName}\nfullname=${problem.name}\ndescfile=${descfile}\n`,
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  zip.file(`description/${descfile}`, (await generateProblemPDF(problem))!);
+  zip.file(
+    `description/${descfile}`,
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    (await generateProblemPDF(problem, index))!,
+  );
 
   problem.samples.forEach(([input, output], index) => {
     const filename = `X_${(index + 1).toString()}`;
@@ -241,13 +370,15 @@ export async function generateProblemZip(
     );
   });
 
-  const content = await zip.generateAsync({ type: 'blob' });
-  if (download) saveAs(content, `${shortName}.zip`);
-  return content;
+  const blob = await zip.generateAsync({ type: 'blob' });
+  if (download) saveAs(blob, `${shortName}.zip`);
+  return blob;
 }
 
 export async function generateAllProblemsZip(problems: problem[]) {
   const zip = new JSZip();
+
+  zip.file('booklet.pdf', await generateProblemsBookletPDF(problems));
 
   for (const [index, problem] of problems.entries()) {
     const problemZip = await generateProblemZip(problem, index);

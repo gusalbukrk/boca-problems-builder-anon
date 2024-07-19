@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import './App.css';
+import ContestSettings from './components/ContestSettings';
 import DownloadProblems from './components/DownloadProblems';
 import Instructions from './components/Instructions';
 import Menu from './components/Menu';
@@ -23,6 +24,8 @@ function App() {
         />
         <main className="flex-grow-1 p-3">
           {selectedComponent === 'instructions' && <Instructions />}
+
+          {selectedComponent === 'contestSettings' && <ContestSettings />}
 
           {selectedComponent === 'create' && (
             <>

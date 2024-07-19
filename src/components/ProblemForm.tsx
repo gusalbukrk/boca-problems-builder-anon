@@ -298,7 +298,7 @@ function ProblemForm({
               };
 
               // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              generateProblemPDF(problem, true);
+              generateProblemPDF(problem, undefined, true);
             }}
           >
             <FontAwesomeIcon icon={faFilePdf} className="me-2" />

@@ -23,4 +23,18 @@ if ((await db.miscellaneous.get({ name: 'problemsOrder' })) === undefined) {
   });
 }
 
+if ((await db.miscellaneous.get({ name: 'contestName' })) === undefined) {
+  await db.miscellaneous.add({
+    name: 'contestName',
+    value: '',
+  });
+}
+
+if ((await db.miscellaneous.get({ name: 'logo' })) === undefined) {
+  await db.miscellaneous.add({
+    name: 'logo',
+    value: '',
+  });
+}
+
 export default db;

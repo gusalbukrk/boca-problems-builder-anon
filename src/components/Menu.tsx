@@ -7,6 +7,7 @@ import {
   faTriangleExclamation,
   faMagnifyingGlass,
   faSquarePlus,
+  faGear,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -42,6 +43,16 @@ function Menu({
       <hr className="my-4" />
       <h3 className="h6 fw-bold">Actions</h3>
       <div className="ps-4">
+        <button
+          className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
+          style={{ fontSize: '1.1rem' }}
+          onClick={() => {
+            setSelectedComponent('contestSettings');
+          }}
+        >
+          <FontAwesomeIcon icon={faGear} />
+          Edit contest settings
+        </button>
         <button
           className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
@@ -138,7 +149,7 @@ function Problems({
                   style={{ cursor: isDragged ? 'grabbing' : 'grab' }}
                   data-movable-handle
                 />
-                <span>
+                <span title={problem.name}>
                   {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                   <strong>{numberToLetter(index!)}</strong> –{' '}
                   {problem.name.length <= 15
