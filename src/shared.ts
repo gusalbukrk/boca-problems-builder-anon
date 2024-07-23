@@ -201,7 +201,6 @@ const generateDocDefinitionProblemContent = (
       margin: [0, 0, 0, 18] as Margins,
     },
     ...problem.images.map((image) => ({
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       image: image,
       width: 250,
       margin: [0, 0, 0, 18] as Margins,
@@ -333,8 +332,8 @@ export async function generateProblemZip(
   const zip = await JSZip.loadAsync(data);
 
   // read existing file
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   // const problemInfo = await zip
+  //   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   //   .file('description/problem.info')!
   //   .async('string');
   // console.log(problemInfo);

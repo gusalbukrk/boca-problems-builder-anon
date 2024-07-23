@@ -57,7 +57,7 @@ function DataManagement() {
             type="file"
             accept="application/json"
             className="form-control form-control-sm"
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises, @typescript-eslint/require-await
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
             onChange={async (e) => {
               const json = e.target.files?.[0];
 

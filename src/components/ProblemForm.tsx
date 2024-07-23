@@ -54,8 +54,7 @@ function ProblemForm({
   }, [selectedProblemID]);
 
   const updateProblem = async (problem: problem) => {
-    // @ts-expect-error Argument of type 'Omit<problem, "id">' is not assignable to parameter of type ...
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // @ts-expect-error Argument of type 'problem' is not assignable to parameter of type ...
     await db.problems.update(selectedProblemID, problem);
     // await db.problems.put({ id: selectedProblemID, ...problem });
   };
