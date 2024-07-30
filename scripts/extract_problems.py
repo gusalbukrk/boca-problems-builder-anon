@@ -4,6 +4,7 @@ import os
 from collections.abc import Iterable
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
+from generate_tables_json_string import generate_tables_json_string
 
 pdfsToIgnore = [
   # white space problem, couldn't correct by tweaking x_tolerance and y_tolerance
@@ -16,8 +17,6 @@ pdfsToIgnore = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/first/contest/B.pdf',
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/first/warmup/B.pdf',
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/first/contest/C.pdf',
-
-  # 
 ]
 
 def list_pdf_files(directory):
@@ -36,9 +35,10 @@ def flatten(xs):
             yield x
 
 # extract non-tabular text from PDF
-def extract_text_from_pdf(pdfPath):
+def extract_problem_from_pdf(pdfPath):
   pdf = pdfplumber.open(pdfPath)  
 
+  # EXTRACT TEXT (except text from tables)
   text = ''
   for page in pdf.pages:
     # https://github.com/jsvine/pdfplumber/issues/292#issuecomment-712752239
@@ -50,7 +50,7 @@ def extract_text_from_pdf(pdfPath):
     # 2022/second/contest/M.pdf page 3 has only images, so there won't be a trailing newline
     pageText = re.sub('^.*\n?', '', pageText)
     text += pageText
-
+  #
   # remove text from tables
   # https://github.com/jsvine/pdfplumber/issues/242
   tables = []
@@ -70,15 +70,14 @@ def extract_text_from_pdf(pdfPath):
       if not pdfPath.endswith('2015/first/contest/G.pdf'):
         raise e
 
-  # remove hyphenation
+  # REMOVE HYPHENATION
   text = text.replace('-\n', '\n')
 
-  # fix diacritics/accents (tilde, circumflex, ç, etc.)
+  # FIX DIACRITICS (tilde, circumflex, ç, etc.)
   # must be done before extract title, because it may contain punctuation
   # `unicodedata.normalize('NFKD', text)` doesn't suffice because pdfplumber isn't consistent with diacritics
   # (sometimes it is extract before the letter, sometimes after) and unicodedata expects the diacritic to be before the letter
   # besides, unicodedata adds a space in the place of the diacritic
-  # TODO: case insensitive
   patterns = [
     ('¸c', 'ç'),
     ('˜a', 'ã'),
@@ -102,26 +101,23 @@ def extract_text_from_pdf(pdfPath):
   for pattern, replacement in patterns:
     text = text.replace(pattern, replacement)
 
-  # get problem letter and name
+  # EXTRACT PROBLEM NAME
   firstLine = re.match('^.*\n', text).group(0).strip()
   text = re.sub('^.*\n', '', text)
   if re.search('–', firstLine):
     # some of the problems, have the letter and the title on the same line
     # e.g. "Problem A – The fellowship of the ring"
-    # problemLetter, problemName = firstLine.split(' – ')
-    m = re.match('^Problema? ([A-Z]) – (.*)$', firstLine)
+    m = re.match('^Problema? [A-Z] – (.*)$', firstLine)
 
     if m is None:
       raise Exception('Unexpected first line in ' + pdfPath + ': "' + firstLine + '"')
 
-    problemLetter = m.group(1)
-    problemName = m.group(2)
+    problemName = m.group(1)
   else:
     # first line has the problem letter, e.g. "Problema A" and second line has the title
     if re.search('^Problema? [A-Z]$', firstLine) is None:
       raise Exception('Unexpected first line in ' + pdfPath + ': "' + firstLine + '"')
 
-    problemLetter = re.match('^Problema? ([A-Z])$', firstLine).group(1)
     problemName = re.match('^.*\n', text).group(0).strip()
     text = re.sub('^.*\n', '', text)
   #
@@ -135,44 +131,95 @@ def extract_text_from_pdf(pdfPath):
     # some of the problems have the expected filename after the title
     # e.g. 2014/first/contest/K.pdf
     text = re.sub('^.*\n', '', text)
-    print(pdfPath)
-    print(newFirstLine)
 
-  # remove newlines
-  # text = re.sub(r'(?<!\.)\n', ' ', text)
+  # REMOVE NEWLINES
   text = re.sub(r'(?<!\.)\n', ' ', text)
   #
   # restore newlines after section names
   # negative lookbehind is needed because sometimes the first word in the output section is 'Output'
-  text = re.sub('(?<!Output )(Entrada|Saída|Input|Output) ', r'\1\n', text)
+  # `.strip()` is necessary because usually 'Exemplos' will be the last line in the text
+  text = re.sub('(?<!Output )(Entrada|Saída|Exemplos|Notas|Input|Output) +', r'\1\n', text).strip()
 
-  # extract images
-  # 2020/first/warmup/A.pdf has a image
-  # 2022/second/contest/M.pdf has a page (3) containing only images
+  # EXTRACT METADATA
+  year, phase, warmup, letter = pdfPath.split("/")[-4:-2] + [pdfPath.split("/")[-2] == 'warmup'] + [pdfPath.split("/")[-1].split(".")[0]]
+  source = {
+    'year': year,
+    'phase': 1 if phase == 'first' else 2,
+    'warmup': warmup,
+    'letter': letter,
+  }
 
-  # identify shapes as image instead of recognizing them as text
-  # 2015/first/contest/G.pdf has shapes
+  # EXTRACT TABLES
+  # NOTE: text in tables are not being normalized (e.g. diacritics are not being fixed) because they contain very simple text
+  tables = [] # e.g. [[['Entrada\n10 7', 'Sa´ıda\n10']], [['Entrada\n2 2', 'Sa´ıda\n2']]]
+  for page in pdf.pages:
+    tables += page.extract_tables()
+  #
+  # some PDFs have figures/shapes which are mistakenly identified as tables; some of them will trigger error when
+  # passed to `generate_tables_json_string` (e.g. 2015/first/contest/E.pdf) others won't (e.g. 2018/first/contest/E.pdf)
+  # meanwhile, every table cell which contains a sample has the words 'entrada', 'saída', 'input' or 'output'
+  # therefore, ignore tables which don't contain these words
+  samplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
+  samples = generate_tables_json_string(samplesTables)
 
-  return problemLetter, problemName, author, text.strip()
+  hasImages = False
+  
+  # EXTRACT IMAGES
+  images = []
+  for page in pdf.pages:
+    images.extend(page.images)
+  #
+  if (len(images) > 0):
+    # print(pdfPath, len(images))
+    hasImages = True
 
-pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/'))) # only PDFs containing individual problems
+    components = pdfPath.split("/")[-4:-1]
+    components.append(pdfPath.split("/")[-1].split(".")[0])
+    dirname = './imgs/' + ("/".join(components))
+    # os.makedirs(dirname, exist_ok=True)
 
-# pdf_files_paths = list(filter(lambda path: re.search('second', path) is not None, pdf_files_paths))
+    for index, image in enumerate(images):
+      x0 = image["x0"]
+      y0 = image["y0"]
+      x1 = image["x1"]
+      y1 = image["y1"]
+      # bbox = (x0, y0, x1, y1) # wrong
+      bbox = (x0, pdf.pages[image['page_number'] - 1].height - y1, x1, pdf.pages[image['page_number'] - 1].height - y0)
+      cropped_page = pdf.pages[image['page_number'] - 1].crop(bbox)
+      image_obj = cropped_page.to_image(resolution=150)
+      # image_obj.save(dirname + '/' + str(index + 1) + '.png')
 
-for path in pdf_files_paths:
+  # EXTRACT IMAGES NOT IDENTIFIED BY PDFPLUMBER
+  # pdfplumber successfully identifies raster images, but not vector figures which are comprised by shapes
+  # https://github.com/jsvine/pdfplumber/issues/454
+  # e.g. 2016/second/contest/F.pdf, 2015/first/contest/G.pdf
+  # code below create a directory for each problem which likely to have images
+  # the process of extracting images from these PDFs will be done manually
+  if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration', text, re.IGNORECASE) is not None):
+    hasImages = True
+    dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
+    # os.makedirs(dirname, exist_ok=True)
+
+  return {
+    'name': problemName,
+    'author': author,
+    'text': text.strip(),
+    'images': False if len(images) == 0 else True,
+    'samples': samples,
+    'source': source,
+    'hasImages': hasImages,
+  }
+
+pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
+
+for i, path in enumerate(pdf_files_paths):
   if path in pdfsToIgnore:
     continue
 
-  print(path)
-  letter, name, author, text = extract_text_from_pdf(path)
-  print(letter + ': ' + name)
-  # print(author)
-  print(text)
-  # print()
-  break
+  # print(path)
+  e = extract_problem_from_pdf(path)
+  print(i, e['name'])
+  # break
 
-# print(extract_text_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/first/warmup/A.pdf'))
-# print(extract_text_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/second/contest/D.pdf'))
-# print('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/second/contest/M.pdf')
-# t = extract_text_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2014/first/contest/K.pdf')
-# print(t)
+# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/second/contest/F.pdf')
+# print(e)
