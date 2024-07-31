@@ -20,6 +20,22 @@ pdfsToIgnore = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/first/contest/C.pdf',
 ]
 
+# despite its text contain words like 'figure', 'figura', 'picture', ...
+# the PDFs of these problems doesn't actually contain any figures
+doesNotContainFigures = [
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/first/contest/J.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/warmup/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/D.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/G.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/M.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/second/warmup/C.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/second/contest/K.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/second/contest/A.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/first/contest/J.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/second/contest/H.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/second/warmup/B.pdf',
+]
+
 def list_pdf_files(directory):
 	pdf_files = []
 	for root, dirs, files in os.walk(directory):
@@ -196,10 +212,12 @@ def extract_problem_from_pdf(pdfPath):
   # e.g. 2016/second/contest/F.pdf, 2015/first/contest/G.pdf
   # code below create a directory for each problem which likely to have images
   # the process of extracting images from these PDFs will be done manually
-  if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration', text, re.IGNORECASE) is not None):
-    hasImages = True
-    dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
-    # os.makedirs(dirname, exist_ok=True)
+  if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration|image', text, re.IGNORECASE) is not None):
+    if pdfPath not in doesNotContainFigures:
+      # print(pdfPath)
+      hasImages = True
+      dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
+      # os.makedirs(dirname, exist_ok=True)
 
   return {
     'name': problemName,
@@ -213,24 +231,24 @@ def extract_problem_from_pdf(pdfPath):
 
 pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
 
-ps = []
+# ps = []
 for path in pdf_files_paths:
   if path in pdfsToIgnore:
     continue
 
-  print(path)
+  # print(path)
   p = extract_problem_from_pdf(path)
   # print(p)
   # print(json.dumps(p, ensure_ascii=False)) # print json
-  ps.append(p)
+  # ps.append(p)
 
   # break
 
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-with open('output.json', 'w') as f:
-  json.dump(ps, f, ensure_ascii=False)
+# with open('output.json', 'w') as f:
+#   json.dump(ps, f, ensure_ascii=False)
 
-# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/second/contest/F.pdf')
+# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/second/contest/H.pdf')
 # print(e)
