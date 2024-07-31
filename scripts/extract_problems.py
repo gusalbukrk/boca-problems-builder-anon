@@ -4,7 +4,8 @@ import os
 from collections.abc import Iterable
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
-from generate_tables_json_string import generate_tables_json_string
+from format_samples import format_samples
+import json
 
 pdfsToIgnore = [
   # white space problem, couldn't correct by tweaking x_tolerance and y_tolerance
@@ -156,11 +157,11 @@ def extract_problem_from_pdf(pdfPath):
     tables += page.extract_tables()
   #
   # some PDFs have figures/shapes which are mistakenly identified as tables; some of them will trigger error when
-  # passed to `generate_tables_json_string` (e.g. 2015/first/contest/E.pdf) others won't (e.g. 2018/first/contest/E.pdf)
+  # passed to `format_samples` (e.g. 2015/first/contest/E.pdf) others won't (e.g. 2018/first/contest/E.pdf)
   # meanwhile, every table cell which contains a sample has the words 'entrada', 'saída', 'input' or 'output'
   # therefore, ignore tables which don't contain these words
   samplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
-  samples = generate_tables_json_string(samplesTables)
+  samples = format_samples(samplesTables)
 
   hasImages = False
   
@@ -212,14 +213,24 @@ def extract_problem_from_pdf(pdfPath):
 
 pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
 
-for i, path in enumerate(pdf_files_paths):
+ps = []
+for path in pdf_files_paths:
   if path in pdfsToIgnore:
     continue
 
-  # print(path)
-  e = extract_problem_from_pdf(path)
-  print(i, e['name'])
+  print(path)
+  p = extract_problem_from_pdf(path)
+  # print(p)
+  # print(json.dumps(p, ensure_ascii=False)) # print json
+  ps.append(p)
+
   # break
+
+# when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
+# for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
+# which is opportune because the size of the JSON file will be reduced without the escape sequences
+with open('output.json', 'w') as f:
+  json.dump(ps, f, ensure_ascii=False)
 
 # e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/second/contest/F.pdf')
 # print(e)

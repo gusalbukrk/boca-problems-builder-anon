@@ -1,4 +1,3 @@
-import json
 import re
 
 input = [[['Entrada\n6\n3 2 1 1 2 3\n1 2\n3 4\n6 5\n2 6\n3 6', 'Sa´ıda\n5']], [['Entrada\n8\n1 2 3 3 2 4 1 4\n1 2\n2 3\n2 6\n5 6\n6 8\n7 8\n4 7', 'Sa´ıda\n12']]]
@@ -37,18 +36,13 @@ def remove_headers(test_cases):
 
     return header_substrings_removed
 
-# get `tables` containing the samples and return it in properly formatted json string
-def generate_tables_json_string(data):
-  str_data = str(data)
-  json_data = json.loads(str_data.replace("'", '"').replace("\n", "\\n"))
-  flat_json_data = [item for sublist in json_data for subsublist in sublist for item in subsublist]
-  chunked_data = split_in_chunks_of_two(flat_json_data)
-  removed_headers= remove_headers(chunked_data)
-  j = json.dumps(removed_headers)
-  return j
+# get `tables` containing the samples and return it as a properly formatted list of tuples of size 2
+# e.g. `[('6\n3 2 1 1 2 3\n1 2\n3 4\n6 5\n2 6\n3 6', '5'), ('8\n1 2 3 3 2 4 1 4\n1 2\n2 3\n2 6\n5 6\n6 8\n7 8\n4 7', '12')]`
+def format_samples(data):
+  flat_data = [item for sublist in data for subsublist in sublist for item in subsublist]
+  chunked_data = split_in_chunks_of_two(flat_data)
+  removed_headers = remove_headers(chunked_data)
+  return removed_headers
 
-# output = generate_tables_json_string(input)
+# output = format_samples(input)
 # print(output)
-# # Write output to a file
-# with open('output.json', 'w') as f:
-#     json.dump(json.loads(output), f, indent=2)
