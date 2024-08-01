@@ -9,31 +9,31 @@ import json
 
 pdfsToIgnore = [
   # white space problem, couldn't correct by tweaking x_tolerance and y_tolerance
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2015/first/contest/H.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/first/warmup/A.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/first/contest/G.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/first/contest/I.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2013/first/contest/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/first/contest/F.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/first/contest/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/first/warmup/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/first/contest/C.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2015/phase1/contest/H/H.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/warmup/A/A.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/G/G.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/I/I.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2013/phase1/contest/B/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/F/F.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase1/contest/B/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/phase1/warmup/B/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/C/C.pdf',
 ]
 
 # despite its text contain words like 'figure', 'figura', 'picture', ...
 # the PDFs of these problems doesn't actually contain any figures
 doesNotContainFigures = [
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/first/contest/J.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/warmup/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/D.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/G.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/second/contest/M.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/second/warmup/C.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/second/contest/K.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/second/contest/A.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/first/contest/J.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/second/contest/H.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/second/warmup/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/J/J.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/warmup/B/B.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/D/D.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/G/G.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/M/M.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase2/warmup/C/C.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase2/contest/K/K.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/phase2/contest/A/A.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/J/J.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/phase2/warmup/B/B.pdf',
 ]
 
 def list_pdf_files(directory):
@@ -64,7 +64,7 @@ def extract_problem_from_pdf(pdfPath):
     
     # remove first line at every page, because it is the page header
     #
-    # 2022/second/contest/M.pdf page 3 has only images, so there won't be a trailing newline
+    # 2022/phase2/contest/M/M.pdf page 3 has only images, so there won't be a trailing newline
     pageText = re.sub('^.*\n?', '', pageText)
     text += pageText
   #
@@ -77,14 +77,14 @@ def extract_problem_from_pdf(pdfPath):
   for table in tables:
     try:
       tableText = table.page.within_bbox(table.bbox).extract_text(x_tolerance=2, y_tolerance=6)
-      # sometimes table extract_text returns empty string (e.g. 2019/second/contest/F.pdf); replacing empty string
+      # sometimes table extract_text returns empty string (e.g. 2019/phase2/contest/F/F.pdf); replacing empty string
       # occurrences with a space will result in adding a space between every character of the original string
       if tableText != '':
         text = text.replace(tableText, ' ')
     except ValueError as e:
-      # 2015/first/contest/G.pdf has a figure which is mistakenly identified as a table,
+      # 2015/phase1/contest/G/G.pdf has a figure which is mistakenly identified as a table,
       # which triggers error `Bounding box is not fully within parent page bounding box`
-      if not pdfPath.endswith('2015/first/contest/G.pdf'):
+      if not pdfPath.endswith('2015/phase1/contest/G/G.pdf'):
         raise e
 
   # REMOVE HYPHENATION
@@ -146,7 +146,7 @@ def extract_problem_from_pdf(pdfPath):
     author = re.match('^Author: (.*)$', newFirstLine).group(1)
   elif re.search('^Arquivo: (.*)$', newFirstLine) is not None:
     # some of the problems have the expected filename after the title
-    # e.g. 2014/first/contest/K.pdf
+    # e.g. 2014/phase1/contest/K/K.pdf
     text = re.sub('^.*\n', '', text)
 
   # REMOVE NEWLINES
@@ -158,12 +158,13 @@ def extract_problem_from_pdf(pdfPath):
   text = re.sub('(?<!Output )(Entrada|Saída|Exemplos|Notas|Input|Output) +', r'\1\n', text).strip()
 
   # EXTRACT METADATA
-  year, phase, warmup, letter = pdfPath.split("/")[-4:-2] + [pdfPath.split("/")[-2] == 'warmup'] + [pdfPath.split("/")[-1].split(".")[0]]
+  year, phase, warmup, letter = pdfPath.split("/")[-5:-3] + [pdfPath.split("/")[-3] == 'warmup'] + [pdfPath.split("/")[-2]]
   source = {
     'year': year,
-    'phase': 1 if phase == 'first' else 2,
+    'phase': 1 if phase == 'phase1' else 2,
     'warmup': warmup,
     'letter': letter,
+    'author': author,
   }
 
   # EXTRACT TABLES
@@ -173,7 +174,7 @@ def extract_problem_from_pdf(pdfPath):
     tables += page.extract_tables()
   #
   # some PDFs have figures/shapes which are mistakenly identified as tables; some of them will trigger error when
-  # passed to `format_samples` (e.g. 2015/first/contest/E.pdf) others won't (e.g. 2018/first/contest/E.pdf)
+  # passed to `format_samples` (e.g. 2015/phase1/contest/E/E.pdf) others won't (e.g. 2018/phase1/contest/E/E.pdf)
   # meanwhile, every table cell which contains a sample has the words 'entrada', 'saída', 'input' or 'output'
   # therefore, ignore tables which don't contain these words
   samplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
@@ -190,8 +191,7 @@ def extract_problem_from_pdf(pdfPath):
     # print(pdfPath, len(images))
     hasImages = True
 
-    components = pdfPath.split("/")[-4:-1]
-    components.append(pdfPath.split("/")[-1].split(".")[0])
+    components = pdfPath.split("/")[-5:-1]
     dirname = './imgs/' + ("/".join(components))
     # os.makedirs(dirname, exist_ok=True)
 
@@ -207,23 +207,22 @@ def extract_problem_from_pdf(pdfPath):
       # image_obj.save(dirname + '/' + str(index + 1) + '.png')
 
   # EXTRACT IMAGES NOT IDENTIFIED BY PDFPLUMBER
-  # pdfplumber successfully identifies raster images, but not vector figures which are comprised by shapes
+  # pdfplumber successfully identifies raster images, but not vector figures which are made of shapes (lines, circles, rectangles, ...)
   # https://github.com/jsvine/pdfplumber/issues/454
-  # e.g. 2016/second/contest/F.pdf, 2015/first/contest/G.pdf
+  # e.g. 2016/phase2/contest/F/F.pdf, 2015/phase1/contest/G/G.pdf
   # code below create a directory for each problem which likely to have images
-  # the process of extracting images from these PDFs will be done manually
+  # the process of extracting vector images from these PDFs will be done manually
   if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration|image', text, re.IGNORECASE) is not None):
     if pdfPath not in doesNotContainFigures:
       # print(pdfPath)
       hasImages = True
-      dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
+      # dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
+      dirname = './imgs/' + ("/".join(pdfPath.split("/")[-5:-1]))
       # os.makedirs(dirname, exist_ok=True)
 
   return {
     'name': problemName,
-    'author': author,
     'text': text.strip(),
-    'images': False if len(images) == 0 else True,
     'samples': samples,
     'source': source,
     'hasImages': hasImages,
@@ -231,24 +230,24 @@ def extract_problem_from_pdf(pdfPath):
 
 pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
 
-# ps = []
+ps = []
 for path in pdf_files_paths:
   if path in pdfsToIgnore:
     continue
 
-  # print(path)
+  print(path)
   p = extract_problem_from_pdf(path)
   # print(p)
   # print(json.dumps(p, ensure_ascii=False)) # print json
-  # ps.append(p)
+  ps.append(p)
 
   # break
 
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-# with open('output.json', 'w') as f:
-#   json.dump(ps, f, ensure_ascii=False)
+with open('output.json', 'w') as f:
+  json.dump(ps, f, ensure_ascii=False, indent=2)
 
-# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/second/contest/H.pdf')
+# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf')
 # print(e)
