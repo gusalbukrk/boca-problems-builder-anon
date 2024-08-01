@@ -59,8 +59,25 @@ for img in imgs:
   dirPathToMoveTo = base_path + m
   # print(img, dirPathToMoveTo)
 
-  if os.path.isdir(dirPathToMoveTo):
-    print(img, '=>', dirPathToMoveTo)
-    # shutil.copy(img, dirPathToMoveTo)
-  else:
-    print('Directory does not exist:', dirPathToMoveTo)
+  # if os.path.isdir(dirPathToMoveTo):
+  #   print(img, '=>', dirPathToMoveTo)
+  #   # shutil.copy(img, dirPathToMoveTo)
+  # else:
+  #   print('Directory does not exist:', dirPathToMoveTo)
+
+# NOTE: remove sample files extensions
+# samples files of 2014 & 2015 and samples files of phase2 of 2016
+# have extension (input samples have `.in`, output samples have `.sol`)
+
+def list_samples_files_with_extension(directory):
+	samples_files = []
+	for root, dirs, files in os.walk(directory):
+		for file in files:
+			if file.endswith((".in", ".sol")):
+				samples_files.append(os.path.join(root, file))
+	return samples_files
+#
+samples_files = list_samples_files_with_extension(base_path)
+for f in samples_files:
+  print(f, re.sub(r'(\.in|\.sol)$', '', f))
+  os.rename(f, re.sub(r'(\.in|\.sol)$', '', f))

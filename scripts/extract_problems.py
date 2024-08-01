@@ -36,6 +36,12 @@ doesNotContainFigures = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/phase2/warmup/B/B.pdf',
 ]
 
+leftoversFile = open('leftovers.json', 'r')
+leftovers = json.loads(leftoversFile.read())
+leftoversFile.close()
+pdfPathsWithLeftovers = leftovers.keys()
+# print(len(pdfPathsWithLeftovers))
+
 def list_pdf_files(directory):
 	pdf_files = []
 	for root, dirs, files in os.walk(directory):
@@ -220,6 +226,18 @@ def extract_problem_from_pdf(pdfPath):
       dirname = './imgs/' + ("/".join(pdfPath.split("/")[-5:-1]))
       # os.makedirs(dirname, exist_ok=True)
 
+  # REMOVE LEFTOVER TEXTS FROM FIGURES
+  # the figures that are vectors were extracted manually and the leftovers.json has a key/value pairs
+  # in which key is the path to a PDF problem and value is a list of strings which are leftovers from the figures for that PDF
+  if pdfPath in pdfPathsWithLeftovers:
+    # print(pdfPath)
+    leftoversOfCurrentPdf = leftovers[pdfPath]
+    for leftover in leftoversOfCurrentPdf:
+      leftover = leftover.replace('\\n', '\n')
+      if text.find(leftover) == -1:
+        raise Exception(f'Leftover "{leftover}" not found in {pdfPath}')
+      text = text.replace(leftover, '')
+
   return {
     'name': problemName,
     'text': text.strip(),
@@ -249,5 +267,15 @@ for path in pdf_files_paths:
 with open('output.json', 'w') as f:
   json.dump(ps, f, ensure_ascii=False, indent=2)
 
-# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf')
+# create a JSON file for each problem in the SBC directory
+# print()
+# destBasePath = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/'
+# for p in ps:
+#   problemPath = f'{p["source"]["year"]}/phase{p["source"]["phase"]}/{"warmup" if p["source"]["warmup"] else "contest"}/{p["source"]["letter"]}/'
+#   filename = destBasePath + problemPath + p['source']['letter'] + '.json'
+#   print(filename)
+#   with open(filename, 'w') as f:
+#     json.dump(p, f, ensure_ascii=False, indent=2)
+
+# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2015/phase2/contest/H/H.pdf')
 # print(e)
