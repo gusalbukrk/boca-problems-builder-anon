@@ -36,13 +36,13 @@ def remove_headers(test_cases):
 
     return header_substrings_removed
 
-# get `tables` containing the samples and return it as a properly formatted list of tuples of size 2
+# get `tables` containing the samples examples and return it as a properly formatted list of tuples of size 2
 # e.g. `[('6\n3 2 1 1 2 3\n1 2\n3 4\n6 5\n2 6\n3 6', '5'), ('8\n1 2 3 3 2 4 1 4\n1 2\n2 3\n2 6\n5 6\n6 8\n7 8\n4 7', '12')]`
-def format_samples(data):
+def format_samples_examples(data):
   flat_data = [item for sublist in data for subsublist in sublist for item in subsublist]
   chunked_data = split_in_chunks_of_two(flat_data)
   removed_headers = remove_headers(chunked_data)
   return removed_headers
 
-# output = format_samples(input)
+# output = format_samples_examples(input)
 # print(output)

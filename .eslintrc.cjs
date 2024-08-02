@@ -27,6 +27,7 @@ module.exports = {
     'dist',
     '!.*', // don't ignore dotfiles
     '/node_modules/*', // otherwise, won't ignore dotfiles and directories in node_modules
+    '/scripts/*',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

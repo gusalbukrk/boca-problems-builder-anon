@@ -4,7 +4,7 @@ import os
 from collections.abc import Iterable
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
-from format_samples import format_samples
+from format_samples_examples import format_samples_examples
 import json
 
 pdfsToIgnore = [
@@ -57,7 +57,6 @@ def flatten(xs):
         else:
             yield x
 
-# extract non-tabular text from PDF
 def extract_problem_from_pdf(pdfPath):
   pdf = pdfplumber.open(pdfPath)  
 
@@ -173,18 +172,18 @@ def extract_problem_from_pdf(pdfPath):
     'author': author,
   }
 
-  # EXTRACT TABLES
+  # EXTRACT TABLES CONTAINING SAMPLES EXAMPLES
   # NOTE: text in tables are not being normalized (e.g. diacritics are not being fixed) because they contain very simple text
   tables = [] # e.g. [[['Entrada\n10 7', 'Sa´ıda\n10']], [['Entrada\n2 2', 'Sa´ıda\n2']]]
   for page in pdf.pages:
     tables += page.extract_tables()
   #
   # some PDFs have figures/shapes which are mistakenly identified as tables; some of them will trigger error when
-  # passed to `format_samples` (e.g. 2015/phase1/contest/E/E.pdf) others won't (e.g. 2018/phase1/contest/E/E.pdf)
+  # passed to `format_samples_examples` (e.g. 2015/phase1/contest/E/E.pdf) others won't (e.g. 2018/phase1/contest/E/E.pdf)
   # meanwhile, every table cell which contains a sample has the words 'entrada', 'saída', 'input' or 'output'
   # therefore, ignore tables which don't contain these words
-  samplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
-  samples = format_samples(samplesTables)
+  samplesExamplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
+  samplesExamples = format_samples_examples(samplesExamplesTables)
 
   hasImages = False
   
@@ -241,10 +240,79 @@ def extract_problem_from_pdf(pdfPath):
   return {
     'name': problemName,
     'text': text.strip(),
-    'samples': samples,
+    'samplesExamples': samplesExamples,
     'source': source,
     'hasImages': hasImages,
   }
+
+def natural_sort_key(s):
+    """A key function for sorting strings with numbers correctly."""
+    return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
+  
+def sort_by_filesize(filename, basename):
+  return os.path.getsize(os.path.join(basename, filename))
+
+# https://stackoverflow.com/a/30686735
+def get_string_size(s):
+    return len(s.encode('utf-8'))
+
+# if abridged is True, will limit the size of the samples to 10MB
+def get_problem_samples(problemPath, abridged):
+  inputDirPath = os.path.join(problemPath, 'input')
+  outputDirPath = os.path.join(problemPath, 'output')
+
+  # check if every input file has a corresponding output file
+  # num_input_files = sum(os.path.isfile(os.path.join(inputDirPath, f)) for f in os.listdir(inputDirPath))
+  # num_output_files = sum(os.path.isfile(os.path.join(outputDirPath, f)) for f in os.listdir(outputDirPath))
+  # if (num_input_files != num_output_files):
+  #   raise Exception(f'Number of input files ({num_input_files}) is different from number of output files ({num_output_files}) in {problemPath}')
+  #  # 
+  # for filename in os.listdir(inputDirPath):
+  #   # file_path = os.path.join(inputDirPath, filename)
+  #   if os.path.isfile(os.path.join(outputDirPath, filename)) is False:
+  #     raise Exception(f'Output file not found for {filename} in {outputDirPath}')
+
+  samples = []
+
+  # sort first by filename and then by filesize; i.e. files of same size will be sorted by filename
+  sortedListing = sorted(sorted(os.listdir(inputDirPath), key=natural_sort_key), key=lambda s: sort_by_filesize(s, inputDirPath))
+  # sortedListing = sorted(os.listdir(inputDirPath), key=natural_sort_key)
+  for inputFile in sortedListing:
+    inputFilePath = os.path.join(inputDirPath, inputFile)
+    inputFileSize = os.path.getsize(inputFilePath)
+
+    samplesSize = get_string_size(json.dumps(samples, ensure_ascii=False, indent=2))
+    estimatedSize = samplesSize + inputFileSize # size if current sample is added
+
+    if (abridged and estimatedSize > 10485760): # limit each samples to 10MB
+      # print(inputFilePath)
+      break # using break instead of continue because the input files are sorted by size
+
+    with open(inputFilePath, 'r') as f:
+      inputText = f.read()
+    #
+    with open(os.path.join(outputDirPath, inputFile), 'r') as f:
+      outputText = f.read()
+
+    samples.append((inputText, outputText))
+
+  return samples
+
+# NOTE: when abridged is set to False, it takes about 20 minutes
+def save_samples_json(pdfPath, abridged = True):
+  path = os.path.dirname(pdfPath)
+
+  samples = get_problem_samples(path, abridged)
+
+  components = path.split("/")[-4:]
+  samplesDir = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/' + ("/".join(components))
+  # samplesFilename = 'samples' + ('_abridged' if abridged else '_full') + '.json'
+  samplesFilename = 'samples.json'
+  samplesFile = os.path.join(samplesDir, samplesFilename)
+  print(samplesFile, len(samples))
+
+  with open(samplesFile, 'w') as f:
+    json.dump(samples, f, ensure_ascii=False, indent=2)
 
 pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
 
@@ -256,16 +324,17 @@ for path in pdf_files_paths:
   print(path)
   p = extract_problem_from_pdf(path)
   # print(p)
-  # print(json.dumps(p, ensure_ascii=False)) # print json
   ps.append(p)
 
-  # break
+  # save_samples_json(path)
+
+  break
 
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-with open('output.json', 'w') as f:
-  json.dump(ps, f, ensure_ascii=False, indent=2)
+# with open('output.json', 'w') as f:
+#   json.dump(ps, f, ensure_ascii=False, indent=2)
 
 # create a JSON file for each problem in the SBC directory
 # print()
