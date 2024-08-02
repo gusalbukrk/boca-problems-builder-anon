@@ -6,6 +6,9 @@ import pdfplumber
 from pypdf import PdfReader, PdfWriter
 from format_samples_examples import format_samples_examples
 import json
+from googletrans import Translator
+
+translator = Translator()
 
 pdfsToIgnore = [
   # white space problem, couldn't correct by tweaking x_tolerance and y_tolerance
@@ -35,6 +38,20 @@ doesNotContainFigures = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf',
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/phase2/warmup/B/B.pdf',
 ]
+
+# names of Latin American countries in English and Portuguese
+# countries which names are the same in both languages were omitted
+latin_american_countries = {
+    "Bolivia": "Bolívia",
+    "Brazil": "Brasil",
+    "Colombia": "Colômbia",
+    "Dominican Republic": "República Dominicana",
+    "Ecuador": "Equador",
+    "Mexico": "México",
+    "Nicaragua": "Nicarágua",
+    "Paraguay": "Paraguai",
+    "Uruguay": "Uruguai"
+}
 
 leftoversFile = open('leftovers.json', 'r')
 leftovers = json.loads(leftoversFile.read())
@@ -237,6 +254,21 @@ def extract_problem_from_pdf(pdfPath):
         raise Exception(f'Leftover "{leftover}" not found in {pdfPath}')
       text = text.replace(leftover, '')
 
+  # TRANSLATE TEXT
+  # problems of phase1 are already in Portuguese
+  if source['phase'] == 2:
+    n = translator.translate(problemName, dest='pt').text
+    t = translator.translate(text, dest='pt').text
+    problemName = n
+    text = t
+
+    # translate name of countries in source['author']
+    if source['author'] is not None and ', ' in source['author']:
+      location = source['author'].split(', ')[1] # it may be the name of a country or university
+
+      if location in list(latin_american_countries.keys()):
+        source['author'] = source['author'].replace(location, latin_american_countries[location])
+
   return {
     'name': problemName,
     'text': text.strip(),
@@ -328,13 +360,13 @@ for path in pdf_files_paths:
 
   # save_samples_json(path)
 
-  break
+  # break
 
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-# with open('output.json', 'w') as f:
-#   json.dump(ps, f, ensure_ascii=False, indent=2)
+with open('output.json', 'w') as f:
+  json.dump(ps, f, ensure_ascii=False, indent=2)
 
 # create a JSON file for each problem in the SBC directory
 # print()
