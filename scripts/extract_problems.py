@@ -4,7 +4,7 @@ import os
 from collections.abc import Iterable
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
-from format_samples_examples import format_samples_examples
+from format_examples import format_examples
 import json
 from googletrans import Translator
 
@@ -23,7 +23,7 @@ pdfsToIgnore = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/C/C.pdf',
 ]
 
-# despite its text contain words like 'figure', 'figura', 'picture', ...
+# despite their description containing words like 'figure', 'figura', 'picture', ...
 # the PDFs of these problems doesn't actually contain any figures
 doesNotContainFigures = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/J/J.pdf',
@@ -78,7 +78,7 @@ def extract_problem_from_pdf(pdfPath):
   pdf = pdfplumber.open(pdfPath)  
 
   # EXTRACT TEXT (except text from tables)
-  text = ''
+  description = ''
   for page in pdf.pages:
     # https://github.com/jsvine/pdfplumber/issues/292#issuecomment-712752239
     # y_tolerance for better subscripts recognition
@@ -86,23 +86,23 @@ def extract_problem_from_pdf(pdfPath):
     
     # remove first line at every page, because it is the page header
     #
-    # 2022/phase2/contest/M/M.pdf page 3 has only images, so there won't be a trailing newline
+    # page 3 from 2022/phase2/contest/M/M.pdf has only images, so there won't be a trailing newline
     pageText = re.sub('^.*\n?', '', pageText)
-    text += pageText
+    description += pageText
   #
   # remove text from tables
   # https://github.com/jsvine/pdfplumber/issues/242
   tables = []
   for page in pdf.pages:
-    tables.extend(page.find_tables()) # get table coordinates
-
+    tables.extend(page.find_tables()) # get tables coordinates
+  #
   for table in tables:
     try:
       tableText = table.page.within_bbox(table.bbox).extract_text(x_tolerance=2, y_tolerance=6)
-      # sometimes table extract_text returns empty string (e.g. 2019/phase2/contest/F/F.pdf); replacing empty string
+      # sometimes `extract_text` returns empty string (e.g. 2019/phase2/contest/F/F.pdf); replacing empty string
       # occurrences with a space will result in adding a space between every character of the original string
       if tableText != '':
-        text = text.replace(tableText, ' ')
+        description = description.replace(tableText, ' ')
     except ValueError as e:
       # 2015/phase1/contest/G/G.pdf has a figure which is mistakenly identified as a table,
       # which triggers error `Bounding box is not fully within parent page bounding box`
@@ -110,13 +110,13 @@ def extract_problem_from_pdf(pdfPath):
         raise e
 
   # REMOVE HYPHENATION
-  text = text.replace('-\n', '\n')
+  description = description.replace('-\n', '\n')
 
   # FIX DIACRITICS (tilde, circumflex, ç, etc.)
   # must be done before extract title, because it may contain punctuation
-  # `unicodedata.normalize('NFKD', text)` doesn't suffice because pdfplumber isn't consistent with diacritics
+  # `unicodedata.normalize('NFKD', description)` doesn't suffice because pdfplumber isn't consistent with diacritics
   # (sometimes it is extract before the letter, sometimes after) and unicodedata expects the diacritic to be before the letter
-  # besides, unicodedata adds a space in the place of the diacritic
+  # besides, unicodedata is adding a space in the place of the diacritic
   patterns = [
     ('¸c', 'ç'),
     ('˜a', 'ã'),
@@ -138,11 +138,11 @@ def extract_problem_from_pdf(pdfPath):
   patterns = reduce(lambda acc, x: acc + [x, (x[0][::-1], x[1]), (x[0].upper(), x[1].upper()), (x[0][::-1].upper(), x[1].upper())], patterns, [])
   #
   for pattern, replacement in patterns:
-    text = text.replace(pattern, replacement)
+    description = description.replace(pattern, replacement)
 
   # EXTRACT PROBLEM NAME
-  firstLine = re.match('^.*\n', text).group(0).strip()
-  text = re.sub('^.*\n', '', text)
+  firstLine = re.match('^.*\n', description).group(0).strip()
+  description = re.sub('^.*\n', '', description)
   if re.search('–', firstLine):
     # some of the problems, have the letter and the title on the same line
     # e.g. "Problem A – The fellowship of the ring"
@@ -157,31 +157,32 @@ def extract_problem_from_pdf(pdfPath):
     if re.search('^Problema? [A-Z]$', firstLine) is None:
       raise Exception('Unexpected first line in ' + pdfPath + ': "' + firstLine + '"')
 
-    problemName = re.match('^.*\n', text).group(0).strip()
-    text = re.sub('^.*\n', '', text)
+    problemName = re.match('^.*\n', description).group(0).strip()
+    description = re.sub('^.*\n', '', description)
   #
   # some of the problems have the author after the title
-  newFirstLine = re.match('^.*\n', text).group(0).strip()
+  newFirstLine = re.match('^.*\n', description).group(0).strip()
   author = None
   if re.search('^Author: (.*)$', newFirstLine) is not None:
-    text = re.sub('^.*\n', '', text)
+    description = re.sub('^.*\n', '', description)
     author = re.match('^Author: (.*)$', newFirstLine).group(1)
   elif re.search('^Arquivo: (.*)$', newFirstLine) is not None:
     # some of the problems have the expected filename after the title
     # e.g. 2014/phase1/contest/K/K.pdf
-    text = re.sub('^.*\n', '', text)
+    description = re.sub('^.*\n', '', description)
 
   # REMOVE NEWLINES
-  text = re.sub(r'(?<!\.)\n', ' ', text)
+  description = re.sub(r'(?<!\.)\n', ' ', description)
   #
   # restore newlines after section names
   # negative lookbehind is needed because sometimes the first word in the output section is 'Output'
-  # `.strip()` is necessary because usually 'Exemplos' will be the last line in the text
-  text = re.sub('(?<!Output )(Entrada|Saída|Exemplos|Notas|Input|Output) +', r'\1\n', text).strip()
+  # `.strip()` is necessary because usually 'Exemplos' will be the last line in the description
+  description = re.sub('(?<!Output )(Entrada|Saída|Exemplos|Notas|Input|Output) +', r'\1\n', description).strip()
 
   # EXTRACT METADATA
   year, phase, warmup, letter = pdfPath.split("/")[-5:-3] + [pdfPath.split("/")[-3] == 'warmup'] + [pdfPath.split("/")[-2]]
   source = {
+    'competition': 'MP-SBC',
     'year': year,
     'phase': 1 if phase == 'phase1' else 2,
     'warmup': warmup,
@@ -196,13 +197,13 @@ def extract_problem_from_pdf(pdfPath):
     tables += page.extract_tables()
   #
   # some PDFs have figures/shapes which are mistakenly identified as tables; some of them will trigger error when
-  # passed to `format_samples_examples` (e.g. 2015/phase1/contest/E/E.pdf) others won't (e.g. 2018/phase1/contest/E/E.pdf)
+  # passed to `format_examples` (e.g. 2015/phase1/contest/E/E.pdf) others won't (e.g. 2018/phase1/contest/E/E.pdf)
   # meanwhile, every table cell which contains a sample has the words 'entrada', 'saída', 'input' or 'output'
   # therefore, ignore tables which don't contain these words
-  samplesExamplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
-  samplesExamples = format_samples_examples(samplesExamplesTables)
+  examplesTables = list(filter(lambda t: re.search('(entrada|saída|input|output)', str(t), re.IGNORECASE) is not None, tables))
+  examples = format_examples(examplesTables)
 
-  hasImages = False
+  # hasImages = False
   
   # EXTRACT IMAGES
   images = []
@@ -211,7 +212,7 @@ def extract_problem_from_pdf(pdfPath):
   #
   if (len(images) > 0):
     # print(pdfPath, len(images))
-    hasImages = True
+    # hasImages = True
 
     components = pdfPath.split("/")[-5:-1]
     dirname = './imgs/' + ("/".join(components))
@@ -234,33 +235,33 @@ def extract_problem_from_pdf(pdfPath):
   # e.g. 2016/phase2/contest/F/F.pdf, 2015/phase1/contest/G/G.pdf
   # code below create a directory for each problem which likely to have images
   # the process of extracting vector images from these PDFs will be done manually
-  if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration|image', text, re.IGNORECASE) is not None):
+  if (re.search('figure|figura|picture|ilustraç(ão|ões)|illustration|image', description, re.IGNORECASE) is not None):
     if pdfPath not in doesNotContainFigures:
       # print(pdfPath)
-      hasImages = True
+      # hasImages = True
       # dirname = f"./imgs/{year}/{phase}/{'warmup' if warmup is True else 'contest'}/{letter}/"
       dirname = './imgs/' + ("/".join(pdfPath.split("/")[-5:-1]))
       # os.makedirs(dirname, exist_ok=True)
 
-  # REMOVE LEFTOVER TEXTS FROM FIGURES
-  # the figures that are vectors were extracted manually and the leftovers.json has a key/value pairs
-  # in which key is the path to a PDF problem and value is a list of strings which are leftovers from the figures for that PDF
+  # REMOVE LEFTOVER TEXT FROM FIGURES
+  # the figures that are vectors were extracted manually and the leftovers.json has key/value pairs
+  # in which a key is the path to a PDF problem and a value is a list of strings which are leftovers from the figures for that PDF
   if pdfPath in pdfPathsWithLeftovers:
     # print(pdfPath)
     leftoversOfCurrentPdf = leftovers[pdfPath]
     for leftover in leftoversOfCurrentPdf:
       leftover = leftover.replace('\\n', '\n')
-      if text.find(leftover) == -1:
+      if description.find(leftover) == -1:
         raise Exception(f'Leftover "{leftover}" not found in {pdfPath}')
-      text = text.replace(leftover, '')
+      description = description.replace(leftover, '')
 
-  # TRANSLATE TEXT
+  # TRANSLATE DESCRIPTION
   # problems of phase1 are already in Portuguese
   if source['phase'] == 2:
     n = translator.translate(problemName, dest='pt').text
-    t = translator.translate(text, dest='pt').text
+    t = translator.translate(description, dest='pt').text
     problemName = n
-    text = t
+    description = t
 
     # translate name of countries in source['author']
     if source['author'] is not None and ', ' in source['author']:
@@ -269,17 +270,24 @@ def extract_problem_from_pdf(pdfPath):
       if location in list(latin_american_countries.keys()):
         source['author'] = source['author'].replace(location, latin_american_countries[location])
 
+  # COUNT HOW MANY IMAGES THE PROBLEM HAS
+  # raster images were extracted with code above and vector images were extracted manually
+  problemDirname = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/' + ("/".join(pdfPath.split("/")[-5:-1]))
+  imagesInDir = list(filter(lambda filename: filename.endswith((".png", ".jpeg", ".jpg", ".gif", ".svg")), os.listdir(problemDirname)))
+  # print(problemDirname, imagesInDir)
+  imagesQuant = len(imagesInDir)
+
   return {
     'name': problemName,
-    'text': text.strip(),
-    'samplesExamples': samplesExamples,
+    'description': description.strip(),
+    'examples': examples,
     'source': source,
-    'hasImages': hasImages,
+    'imagesQuant': imagesQuant,
   }
 
 def natural_sort_key(s):
     """A key function for sorting strings with numbers correctly."""
-    return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
+    return [int(substr) if substr.isdigit() else substr.lower() for substr in re.split('([0-9]+)', s)]
   
 def sort_by_filesize(filename, basename):
   return os.path.getsize(os.path.join(basename, filename))
@@ -321,12 +329,12 @@ def get_problem_samples(problemPath, abridged):
       break # using break instead of continue because the input files are sorted by size
 
     with open(inputFilePath, 'r') as f:
-      inputText = f.read()
+      inputContent = f.read()
     #
     with open(os.path.join(outputDirPath, inputFile), 'r') as f:
-      outputText = f.read()
+      outputContent = f.read()
 
-    samples.append((inputText, outputText))
+    samples.append((inputContent, outputContent))
 
   return samples
 
