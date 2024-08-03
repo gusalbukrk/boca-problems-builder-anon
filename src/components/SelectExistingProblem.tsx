@@ -1,8 +1,11 @@
 import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import existingProblems from '../assets/problems.json';
+import existingProblemsJson from '../assets/problems.json';
 import { problem, createProblem } from '../shared';
+
+// fix `Types of property 'examples' are incompatible. Type 'string[][]' is not comparable to type '[string, string][]'`
+const existingProblems = existingProblemsJson as unknown as problem[];
 
 function SelectExistingProblem({
   setSelectedProblemID,
@@ -25,7 +28,7 @@ function SelectExistingProblem({
           {existingProblems.map((problem, i) => (
             <tr key={i}>
               <td>{problem.name}</td>
-              <td>{problem.author}</td>
+              <td>{problem.source.author}</td>
               <td>
                 <button
                   className="btn btn-link"
@@ -41,7 +44,7 @@ function SelectExistingProblem({
                   className="btn btn-link"
                   // eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={async () => {
-                    await createProblem(problem as problem);
+                    await createProblem(problem);
                   }}
                 >
                   <FontAwesomeIcon icon={faPlus} />

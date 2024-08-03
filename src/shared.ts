@@ -17,15 +17,24 @@ import db from './db';
 
 export interface problem {
   name: string;
-  author: string;
-  timeLimit: number;
   description: string;
-  samples: [string, string][];
-  images: string[];
+  examples: [string, string][];
+  source: {
+    competition?: string;
+    year?: number;
+    phase?: number;
+    warmup?: boolean;
+    letter?: string;
+    author?: string;
+  };
+
+  // the following properties are present only on the existing problems
+  imagesQuant?: number;
 
   // the following properties are present only on the problems stored
   // in the indexedDB database but not in the JSON file
   id?: string;
+  images?: string[];
 }
 
 export const createProblem = async (problem: problem) => {
@@ -59,59 +68,65 @@ const fonts = {
   },
 };
 
-const docDefinitionGeneralSettings = {
-  pageMargins: [56, 70, 56, 56] as Margins,
-  header: (currentPage: number) => {
-    return currentPage === 1
-      ? []
-      : ([
-          {
-            columns: [
-              {
-                text: '1º Minimaratona de Programação do IF Goiano Catalão',
-                marginLeft: 56,
-                width: 'auto',
-              },
-              {
-                text: currentPage,
-                alignment: 'right' as Alignment,
-                marginRight: 56,
-              },
-            ],
-            marginTop: 18,
-            color: '#101010',
-            fontSize: 10,
-          },
-          {
-            canvas: [
-              {
-                type: 'line',
-                x1: 56,
-                y1: 9,
-                x2: 540,
-                y2: 9,
-                lineWidth: 2,
-                lineColor: '#7e7e7e',
-              } as CanvasLine,
-            ],
-          },
-        ] as Content);
-  },
-  defaultStyle: {
-    // fontSize: 12, // default
-    alignment: 'justify' as Alignment,
-    lineHeight: 1.2,
-  },
-  styles: {
-    header: {
-      alignment: 'center' as Alignment,
-      fontSize: 18,
-      bold: true,
+const docDefinitionGeneralSettings = async () => {
+  const contestName = ((await db.miscellaneous.get('contestName'))?.value ??
+    '') as string;
+
+  return {
+    pageMargins: [56, 70, 56, 56] as Margins,
+    header: (currentPage: number) => {
+      return currentPage === 1
+        ? []
+        : ([
+            {
+              columns: [
+                {
+                  // text: '1º Minimaratona de Programação do IF Goiano Catalão',
+                  text: contestName,
+                  marginLeft: 56,
+                  width: 'auto',
+                },
+                {
+                  text: currentPage,
+                  alignment: 'right' as Alignment,
+                  marginRight: 56,
+                },
+              ],
+              marginTop: 18,
+              color: '#101010',
+              fontSize: 10,
+            },
+            {
+              canvas: [
+                {
+                  type: 'line',
+                  x1: 56,
+                  y1: 9,
+                  x2: 540,
+                  y2: 9,
+                  lineWidth: 2,
+                  lineColor: '#7e7e7e',
+                } as CanvasLine,
+              ],
+            },
+          ] as Content);
     },
-    subheader: {
-      bold: true,
+    defaultStyle: {
+      // fontSize: 12, // default
+      alignment: 'justify' as Alignment,
+      lineHeight: 1.2,
     },
-  },
+    styles: {
+      header: {
+        alignment: 'center' as Alignment,
+        fontSize: 18,
+        bold: true,
+      },
+      subheader: {
+        bold: true,
+      },
+    },
+  };
 };
 
 const generateDocDefinitionCoverPageContent = async (problemsQuant: number) => {
@@ -127,13 +142,16 @@ const generateDocDefinitionCoverPageContent = async (problemsQuant: number) => {
   const logo = ((await db.miscellaneous.get('logo'))?.value ?? '') as string;
 
   return [
-    {
-      image: logo,
-      // width: 150,
-      fit: [500, 120] as [number, number], // max height 120px
-      margin: [0, 0, 0, 8] as Margins,
-      alignment: 'center' as Alignment,
-    },
+    // ternary is needed, otherwise error when logo is not set
+    logo === ''
+      ? ''
+      : {
+          image: logo,
+          // width: 150,
+          fit: [500, 120] as [number, number], // max height 120px
+          margin: [0, 0, 0, 8] as Margins,
+          alignment: 'center' as Alignment,
+        },
     {
       text: contestName,
       alignment: 'center' as Alignment,
@@ -200,7 +218,7 @@ const generateDocDefinitionProblemContent = (
       style: 'header',
       margin: [0, 0, 0, 18] as Margins,
     },
-    ...problem.images.map((image) => ({
+    ...(problem.images ?? []).map((image) => ({
       image: image,
       width: 250,
       margin: [0, 0, 0, 18] as Margins,
@@ -215,15 +233,15 @@ const generateDocDefinitionProblemContent = (
       .split('\n')
       .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
       .map((obj) =>
-        ['Entrada', 'Saída', 'Restrições'].includes(obj.text)
+        ['Entrada', 'Saída', 'Restrições', 'Exemplos'].includes(obj.text)
           ? { ...obj, style: 'subheader' }
           : obj,
       ),
-    {
-      text: 'Exemplos',
-      style: 'subheader',
-      margin: [0, 0, 0, 12] as Margins,
-    },
+    // {
+    //   text: 'Exemplos',
+    //   style: 'subheader',
+    //   margin: [0, 0, 0, 12] as Margins,
+    // },
     {
       table: {
         // headers are automatically repeated if the table spans over multiple pages
@@ -242,10 +260,10 @@ const generateDocDefinitionProblemContent = (
             { text: 'Input', bold: true },
             { text: 'Output', bold: true },
           ],
-          // deep copying samples because they're for some unknown reason being mutated when used here
+          // deep copying examples because they're for some unknown reason being mutated when used here
           // `["10","100"]` => `[ { "text": "10", ... } ] }, { "text": "100", ...} ] } ]`
           ...(
-            JSON.parse(JSON.stringify(problem.samples)) as [string, string][]
+            JSON.parse(JSON.stringify(problem.examples)) as [string, string][]
           ).map(([input, output], index) => [
             {
               text: index + 1,
@@ -262,13 +280,13 @@ const generateDocDefinitionProblemContent = (
   ];
 };
 
-export function generateProblemPDF(
+export async function generateProblemPDF(
   problem: problem,
   index?: number,
   open = false,
 ) {
   const docDefinition = {
-    ...docDefinitionGeneralSettings,
+    ...(await docDefinitionGeneralSettings()),
 
     content: generateDocDefinitionProblemContent(problem, index),
   };
@@ -288,7 +306,7 @@ export function generateProblemPDF(
 
 export async function generateProblemsBookletPDF(problems: problem[]) {
   const docDefinition = {
-    ...docDefinitionGeneralSettings,
+    ...(await docDefinitionGeneralSettings()),
 
     content: [
       ...(await generateDocDefinitionCoverPageContent(problems.length)),
@@ -359,7 +377,7 @@ export async function generateProblemZip(
     (await generateProblemPDF(problem, index))!,
   );
 
-  problem.samples.forEach(([input, output], index) => {
+  problem.examples.forEach(([input, output], index) => {
     const filename = `X_${(index + 1).toString()}`;
 
     zip.file(`input/${filename}`, input.endsWith('\n') ? input : `${input}\n`);

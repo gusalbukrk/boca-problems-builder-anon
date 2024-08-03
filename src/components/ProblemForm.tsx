@@ -24,9 +24,8 @@ function ProblemForm({
 }) {
   const [name, setName] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
-  const [timeLimit, setTimeLimit] = useState<number>(1);
   const [description, setDescription] = useState<string>('');
-  const [samples, setSamples] = useState<[string, string][]>([['', '']]);
+  const [examples, setExamples] = useState<[string, string][]>([['', '']]);
   const [images, setImages] = useState([] as string[]);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const imagesInputRef = useRef<HTMLInputElement>(null);
@@ -43,11 +42,10 @@ function ProblemForm({
 
         if (problem !== undefined) {
           setName(problem.name);
-          setAuthor(problem.author);
-          setTimeLimit(problem.timeLimit);
+          setAuthor(problem.source.author ?? '');
           setDescription(problem.description);
-          setImages(problem.images);
-          setSamples(problem.samples);
+          setImages(problem.images ?? []);
+          setExamples(problem.examples);
         }
       }
     })();
@@ -64,11 +62,12 @@ function ProblemForm({
 
     const problem = {
       name,
-      author,
-      timeLimit,
+      source: {
+        author,
+      },
       description,
       images,
-      samples,
+      examples,
     };
 
     console.log('Problem:', problem);
@@ -78,12 +77,11 @@ function ProblemForm({
 
       setName('');
       setAuthor('');
-      setTimeLimit(1);
       setDescription('');
       setImages([]);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       imagesInputRef.current!.value = '';
-      setSamples([['', '']]);
+      setExamples([['', '']]);
     } else {
       await updateProblem(problem);
     }
@@ -135,23 +133,6 @@ function ProblemForm({
             onChange={(e) => {
               setAuthor(e.target.value);
             }}
-            readOnly={readonly}
-            // required
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="timeLimit" className="form-label fw-medium">
-            Time Limit (in seconds)
-          </label>
-          <input
-            id="timeLimit"
-            type="number"
-            className="form-control"
-            value={timeLimit}
-            onChange={(e) => {
-              setTimeLimit(Number(e.target.value));
-            }}
-            min={1}
             readOnly={readonly}
             // required
           />
@@ -226,25 +207,25 @@ function ProblemForm({
             )}
           </div>
         </div>
-        <label htmlFor="sample-input-1" className="form-label mb-3 fw-medium">
-          Samples
+        <label htmlFor="example-input-1" className="form-label mb-3 fw-medium">
+          Examples
         </label>
         <div className="mb-4">
-          {samples.map(([input, output], index) => (
+          {examples.map(([input, output], index) => (
             <div key={index} className="mb-3 row">
               <p className="col-1 mb-0 text-secondary fw-bold mt-1">
                 {index + 1}
               </p>
               <div className="col">
                 <TextareaAutosize
-                  id={index === 0 ? 'sample-input-1' : undefined}
+                  id={index === 0 ? 'example-input-1' : undefined}
                   className="form-control"
                   style={{ resize: 'none' }}
                   value={input}
                   onChange={(e) => {
-                    const newSamples = [...samples];
-                    newSamples[index][0] = e.target.value;
-                    setSamples(newSamples);
+                    const newExamples = [...examples];
+                    newExamples[index][0] = e.target.value;
+                    setExamples(newExamples);
                   }}
                   readOnly={readonly}
                   // required
@@ -256,9 +237,9 @@ function ProblemForm({
                   style={{ resize: 'none' }}
                   value={output}
                   onChange={(e) => {
-                    const newSamples = [...samples];
-                    newSamples[index][1] = e.target.value;
-                    setSamples(newSamples);
+                    const newExamples = [...examples];
+                    newExamples[index][1] = e.target.value;
+                    setExamples(newExamples);
                   }}
                   readOnly={readonly}
                   // required
@@ -270,10 +251,12 @@ function ProblemForm({
                     type="button"
                     className="btn btn-link"
                     onClick={() => {
-                      const newSamples = samples.filter((_, i) => i !== index);
-                      setSamples(newSamples);
+                      const newExamples = examples.filter(
+                        (_, i) => i !== index,
+                      );
+                      setExamples(newExamples);
                     }}
-                    disabled={samples.length === 1}
+                    disabled={examples.length === 1}
                   >
                     <FontAwesomeIcon icon={faTrashCan} />
                   </button>
@@ -286,18 +269,19 @@ function ProblemForm({
           <button
             type="button"
             className="btn btn-primary fw-medium"
-            onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={async () => {
               const problem = {
                 name,
-                author,
-                timeLimit,
+                source: {
+                  author,
+                },
                 description,
                 images,
-                samples,
+                examples,
               };
 
-              // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              generateProblemPDF(problem, undefined, true);
+              await generateProblemPDF(problem, undefined, true);
             }}
           >
             <FontAwesomeIcon icon={faFilePdf} className="me-2" />
@@ -309,11 +293,11 @@ function ProblemForm({
               type="button"
               className="btn btn-outline-primary btn-sm mb-4"
               onClick={() => {
-                setSamples([...samples, ['', '']]);
+                setExamples([...examples, ['', '']]);
               }}
             >
               <FontAwesomeIcon icon={faPlus} className="me-2" />
-              Add sample
+              Add example
             </button>
             <br />
             <button type="submit" className="btn btn-primary fw-medium">
