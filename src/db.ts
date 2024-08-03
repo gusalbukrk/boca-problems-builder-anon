@@ -1,10 +1,10 @@
 import Dexie, { type EntityTable } from 'dexie';
 
-import { problem } from './shared';
+import { UserProblem } from './shared';
 
 const db = new Dexie('Database') as Dexie & {
   problems: EntityTable<
-    problem,
+    UserProblem,
     'id' // primary key "id" (for the typings only)
   >;
   miscellaneous: EntityTable<{ name: string; value: unknown }, 'name'>;

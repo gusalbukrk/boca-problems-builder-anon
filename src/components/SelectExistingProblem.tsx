@@ -2,10 +2,10 @@ import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import existingProblemsJson from '../assets/problems.json';
-import { problem, createProblem } from '../shared';
+import { ExistingProblem, createProblem } from '../shared';
 
 // fix `Types of property 'examples' are incompatible. Type 'string[][]' is not comparable to type '[string, string][]'`
-const existingProblems = existingProblemsJson as unknown as problem[];
+const existingProblems = existingProblemsJson as unknown as ExistingProblem[];
 
 function SelectExistingProblem({
   setSelectedProblemID,

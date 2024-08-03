@@ -13,7 +13,12 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import existingProblems from '../assets/problems.json';
 import db from '../db';
-import { problem, createProblem, generateProblemPDF } from '../shared';
+import {
+  UserProblem,
+  ExistingProblem,
+  createProblem,
+  generateProblemPDF,
+} from '../shared';
 
 function ProblemForm({
   selectedProblemID,
@@ -34,24 +39,31 @@ function ProblemForm({
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     (async () => {
       if (selectedProblemID !== undefined) {
+        // const problem =
+        //   (await db.problems.get(selectedProblemID)) ??
+        //   (existingProblems.find(
+        //     (problem) => problem.name === selectedProblemID,
+        //   ) as UserProblem | undefined);
+
         const problem =
           (await db.problems.get(selectedProblemID)) ??
           (existingProblems.find(
             (problem) => problem.name === selectedProblemID,
-          ) as problem | undefined);
+          ) as ExistingProblem | undefined);
 
         if (problem !== undefined) {
           setName(problem.name);
           setAuthor(problem.source.author ?? '');
           setDescription(problem.description);
-          setImages(problem.images ?? []);
           setExamples(problem.examples);
+
+          if ('images' in problem) setImages(problem.images);
         }
       }
     })();
   }, [selectedProblemID]);
 
-  const updateProblem = async (problem: problem) => {
+  const updateProblem = async (problem: Omit<UserProblem, 'id'>) => {
     // @ts-expect-error Argument of type 'problem' is not assignable to parameter of type ...
     await db.problems.update(selectedProblemID, problem);
     // await db.problems.put({ id: selectedProblemID, ...problem });

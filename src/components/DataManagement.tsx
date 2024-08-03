@@ -11,7 +11,7 @@ import { saveAs } from 'file-saver';
 
 import db from '../db';
 import {
-  problem,
+  UserProblem,
   generateProblemZip,
   generateAllProblemsZip,
   numberToLetter,
@@ -30,7 +30,7 @@ function DataManagement() {
       ? []
       : (problemsOrder.map((id) =>
           problems.find((problem) => problem.id === id),
-        ) as problem[]);
+        ) as UserProblem[]);
 
   return (
     <>

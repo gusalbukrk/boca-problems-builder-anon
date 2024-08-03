@@ -15,35 +15,64 @@ import {
 
 import db from './db';
 
-export interface problem {
+export interface ExistingProblem {
   name: string;
   description: string;
-  examples: [string, string][];
   source: {
-    competition?: string;
-    year?: number;
-    phase?: number;
-    warmup?: boolean;
-    letter?: string;
-    author?: string;
+    competition: string;
+    year: number;
+    phase: number;
+    warmup: boolean;
+    letter: string;
+    author: string | null;
   };
-
-  // the following properties are present only on the existing problems
   imagesQuant?: number;
-
-  // the following properties are present only on the problems stored
-  // in the indexedDB database but not in the JSON file
-  id?: string;
-  images?: string[];
+  examples: [string, string][];
 }
 
-export const createProblem = async (problem: problem) => {
+export interface UserProblem {
+  name: string;
+  description: string;
+  source: {
+    author: string | null;
+  };
+  examples: [string, string][];
+
+  id: string;
+  images: string[];
+}
+
+// export interface problem {
+//   name: string;
+//   description: string;
+//   examples: [string, string][];
+//   source: {
+//     competition?: string;
+//     year?: number;
+//     phase?: number;
+//     warmup?: boolean;
+//     letter?: string;
+//     author?: string;
+//   };
+
+//   // the following properties are present only on the existing problems
+//   imagesQuant?: number;
+
+//   // the following properties are present only on the problems stored
+//   // in the indexedDB database but not in the JSON file
+//   id?: string;
+//   images?: string[];
+// }
+
+export const createProblem = async (
+  problem: ExistingProblem | Omit<UserProblem, 'id'>,
+) => {
   const id = nanoid();
 
   await db.problems.add({
     id,
     ...problem,
-  });
+  } as UserProblem);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const problemsOrder = (await db.miscellaneous.get({
@@ -206,7 +235,7 @@ const generateDocDefinitionCoverPageContent = async (problemsQuant: number) => {
 };
 
 const generateDocDefinitionProblemContent = (
-  problem: problem,
+  problem: ExistingProblem | UserProblem | Omit<UserProblem, 'id'>,
   index?: number,
 ) => {
   return [
@@ -218,7 +247,7 @@ const generateDocDefinitionProblemContent = (
       style: 'header',
       margin: [0, 0, 0, 18] as Margins,
     },
-    ...(problem.images ?? []).map((image) => ({
+    ...('images' in problem ? problem.images : []).map((image) => ({
       image: image,
       width: 250,
       margin: [0, 0, 0, 18] as Margins,
@@ -281,7 +310,7 @@ const generateDocDefinitionProblemContent = (
 };
 
 export async function generateProblemPDF(
-  problem: problem,
+  problem: ExistingProblem | UserProblem | Omit<UserProblem, 'id'>,
   index?: number,
   open = false,
 ) {
@@ -304,7 +333,7 @@ export async function generateProblemPDF(
   }
 }
 
-export async function generateProblemsBookletPDF(problems: problem[]) {
+export async function generateProblemsBookletPDF(problems: UserProblem[]) {
   const docDefinition = {
     ...(await docDefinitionGeneralSettings()),
 
@@ -338,7 +367,7 @@ export const numberToLetter = (n: number) => {
 };
 
 export async function generateProblemZip(
-  problem: problem,
+  problem: UserProblem,
   index: number,
   download = false,
 ) {
@@ -392,7 +421,7 @@ export async function generateProblemZip(
   return blob;
 }
 
-export async function generateAllProblemsZip(problems: problem[]) {
+export async function generateAllProblemsZip(problems: UserProblem[]) {
   const zip = new JSZip();
 
   zip.file('booklet.pdf', await generateProblemsBookletPDF(problems));

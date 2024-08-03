@@ -14,7 +14,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { List, arrayMove, arrayRemove } from 'react-movable';
 
 import db from '../db';
-import { numberToLetter, type problem } from '../shared';
+import { numberToLetter, UserProblem } from '../shared';
 
 function Menu({
   setSelectedComponent,
@@ -110,7 +110,7 @@ function Problems({
       ? []
       : (problemsOrder.map((id) =>
           problems.find((problem) => problem.id === id),
-        ) as Required<problem>[]);
+        ) as UserProblem[]);
 
   return (
     <>

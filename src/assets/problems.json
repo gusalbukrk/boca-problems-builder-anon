@@ -9,7 +9,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -26,7 +26,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -43,7 +43,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -70,7 +70,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -88,7 +88,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -107,7 +107,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -124,7 +124,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -141,7 +141,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -159,7 +159,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -176,7 +176,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -193,7 +193,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -210,7 +210,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -229,7 +229,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -247,7 +247,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -265,7 +265,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -283,7 +283,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -301,7 +301,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -321,7 +321,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -347,7 +347,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -364,7 +364,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -385,7 +385,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -410,7 +410,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -428,7 +428,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -447,7 +447,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -464,7 +464,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -482,7 +482,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -499,7 +499,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -518,7 +518,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -539,7 +539,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -563,7 +563,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -580,7 +580,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -598,7 +598,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -619,7 +619,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -637,7 +637,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -654,7 +654,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -672,7 +672,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -689,7 +689,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -709,7 +709,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -728,7 +728,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -746,7 +746,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -764,7 +764,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -783,7 +783,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -800,7 +800,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -818,7 +818,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -837,7 +837,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -854,7 +854,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -875,7 +875,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -893,7 +893,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -914,7 +914,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -932,7 +932,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -952,7 +952,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -969,7 +969,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -986,7 +986,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -1004,7 +1004,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -1024,7 +1024,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -1041,7 +1041,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -1062,7 +1062,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -1080,7 +1080,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -1097,7 +1097,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -1120,7 +1120,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -1138,7 +1138,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -1155,7 +1155,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -1175,7 +1175,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -1192,7 +1192,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -1211,7 +1211,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -1228,7 +1228,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -1245,7 +1245,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -1262,7 +1262,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -1279,7 +1279,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -1297,7 +1297,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -1315,7 +1315,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -1335,7 +1335,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -1353,7 +1353,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -1371,7 +1371,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -1388,7 +1388,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -1406,7 +1406,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -1430,7 +1430,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -1448,7 +1448,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -1465,7 +1465,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -1483,7 +1483,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -1500,7 +1500,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -1517,7 +1517,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -1536,7 +1536,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -1554,7 +1554,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -1571,7 +1571,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -1589,7 +1589,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -1607,7 +1607,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -1626,7 +1626,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -1649,7 +1649,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -1667,7 +1667,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -1685,7 +1685,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -1703,7 +1703,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -1727,7 +1727,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -1748,7 +1748,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -1769,7 +1769,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -1787,7 +1787,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -1804,7 +1804,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -1822,7 +1822,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -1839,7 +1839,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -1858,7 +1858,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -1875,7 +1875,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -1901,7 +1901,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -1920,7 +1920,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -1936,7 +1936,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -1960,7 +1960,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -1974,7 +1974,7 @@
     "examples": [["3\n15 0 3\n35 50 40\n15 0 30", "C\nH\nH"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -1991,7 +1991,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -2009,7 +2009,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -2027,7 +2027,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -2044,7 +2044,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -2061,7 +2061,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -2081,7 +2081,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -2099,7 +2099,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -2118,7 +2118,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -2135,7 +2135,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -2154,7 +2154,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -2171,7 +2171,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -2191,7 +2191,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -2209,7 +2209,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -2227,7 +2227,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -2245,7 +2245,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -2262,7 +2262,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -2279,7 +2279,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -2297,7 +2297,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -2315,7 +2315,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -2333,7 +2333,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -2353,7 +2353,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -2373,7 +2373,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -2392,7 +2392,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -2411,7 +2411,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -2429,7 +2429,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -2448,7 +2448,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -2466,7 +2466,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -2489,7 +2489,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -2510,7 +2510,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -2528,7 +2528,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -2549,7 +2549,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -2567,7 +2567,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -2587,7 +2587,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -2604,7 +2604,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -2622,7 +2622,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -2639,7 +2639,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -2657,7 +2657,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -2676,7 +2676,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -2694,7 +2694,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "O",
@@ -2711,7 +2711,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -2729,7 +2729,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -2749,7 +2749,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -2767,7 +2767,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -2784,7 +2784,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -2803,7 +2803,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -2822,7 +2822,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -2840,7 +2840,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -2858,7 +2858,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -2876,7 +2876,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -2894,7 +2894,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -2913,7 +2913,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -2931,7 +2931,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -2955,7 +2955,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -2973,7 +2973,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -2992,7 +2992,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -3010,7 +3010,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -3031,7 +3031,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -3048,7 +3048,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "N",
@@ -3065,7 +3065,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -3084,7 +3084,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -3102,7 +3102,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -3121,7 +3121,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -3135,7 +3135,7 @@
     "examples": [["10\n23 20 7 30 43 70 5 42 67 10", "3 4 3 2 1 0 1 2 1 2"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -3155,7 +3155,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -3173,7 +3173,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -3193,7 +3193,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -3212,7 +3212,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -3230,7 +3230,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -3247,7 +3247,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -3264,7 +3264,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -3282,7 +3282,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -3300,7 +3300,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -3317,7 +3317,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -3337,7 +3337,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -3354,7 +3354,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -3372,7 +3372,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -3389,7 +3389,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -3406,7 +3406,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -3425,7 +3425,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -3442,7 +3442,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -3460,7 +3460,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -3478,7 +3478,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -3492,7 +3492,7 @@
     "examples": [["5 2 1\nY N\nN N\nY N\nN Y\nY Y", "Y N\nN N\nY Y\nN Y\nY Y"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -3512,7 +3512,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -3540,7 +3540,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -3557,7 +3557,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -3576,7 +3576,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -3594,7 +3594,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -3612,7 +3612,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -3630,7 +3630,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -3649,7 +3649,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -3666,7 +3666,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -3684,7 +3684,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -3703,7 +3703,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -3720,7 +3720,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -3738,7 +3738,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -3757,7 +3757,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -3776,7 +3776,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -3793,7 +3793,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -3811,7 +3811,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -3831,7 +3831,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -3848,7 +3848,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -3865,7 +3865,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -3885,7 +3885,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -3905,7 +3905,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -3924,7 +3924,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -3943,7 +3943,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -3963,7 +3963,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -3986,7 +3986,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -4003,7 +4003,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -4023,7 +4023,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -4041,7 +4041,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -4059,7 +4059,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -4077,7 +4077,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -4094,7 +4094,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -4111,7 +4111,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -4129,7 +4129,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -4153,7 +4153,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -4171,7 +4171,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -4189,7 +4189,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -4206,7 +4206,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -4224,7 +4224,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -4243,7 +4243,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -4261,7 +4261,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -4279,7 +4279,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -4300,7 +4300,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -4318,7 +4318,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -4336,7 +4336,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -4358,7 +4358,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -4381,7 +4381,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -4401,7 +4401,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -4419,7 +4419,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -4436,7 +4436,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -4454,7 +4454,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -4471,7 +4471,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -4491,7 +4491,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -4508,7 +4508,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -4529,7 +4529,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -4549,7 +4549,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -4573,7 +4573,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -4591,7 +4591,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -4612,7 +4612,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -4632,7 +4632,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -4656,7 +4656,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -4674,7 +4674,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -4691,7 +4691,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -4708,7 +4708,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -4726,7 +4726,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -4744,7 +4744,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -4765,7 +4765,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -4788,7 +4788,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -4815,7 +4815,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -4832,7 +4832,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -4849,7 +4849,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -4863,7 +4863,7 @@
     "examples": [["4\n10 3\n10 4\n15 3\n5 20", "6\n6\n7\n4"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -4882,7 +4882,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -4900,7 +4900,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -4921,7 +4921,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -4938,7 +4938,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -4955,7 +4955,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -4972,7 +4972,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -4991,7 +4991,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -5010,7 +5010,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -5028,7 +5028,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -5048,7 +5048,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -5065,7 +5065,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -5086,7 +5086,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -5106,7 +5106,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -5129,7 +5129,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -5146,7 +5146,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -5166,7 +5166,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -5185,7 +5185,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -5199,7 +5199,7 @@
     "examples": [["5 2 1\nY N\nN N\nY N\nN Y\nY Y", "Y N\nN N\nY Y\nN Y\nY Y"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -5222,7 +5222,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -5239,7 +5239,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -5257,7 +5257,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -5274,7 +5274,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -5291,7 +5291,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -5308,7 +5308,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -5325,7 +5325,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -5341,7 +5341,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -5359,7 +5359,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -5376,7 +5376,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -5394,7 +5394,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -5417,7 +5417,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -5435,7 +5435,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -5453,7 +5453,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -5473,7 +5473,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -5490,7 +5490,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -5510,7 +5510,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -5531,7 +5531,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -5549,7 +5549,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -5566,7 +5566,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -5584,7 +5584,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -5598,7 +5598,7 @@
     "examples": [["3 3 2 5\n5 2 1\n3 2 8\n1 9 3\n1 2\n1 3", "14"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -5622,7 +5622,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -5640,7 +5640,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -5658,7 +5658,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -5675,7 +5675,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -5692,7 +5692,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -5710,7 +5710,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -5729,7 +5729,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -5746,7 +5746,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -5765,7 +5765,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -5784,7 +5784,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -5801,7 +5801,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -5825,7 +5825,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -5842,7 +5842,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -5861,7 +5861,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -5878,7 +5878,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -5895,7 +5895,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -5915,7 +5915,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -5929,7 +5929,7 @@
     "examples": [["4\n0 3 2 13\n3 0 8 9\n2 8 0 5\n13 9 5 0", "16"]],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -5947,7 +5947,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -5966,7 +5966,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "M",
