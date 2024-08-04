@@ -18,7 +18,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -41,7 +41,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -64,7 +64,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -91,7 +91,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -118,7 +118,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -149,7 +149,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -172,7 +172,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -195,7 +195,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -222,7 +222,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -245,7 +245,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -268,7 +268,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -291,7 +291,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -310,7 +310,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -337,7 +337,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -364,7 +364,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -391,7 +391,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -418,7 +418,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -441,7 +441,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -476,7 +476,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -499,7 +499,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -526,7 +526,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -557,7 +557,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -584,7 +584,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -615,7 +615,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -638,7 +638,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -665,7 +665,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -688,7 +688,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -719,7 +719,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2015",
+      "year": 2015,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -758,7 +758,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -785,7 +785,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -808,7 +808,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -835,7 +835,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -862,7 +862,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -889,7 +889,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -912,7 +912,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -939,7 +939,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -962,7 +962,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -985,7 +985,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -1016,7 +1016,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -1043,38 +1043,11 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 1,
       "warmup": false,
       "letter": "L",
       "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Concorrência",
-    "description": "Bob e Alice estão participando de um concurso de programação em equipe. O concurso tem N problemas que devem ser resolvidos em ordem. Naturalmente, existem alguns problemas que eles não conseguem resolver; nesse caso, podem ignorá-los. Também pode haver problemas que apenas Bob ou Alice podem resolver.\nEles querem resolver todos os problemas possíveis trocando o mínimo de vezes possível quem está no computador programando a solução.\nDado o número de problemas e os problemas que Bob e Alice podem resolver, calcule o número mínimo de alternâncias entre o uso do computador. Qualquer pessoa pode começar a usá-lo.\nEntrada\nA primeira linha contém três inteiros N (1 ≤ N ≤ 109), A (1 ≤ A ≤ min(N,5 ∗ 104)) e B (1 ≤ B ≤ min(N,5 ∗ 104)). A próxima linha contém inteiros únicos A denotando os problemas que Alice pode resolver. A linha a seguir contém B inteiros únicos denotando os problemas que Bob pode resolver. O primeiro problema é denotado pelo número 1, o segundo pelo número 2, o N-ésimo por N e assim por diante.\nSaída\nProduza uma linha com um número inteiro representando o número mínimo de alternâncias entre o uso do computador.",
-    "examples": [
-      [
-        "5 2 3\n2 4\n1 5 3",
-        "4"
-      ],
-      [
-        "4 3 3\n1 2 3\n2 3 4",
-        "1"
-      ],
-      [
-        "4 3 3\n1 3 4\n4 3 1",
-        "0"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2016",
-      "phase": 2,
-      "warmup": true,
-      "letter": "C",
-      "author": "Bruno Junqueira Adami, Brasil"
     },
     "imagesQuant": 0
   },
@@ -1101,7 +1074,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -1124,7 +1097,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -1151,7 +1124,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -1182,7 +1155,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -1205,7 +1178,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -1244,7 +1217,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -1271,7 +1244,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -1298,7 +1271,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -1325,7 +1298,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -1348,7 +1321,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -1371,7 +1344,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -1394,7 +1367,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -1421,7 +1394,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2016",
+      "year": 2016,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -1456,7 +1429,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -1479,7 +1452,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -1518,7 +1491,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -1545,7 +1518,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -1568,7 +1541,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -1591,7 +1564,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -1618,7 +1591,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -1641,7 +1614,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -1664,7 +1637,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -1687,7 +1660,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -1718,7 +1691,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -1741,7 +1714,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -1764,7 +1737,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -1787,7 +1760,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -1810,7 +1783,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -1837,7 +1810,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -1864,7 +1837,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -1887,7 +1860,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -1914,7 +1887,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -1941,7 +1914,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -1964,7 +1937,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -1991,7 +1964,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -2018,7 +1991,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2013",
+      "year": 2013,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -2045,60 +2018,10 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": true,
       "letter": "C",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Fatorial",
-    "description": "O fatorial de um número inteiro positivo N, denotado por N!, é definido como o produto dos inteiros positivos menores do que ou iguais a N. Por exemplo 4! = 4 × 3 × 2 × 1 = 24.\nDado um inteiro positivo N, você deve escrever um programa para determinar o menor número k tal que N = a1! + a2! + ... + ak!, onde cada ai, para 1 ≤ i ≤ k, é um número inteiro positivo.\nPor exemplo, para N = 10 a resposta é 3, pois é possível escrever N como a soma de três números fatoriais: 10 = 3!+2!+2!. Para N = 25 a resposta é 2, pois é possível escrever N como a soma de dois números fatoriais: 25 = 4! + 1!.\nEntrada\nA entrada consiste de uma única linha que contém um inteiro N (1 ≤ N ≤ 105).\nSaída\nSeu programa deve produzir uma única linha com um inteiro representando a menor quantidade de números fatoriais cuja soma é igual ao valor de N.",
-    "examples": [
-      [
-        "10",
-        "3"
-      ],
-      [
-        "25",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2019",
-      "phase": 1,
-      "warmup": true,
-      "letter": "B",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Teleférico",
-    "description": "A turma da faculdade vai fazer uma excursão na serra e todos os alunos e monitores vão tomar um teleférico para subir até o pico de uma montanha. A cabine do teleférico pode levar C pessoas no máximo, contando alunos e monitores, durante uma viagem até o pico. Por questão de segurança, deve haver pelo menos um monitor dentro da cabine junto com os alunos. Por exemplo, se cabem C = 10 pessoas na cabine e a turma tem A = 20 alunos, os alunos poderiam fazer três viagens: a primeira com 8 alunos e um monitor; a segunda com 6 alunos e um monitor; e a terceira com 6 alunos e um monitor.\nDados como entrada a capacidade C da cabine e o número total A de alunos, você deve escrever um programa para calcular o número mínimo de viagens do teleférico.\nSe você estiver com muita preguiça hoje, não se preocupe: virando a página você encontra soluções para este problema.\nEntrada\nA primeira linha da entrada contém um inteiro C, representando a capacidade da cabine (2 ≤ C ≤ 100). A segunda linha da entrada contém um inteiro A, representando o número total de alunos na turma (1 ≤ A ≤ 1000).\nSaída\nSeu programa deve imprimir uma linha contendo um número inteiro representando o número mínimo de viagens do teleférico para levar todos os alunos até o pico da montanha.\n      Solução em C++ #include <iostream> using namespace std; int main(void){ int C,A; cin >> C >> A; // le a entrada int quociente = A/(C-1); int resto = A%(C-1); int resposta = quociente; if ( resto > 0 ) resposta++; cout << resposta << endl; // escreve a resposta return 0; } Solução em Python C = int(input()) # le a entrada A = int(input()) quociente, resto = A//(C-1), A%(C-1) resposta = quociente if resto>0: resposta += 1 print(resposta) # escreve a resposta Solução em Java import java.util.Scanner; public class A { public static void main(String[] args) { Scanner in = new Scanner(System.in); int quociente, resto, resposta; int C,A; C=in.nextInt(); // le a entrada A=in.nextInt(); quociente=A/(C-1); resto=A%(C-1); resposta=quociente; if (resto>0) resposta=resposta+1; System.out.println(resposta); // imprime a resposta } }",
-    "examples": [
-      [
-        "10\n20",
-        "3"
-      ],
-      [
-        "12\n55",
-        "5"
-      ],
-      [
-        "100\n87",
-        "1"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2019",
-      "phase": 1,
-      "warmup": true,
-      "letter": "A",
       "author": null
     },
     "imagesQuant": 0
@@ -2118,7 +2041,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -2141,7 +2064,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -2172,7 +2095,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -2199,7 +2122,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -2222,7 +2145,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -2249,7 +2172,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -2276,7 +2199,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -2307,7 +2230,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -2330,7 +2253,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -2357,7 +2280,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -2384,7 +2307,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -2411,7 +2334,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -2438,7 +2361,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -2477,7 +2400,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -2516,7 +2439,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -2543,7 +2466,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -2566,7 +2489,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -2593,7 +2516,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -2616,7 +2539,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -2635,7 +2558,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -2658,7 +2581,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -2693,7 +2616,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -2724,7 +2647,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -2743,7 +2666,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -2770,7 +2693,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -2789,7 +2712,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -2812,7 +2735,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -2839,83 +2762,10 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2019",
+      "year": 2019,
       "phase": 2,
       "warmup": false,
       "letter": "M",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Teleférico",
-    "description": "A turma da faculdade vai fazer uma excursão na serra e todos os alunos e monitores vão tomar um teleférico para subir até o pico de uma montanha. A cabine do teleférico pode levar C pessoas no máximo, contando alunos e monitores, durante uma viagem até o pico. Por questão de segurança, deve haver pelo menos um monitor dentro da cabine junto com os alunos. Por exemplo, se cabem C = 10 pessoas na cabine e a turma tem A = 20 alunos, os alunos poderiam fazer três viagens: a primeira com 8 alunos e um monitor; a segunda com 6 alunos e um monitor; e a terceira com 6 alunos e um monitor.\nDados como entrada a capacidade C da cabine e o número total A de alunos, você deve escrever um programa para calcular o número mínimo de viagens do teleférico.\nSe você estiver com muita preguiça hoje, não se preocupe: virando a página você encontra soluções para este problema.\nEntrada\nA primeira linha da entrada contém um inteiro C, representando a capacidade da cabine (2 ≤ C ≤ 100). A segunda linha da entrada contém um inteiro A, representando o número total de alunos na turma (1 ≤ A ≤ 1000).\nSaída\nSeu programa deve imprimir uma linha contendo um número inteiro representando o número mínimo de viagens do teleférico para levar todos os alunos até o pico da montanha.\n      Solução em C++ #include <iostream> using namespace std; int main(void){ int C,A; cin >> C >> A; // le a entrada int quociente = A/(C-1); int resto = A%(C-1); int resposta = quociente; if ( resto > 0 ) resposta++; cout << resposta << endl; // escreve a resposta return 0; } Solução em Python C = int(input()) # le a entrada A = int(input()) quociente, resto = A/(C-1), A%(C-1) resposta = quociente if resto>0: resposta += 1 print(resposta) # escreve a resposta Solução em Java import java.util.Scanner; public class C { public static void main(String[] args) { Scanner in = new Scanner(System.in); int quociente, resto, resposta; int C,A; C=in.nextInt(); // le a entrada A=in.nextInt(); quociente=A/(C-1); resto=A%(C-1); resposta=quociente; if (resto>0) resposta=resposta+1; System.out.println(resposta); // imprime a resposta } }",
-    "examples": [
-      [
-        "10\n20",
-        "3"
-      ],
-      [
-        "12\n55",
-        "5"
-      ],
-      [
-        "100\n87",
-        "1"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2017",
-      "phase": 1,
-      "warmup": true,
-      "letter": "C",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Jogo de Estratégia",
-    "description": "Um jogo de estratégia, com J jogadores, é jogado em volta de uma mesa. O primeiro a jogar é o jogador 1, o segundo a jogar é o jogador 2 e assim por diante. Uma vez completada uma rodada, novamente o jogador 1 faz sua jogada e a ordem dos jogadores se repete novamente. A cada jogada, um jogador garante uma certa quantidade de Pontos de Vitória. A pontuação de cada jogador consiste na soma dos Pontos de Vitória de cada uma das suas jogadas.\nDado o número de jogadores, o número de rodadas e uma lista representando os Pontos de Vitória na ordem em que foram obtidos, você deve determinar qual é o jogador vencedor. Caso mais de um jogador obtenha a pontuação máxima, o jogador com pontuação máxima que tiver jogado por último é o vencedor.\nEntrada\nA entrada consiste de duas linhas. A primeira linha contém dois inteiros J e R, o número de jogadores e de rodadas respectivamente (1 ≤ J,R ≤ 500). A segunda linha contém J × R inteiros, correspondentes aos Pontos de Vitória em cada uma das jogadas feitas, na ordem em que aconteceram.\nOs Pontos de Vitória obtidos em cada jogada serão sempre inteiros entre 0 e 100, inclusive.\nSaída\nSeu programa deve produzir uma única linha, contendo o inteiro correspondente ao jogador ven cedor.",
-    "examples": [
-      [
-        "3 3\n1 1 1 1 2 2 2 3 3",
-        "3"
-      ],
-      [
-        "2 3\n0 0 1 0 2 0",
-        "1"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2017",
-      "phase": 1,
-      "warmup": true,
-      "letter": "B",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Fatorial",
-    "description": "O fatorial de um número inteiro positivo N, denotado por N!, é definido como o produto dos inteiros positivos menores do que ou iguais a N. Por exemplo 4! = 4 × 3 × 2 × 1 = 24.\nDado um inteiro positivo N, você deve escrever um programa para determinar o menor número k tal que N = a1! + a2! + ... + ak!, onde cada ai, para 1 ≤ i ≤ k, é um número inteiro positivo.\nPor exemplo, para N = 10 a resposta é 3, pois é possível escrever N como a soma de três números fatoriais: 10 = 3! + 2! + 2!. Para N = 25 a resposta é 2, pois é possível escrever N como a soma de dois números fatoriais: 25 = 4! + 1!.\nEntrada\nA entrada consiste de uma única linha que contém um inteiro N (1 ≤ N ≤ 105).\nSaída\nSeu programa deve produzir uma única linha com um inteiro representando a menor quantidade de números fatoriais cuja soma é igual ao valor de N.",
-    "examples": [
-      [
-        "10",
-        "3"
-      ],
-      [
-        "25",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2017",
-      "phase": 1,
-      "warmup": true,
-      "letter": "A",
       "author": null
     },
     "imagesQuant": 0
@@ -2947,7 +2797,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -2974,7 +2824,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -3005,7 +2855,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -3028,7 +2878,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -3059,7 +2909,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -3082,7 +2932,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -3105,7 +2955,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -3132,7 +2982,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -3159,7 +3009,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -3186,7 +3036,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -3209,7 +3059,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -3232,7 +3082,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -3259,7 +3109,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -3286,7 +3136,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -3313,7 +3163,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -3336,7 +3186,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -3359,7 +3209,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -3390,7 +3240,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -3421,7 +3271,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -3448,7 +3298,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -3479,7 +3329,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -3506,7 +3356,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -3529,7 +3379,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -3556,7 +3406,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -3583,7 +3433,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -3610,7 +3460,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -3637,7 +3487,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -3660,7 +3510,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -3683,61 +3533,11 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2017",
+      "year": 2017,
       "phase": 2,
       "warmup": false,
       "letter": "M",
       "author": "Paulo Cezar Pereira Costa, Brasil"
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Nota Esquecida",
-    "description": "João não é muito bom em Matemática mas aprendeu que a média de dois números é o valor da soma desses dois números dividido por dois. Ou seja, a média de dois números A e B é M = A+ 2B.\nA professora de Cálculo I contou para João as notas que ele tirou nas duas provas já realizadas. As duas notas são números inteiros entre 0 e 100. João prontamente calculou a média das duas provas, que também resultou em um número inteiro.\nMas João é muito esquecido, e agora não consegue lembrar-se das duas notas que tirou na prova. Ele consegue se lembrar de apenas uma das notas das provas. Por sorte, ele consegue se lembrar também da média entre as duas notas.\nVocê pode ajudar João a determinar a nota da outra prova? Entrada\nA primeira linha contém um número inteiro A (0 ≤ A ≤ 100), indicando a nota de uma prova. A segunda linha contém um número inteiro M (0 ≤ M ≤ 100), indicando a média entre as duas notas das provas.\nSaída\nSeu programa deve produzir uma única linha com um número inteiro representando a nota da outra prova, que João não consegue recordar.",
-    "examples": [
-      [
-        "100\n70",
-        "40"
-      ],
-      [
-        "80\n75",
-        "70"
-      ],
-      [
-        "1\n50",
-        "99"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2020",
-      "phase": 1,
-      "warmup": true,
-      "letter": "C",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Fatorial",
-    "description": "O fatorial de um número inteiro positivo N, denotado por N!, é definido como o produto dos inteiros positivos menores do que ou iguais a N. Por exemplo 4! = 4 × 3 × 2 × 1 = 24.\nDado um inteiro positivo N, você deve escrever um programa para determinar o menor número k tal que N = a1! + a2! + ... + ak!, onde cada ai, para 1 ≤ i ≤ k, é um número inteiro positivo.\nPor exemplo, para N = 10 a resposta é 3, pois é possível escrever N como a soma de três números fatoriais: 10 = 3!+2!+2!. Para N = 25 a resposta é 2, pois é possível escrever N como a soma de dois números fatoriais: 25 = 4! + 1!.\nEntrada\nA entrada consiste de uma única linha que contém um inteiro N (1 ≤ N ≤ 105).\nSaída\nSeu programa deve produzir uma única linha com um inteiro representando a menor quantidade de números fatoriais cuja soma é igual ao valor de N.",
-    "examples": [
-      [
-        "10",
-        "3"
-      ],
-      [
-        "25",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2020",
-      "phase": 1,
-      "warmup": true,
-      "letter": "B",
-      "author": null
     },
     "imagesQuant": 0
   },
@@ -3760,7 +3560,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -3791,7 +3591,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -3818,7 +3618,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "O",
@@ -3841,7 +3641,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -3868,7 +3668,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -3891,7 +3691,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -3918,7 +3718,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -3941,7 +3741,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -3972,7 +3772,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -3991,7 +3791,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -4018,7 +3818,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -4045,7 +3845,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -4072,7 +3872,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -4099,7 +3899,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -4118,67 +3918,13 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 1,
       "warmup": false,
       "letter": "M",
       "author": null
     },
     "imagesQuant": 1
-  },
-  {
-    "name": "Cordilheiras",
-    "description": "Famosa pelas suas cadeias de montanhas, a Nlogónia atrai milhões de turistas todos os anos. O governo dispõe de um orçamento dedicado à manutenção contínua dos percursos pedestres espalhados por todo o país e a maioria deles está repleta de miradouros panorâmicos, acessíveis através de passadiços e escadas de madeira.\nAtualmente em viagem pela Nlogônia e com esperança de voltar para casa com muitas fotos de tirar o fôlego, Lola e seu marido querem visitar o maior número possível de mirantes. Eles planejam percorrer uma trilha diferente a cada dia e explorar seus mirantes. No entanto, para não ficarem exaustos no final do dia, se a passagem de um miradouro para outro necessitar de subir mais de X metros, basta encerrar o dia e regressar ao hotel para descansar um pouco. Felizmente, todas as trilhas para caminhadas na Nlogônia estão equipadas com teleféricos modernos, para que o casal possa começar a caminhar em qualquer ponto de vista que desejar.\nIniciada a caminhada o casal só se dirige ao pico da montanha.\nPara não perder um dia, Lola só quer caminhar por trilhas onde possa chegar a um número razoável de mirantes. Dadas as altitudes dos mirantes panorâmicos de um percurso pedestre, deve-se determinar o número máximo de mirantes que o casal pode visitar.\nEntrada\nA primeira linha contém dois inteiros N (1 ≤ N ≤ 1000) e X (0 ≤ X ≤ 8848), indicando respectivamente o número de mirantes panorâmicos na trilha e o número máximo de metros que Lola e seu marido estão dispostos a percorrer. subir de um ponto de vista para o outro. A segunda linha contém N inteiros A1,A2,...,AN (1 ≤ Ai ≤ 8848 para i = 1,2,...,N), onde Ai é a altitude (em metros) do i-ésimo ponto de vista . Os pontos de vista são dados na ordem em que aparecem na trilha e suas altitudes não são decrescentes, ou seja, Ai ≤ Ai+1 para i = 1,2,...,N − 1.\nSaída\nProduza uma única linha com um número inteiro indicando o número máximo de mirantes panorâmicos que podem ser visitados sem subir mais de X metros de um mirante a outro, e considerando que a jornada pode ser iniciada em qualquer mirante.",
-    "examples": [
-      [
-        "9 2\n3 14 15 92 653 5897 5897 5898 5900",
-        "4"
-      ],
-      [
-        "9 0\n3 14 15 92 653 5897 5897 5898 5900",
-        "2"
-      ],
-      [
-        "9 8848\n3 14 15 92 653 5897 5897 5898 5900",
-        "9"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2020",
-      "phase": 2,
-      "warmup": true,
-      "letter": "C",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Banco de Dados de Clientes",
-    "description": "Hoje em dia existem bilhões de usuários de e-mail. Um fato pouco conhecido é que alguns provedores de e-mail oferecem muito mais do que o endereço de e-mail usual username@provider.com.\nAlguns provedores simplesmente ignoram os pontos nos nomes de usuário. Assim, se John possuir o nome de usuário johnsmith, ele poderá informar às pessoas que seu endereço de e-mail é johnsmith@provider.com, john.smith@provider.com ou john.smith@provider.com, entre outros. Os e-mails enviados para qualquer um desses endereços acabariam em sua caixa de correio.\nOutros provedores permitem anexar o caractere “+” seguido por qualquer combinação de letras e/ou dígitos após o nome de usuário. Com esse recurso, ao registrar o nome de usuário johnsmith, John também poderia usar johnsmith+friends@provider.com e johnsmith+2x3is6@provider.com.\nÀs vezes, os dois recursos estão disponíveis ao mesmo tempo e, nesses casos, john.smith+icpc@provider.com e john.smith+wants.2.eat.lemon.3.14@provider.com são endereços válidos que John poderia usar.\nIsto é bastante útil para os usuários, que podem gerenciar diferentes endereços para ajudar a organizar suas caixas de correio e filtrar facilmente as newsletters eventualmente enviadas após o registro em um novo site. Infelizmente, isso também abre espaço para abusos. Alguns sites dependem do fato de que cada endereço de e-mail identifica um único usuário. No entanto, um usuário mal-comportado pode facilmente criar várias contas aproveitando os vários endereços permitidos pelo provedor de e-mail.\nDepois de saber de tudo isso, seu chefe ficou muito preocupado. E se o número de usuários únicos informado aos acionistas não for preciso e, em vez disso, estiver inchado por contas duplicadas? Isso leva você à tarefa em questão: dada a lista de todos os endereços de e-mail do banco de dados de usuários da empresa, você deve determinar o número real de usuários únicos, assumindo que todos os provedores de e-mail tenham ambos os recursos descritos disponíveis.\nEntrada\nA primeira linha contém um inteiro N (1 ≤ N ≤ 1000) representando o número de endereços de e-mail no banco de dados. Cada uma das próximas N linhas contém uma sequência de no máximo 100 caracteres representando um endereço de e-mail no banco de dados. Cada endereço de e-mail tem o formato localpart@provider onde localpart é uma lista não vazia de rótulos com um “.” (ponto) ou um “+” (sinal de mais) entre cada par de rótulos consecutivos, e provedor é uma lista não vazia de rótulos sempre com um “.” (ponto) entre cada par de rótulos consecutivos. Um rótulo é uma sequência não vazia de letras minúsculas e/ou dígitos. O caracter “+” (sinal de mais) aparece no máximo uma vez em cada endereço de e-mail.\nSaída\nProduza uma única linha com um número inteiro indicando o número de usuários únicos no banco de dados.",
-    "examples": [
-      [
-        "2\ntwo.different.providers@now.here\ntwo.different.providers@nowhere",
-        "2"
-      ],
-      [
-        "2\n1.2.3@testing\ntesting@1.2.3",
-        "2"
-      ],
-      [
-        "7\nalice@e.mail\neve@another.mail\nbob@e.mail\njoe90@e.mail\nb.o.b@e.mail\nbob+new@e.mail\nbob@another.provider",
-        "5"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2020",
-      "phase": 2,
-      "warmup": true,
-      "letter": "B",
-      "author": null
-    },
-    "imagesQuant": 0
   },
   {
     "name": "Construindo um Campo",
@@ -4199,7 +3945,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -4230,7 +3976,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -4257,7 +4003,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -4284,7 +4030,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -4307,7 +4053,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "N",
@@ -4330,7 +4076,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -4361,7 +4107,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -4388,7 +4134,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -4419,7 +4165,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -4438,7 +4184,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -4461,7 +4207,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -4488,7 +4234,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -4523,7 +4269,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -4554,7 +4300,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -4581,7 +4327,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2020",
+      "year": 2020,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -4604,7 +4350,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -4627,7 +4373,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -4654,7 +4400,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -4681,7 +4427,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -4704,7 +4450,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -4739,7 +4485,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -4762,7 +4508,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -4789,7 +4535,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -4812,7 +4558,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -4835,7 +4581,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -4866,7 +4612,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -4889,7 +4635,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -4916,7 +4662,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -4943,7 +4689,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -4962,7 +4708,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -4997,7 +4743,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": true,
       "letter": "A",
@@ -5028,7 +4774,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -5051,7 +4797,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -5082,7 +4828,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -5109,7 +4855,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -5136,7 +4882,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -5163,7 +4909,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -5182,7 +4928,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -5205,7 +4951,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -5232,7 +4978,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -5263,7 +5009,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -5286,7 +5032,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -5313,7 +5059,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -5344,7 +5090,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2023",
+      "year": 2023,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -5375,7 +5121,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -5398,7 +5144,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "B",
@@ -5425,7 +5171,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -5448,7 +5194,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -5471,7 +5217,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -5494,7 +5240,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -5529,7 +5275,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -5552,7 +5298,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -5583,7 +5329,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -5614,7 +5360,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -5637,7 +5383,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -5660,7 +5406,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -5683,7 +5429,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -5706,38 +5452,11 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 1,
       "warmup": false,
       "letter": "H",
       "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "O retorno do Rei",
-    "description": "O prolífico autor Stephen King estava registrando as notas de seus alunos de literatura em uma calculadora on-line de média geral. Ao terminar, percebeu que sua tecla de retorno estava quebrada, então em vez de inserir as notas de um aluno em uma linha separada cada, ele as inseriu em uma única linha sem qualquer separação.\nComo o Sr. King não tem as habilidades necessárias para consertar sua chave de retorno imediatamente, ele precisa que você calcule a média das notas do aluno a partir da entrada não separada.\nCada nota é um número inteiro entre 1 e 10. Todas as notas foram inseridas escritas na base 10 sem zeros à esquerda. Por exemplo, se as notas do aluno do Sr. King fossem 3, 10, 1 e 10, elas seriam inseridas como “310110”.\nEntrada\nA entrada consiste em uma única linha que contém uma string não vazia S de no máximo 100 dígitos de base 10.\nExiste uma maneira única de particionar S em uma lista de substrings de forma que cada substring represente um número inteiro entre 1 e 10 na base 10 sem zeros à esquerda.\nSaída\nProduza uma linha com um número racional representando a média das notas do aluno cujas notas o Sr. King inseriu como S. O resultado deve ser exibido como um número racional com exatamente dois dígitos após a vírgula, arredondado se necessário.",
-    "examples": [
-      [
-        "310110",
-        "6.00"
-      ],
-      [
-        "10910",
-        "9.67"
-      ],
-      [
-        "222222223",
-        "2.11"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2014",
-      "phase": 2,
-      "warmup": true,
-      "letter": "C",
-      "author": "Pablo Ariel Heiber, Universidad de Buenos Aires"
     },
     "imagesQuant": 0
   },
@@ -5760,37 +5479,10 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": true,
       "letter": "B",
-      "author": "Pablo Ariel Heiber, Universidad de Buenos Aires"
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "A sociedade do Anel",
-    "description": "Box é um esporte muito violento. Para compensar, existe um código de conduta para manter o cavalheirismo e o companheirismo no topo do ringue em jogos amistosos. Uma das regras mais conhecidas deste código de conduta é evitar bater no adversário abaixo da cintura ou acima do pescoço.\nDadas as alturas da cintura e do pescoço de um oponente, e as alturas de uma série de socos, calcule quantos desses socos são justos de acordo com a regra acima.\nEntrada\nA primeira linha contém três inteiros W, N e P, representando respectivamente a altura da cintura do oponente, a altura do pescoço e o número de socos desferidos (1 ≤ W < N ≤ 200 e 1 ≤ P ≤ 100) . A segunda linha contém P inteiros H1,H2,...,HP (1 ≤ Hi ≤ 200 para i = 1,2,...,P) indicando as alturas dos punções. Todas as alturas são fornecidas em centímetros.\nSaída\nProduza uma linha com um número inteiro representando o número de golpes justos, de acordo com o código de conduta.",
-    "examples": [
-      [
-        "80 150 3\n10 100 160",
-        "1"
-      ],
-      [
-        "80 150 3\n80 100 150",
-        "3"
-      ],
-      [
-        "2 199 5\n2 1 200 199 1",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2014",
-      "phase": 2,
-      "warmup": true,
-      "letter": "A",
       "author": "Pablo Ariel Heiber, Universidad de Buenos Aires"
     },
     "imagesQuant": 0
@@ -5810,7 +5502,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -5833,7 +5525,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -5860,7 +5552,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -5887,7 +5579,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -5914,7 +5606,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -5941,36 +5633,13 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "B",
       "author": "Fidel I. Schaposnik Massolo, Universidad Nacional de La Plata"
     },
     "imagesQuant": 0
-  },
-  {
-    "name": "Máquina de verificação automatizada",
-    "description": "A Internet Computer Parts Company (ICPC) é uma loja on-line que vende peças de computador. Pares de conectores elétricos em linha estão entre as peças mais populares vendidas pela ICPC. Porém, também são uma das peças que mais são devolvidas por clientes insatisfeitos, pois devido a erros na embalagem os conectores enviados aos clientes podem não ser compatíveis.\nUm conector em linha é composto por cinco pontos de conexão, rotulados de 1 a 5. Cada ponto de conexão de um conector pode ser um plugue ou uma tomada. Dizemos que dois conectores são compatíveis se, para cada etiqueta, um ponto de conexão for um plugue e o outro ponto de conexão for uma tomada (em outras palavras, dois conectores são compatíveis se, para cada ponto de conexão com a mesma etiqueta, um plugue e um tomada se encontram quando os dois conectores estão conectados).\nA figura abaixo mostra exemplos de dois conectores compatíveis e dois conectores não compatíveis.\nA ICPC está lançando uma Máquina de Verificação Automatizada (ACM) de última geração, com um verificador óptico, que verificará se os dois conectores embalados para um cliente são realmente compatíveis. O hardware complexo e caro do ACM está pronto, mas eles precisam da sua ajuda para finalizar o software.\nDadas as descrições de um par de conectores em linha, sua tarefa é determinar se os conectores são compatíveis.\nEntrada\nA primeira linha contém cinco inteiros Xi (0 ≤ Xi ≤ 1 para i = 1,2,...,5), representando os pontos de conexão do primeiro conector do par. A segunda linha contém cinco inteiros Yi (0 ≤ Yi ≤ 1 para i = 1,2,...,5), representando os pontos de conexão do segundo conector. Na entrada, 0 representa uma tomada e 1 representa um plugue.\nSaída\nProduza uma linha com um caractere que representa se os conectores são compatíveis ou não. Se forem compatíveis escreva a letra “Y” maiúscula; caso contrário, escreva a letra maiúscula “N”.",
-    "examples": [
-      [
-        "1 1 0 1 0\n0 0 1 0 1",
-        "Y"
-      ],
-      [
-        "1 0 0 1 0\n1 0 1 1 0",
-        "N"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2014",
-      "phase": 2,
-      "warmup": false,
-      "letter": "A",
-      "author": "Ricardo Anido, Universidade Estadual de Campinas"
-    },
-    "imagesQuant": 1
   },
   {
     "name": "Distribuição uniforme",
@@ -5991,7 +5660,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -6010,7 +5679,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -6037,7 +5706,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -6064,7 +5733,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2014",
+      "year": 2014,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -6103,7 +5772,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": true,
       "letter": "C",
@@ -6130,7 +5799,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": true,
       "letter": "A",
@@ -6157,7 +5826,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -6188,7 +5857,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -6211,7 +5880,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -6234,7 +5903,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -6261,7 +5930,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -6284,7 +5953,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -6311,7 +5980,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -6334,7 +6003,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -6357,7 +6026,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -6380,7 +6049,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -6407,7 +6076,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -6430,7 +6099,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -6457,7 +6126,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 1,
       "warmup": false,
       "letter": "M",
@@ -6484,7 +6153,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "C",
@@ -6511,7 +6180,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "B",
@@ -6546,40 +6215,13 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": true,
       "letter": "A",
       "author": "Pablo Ariel Heiber, Argentina"
     },
     "imagesQuant": 1
-  },
-  {
-    "name": "Banco de Dados de Clientes",
-    "description": "Hoje em dia existem bilhões de usuários de e-mail. Um fato pouco conhecido é que alguns provedores de e-mail oferecem muito mais do que o endereço de e-mail usual username@provider.com.\nAlguns provedores simplesmente ignoram os pontos nos nomes de usuário. Assim, se John possuir o nome de usuário johnsmith, ele poderá informar às pessoas que seu endereço de e-mail é johnsmith@provider.com, john.smith@provider.com ou john.smith@provider.com, entre outros. Os e-mails enviados para qualquer um desses endereços acabariam em sua caixa de correio.\nOutros provedores permitem anexar o caractere “+” seguido por qualquer combinação de letras e/ou dígitos após o nome de usuário. Com esse recurso, ao registrar o nome de usuário johnsmith, John também poderia usar johnsmith+friends@provider.com e johnsmith+2x3is6@provider.com.\nÀs vezes, os dois recursos estão disponíveis ao mesmo tempo e, nesses casos, john.smith+icpc@provider.com e john.smith+wants.2.eat.lemon.3.14@provider.com são endereços válidos que John poderia usar.\nIsto é bastante útil para os usuários, que podem gerenciar diferentes endereços para ajudar a organizar suas caixas de correio e filtrar facilmente as newsletters eventualmente enviadas após o registro em um novo site. Infelizmente, isso também abre espaço para abusos. Alguns sites dependem do fato de que cada endereço de e-mail identifica um único usuário. No entanto, um usuário mal-comportado pode facilmente criar várias contas aproveitando os vários endereços permitidos pelo provedor de e-mail.\nDepois de saber de tudo isso, seu chefe ficou muito preocupado. E se o número de usuários únicos informado aos acionistas não for preciso e, em vez disso, estiver inchado por contas duplicadas? Isso leva você à tarefa em questão: dada a lista de todos os endereços de e-mail do banco de dados de usuários da empresa, você deve determinar o número real de usuários únicos, assumindo que todos os provedores de e-mail tenham ambos os recursos descritos disponíveis.\nEntrada\nA primeira linha contém um inteiro N (1 ≤ N ≤ 1000) representando o número de endereços de e-mail no banco de dados. Cada uma das próximas N linhas contém uma sequência de no máximo 100 caracteres representando um endereço de e-mail no banco de dados. Cada endereço de e-mail tem o formato localpart@provider onde localpart é uma lista não vazia de rótulos com um “.” (ponto) ou um “+” (sinal de mais) entre cada par de rótulos consecutivos, e provedor é uma lista não vazia de rótulos sempre com um “.” (ponto) entre cada par de rótulos consecutivos. Um rótulo é uma sequência não vazia de letras minúsculas e/ou dígitos. O caracter “+” (sinal de mais) aparece no máximo uma vez em cada endereço de e-mail.\nSaída\nProduza uma única linha com um número inteiro indicando o número de usuários únicos no banco de dados.",
-    "examples": [
-      [
-        "2\ntwo.different.providers@now.here\ntwo.different.providers@nowhere",
-        "2"
-      ],
-      [
-        "2\n1.2.3@testing\ntesting@1.2.3",
-        "2"
-      ],
-      [
-        "7\nalice@e.mail\neve@another.mail\nbob@e.mail\njoe90@e.mail\nb.o.b@e.mail\nbob+new@e.mail\nbob@another.provider",
-        "5"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2018",
-      "phase": 2,
-      "warmup": false,
-      "letter": "D",
-      "author": "Paulo Cezar Pereira Costa, Brasil"
-    },
-    "imagesQuant": 0
   },
   {
     "name": "Colhendo Frutas Rubro-Negras",
@@ -6600,7 +6242,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -6623,7 +6265,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -6646,7 +6288,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -6673,77 +6315,11 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "C",
       "author": "Alejandro Strejilevich de Loma, Argentina"
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Construindo um Campo",
-    "description": "John é uma pessoa meticulosa. Na sua fazenda ele construiu um campo circular com algumas árvores plantadas bem na circunferência do campo. A Figura (a) abaixo mostra o campo com as árvores.\nAgora John quer usar uma corda longa e quatro árvores do campo para demarcar um retângulo usando as árvores como vértices e a corda como arestas. A figura (b) abaixo mostra dois retângulos que podem ser demarcados utilizando as árvores do talhão da figura (a).\nDada a descrição das posições das árvores no campo circular de John, você deve determinar se é possível demarcar um retângulo usando quatro das árvores como vértices e a corda como arestas.\nEntrada\nA primeira linha contém um inteiro N (4 ≤ N ≤ 105) indicando o número de árvores no talhão.\nAs árvores são representadas como pontos em uma circunferência. A segunda linha contém N inteiros L1,L2,...,LN (1 ≤ Li ≤ 106 para i = 1,2,...,N) indicando os comprimentos de arco entre cada par de árvores consecutivas. Os arcos são dados em sentido anti-horário. O comprimento total da circunferência não excede 109.\nSaída\nProduza uma única linha com a letra maiúscula “Y” se for possível demarcar um retângulo usando as árvores fornecidas, e a letra maiúscula “N” caso contrário.",
-    "examples": [
-      [
-        "8\n3 3 4 2 6 2 2 2",
-        "Y"
-      ],
-      [
-        "4\n14 16 15 15",
-        "N"
-      ],
-      [
-        "6\n3 7 7 3 10 10",
-        "Y"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2018",
-      "phase": 2,
-      "warmup": false,
-      "letter": "B",
-      "author": "Ricardo Anido, Brasil"
-    },
-    "imagesQuant": 1
-  },
-  {
-    "name": "Uma pizza simétrica",
-    "description": "Bob tem uma mania de simetria. Tudo na sua vida deve ser simétrico: a sua casa, as suas roupas, o seu carro, até a sua comida. E a pizza não é exceção. Para ele comer uma pizza, todos os recheios, como tomate, azeitona, calabresa ou manjericão, devem estar dispostos com algum grau de simetria rotacional.\nEsta noite Bob pediu pizza. Como sempre, quando chegou, pediu ao entregador que demonstrasse que a pizza atendia às suas exigências de simetria rotacional. O motorista demonstrou então a simetria, conforme foi treinado para fazer, utilizando o seguinte procedimento: • tirar foto da pizza com o celular; • gire a pizza em R graus em torno de seu centro; • tire outra foto; • mostre ao Bob as duas imagens lado a lado, para que ele veja que a pizza parece idêntica em ambas.\nSatisfeito, Bob pagou a pizza e levou-a para a cozinha. Para testar seu novo cortador de pizza a laser, ele decidiu cortar a pizza em tantas fatias quanto possível. Claro que Bob quer cortar as fatias de forma que todas fiquem exatamente iguais, de acordo com outra de suas manias. Agora, dado o ângulo R da demonstração de simetria, Bob quer saber a quantidade máxima de fatias iguais em que ele pode cortar a pizza.\nEntrada\nA entrada consiste em uma única linha que contém um número racional R (0 < R < 360) indicando o ângulo de demonstração da simetria rotacional. Este número tem exatamente dois dígitos após a vírgula.\nSaída\nProduza uma única linha com um número inteiro representando a quantidade máxima de fatias iguais em que Bob pode cortar a pizza, com base nas informações fornecidas.",
-    "examples": [
-      [
-        "45.00",
-        "8"
-      ],
-      [
-        "180.00",
-        "2"
-      ],
-      [
-        "240.00",
-        "3"
-      ],
-      [
-        "35.00",
-        "72"
-      ],
-      [
-        "2.50",
-        "144"
-      ],
-      [
-        "11.34",
-        "2000"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2018",
-      "phase": 2,
-      "warmup": false,
-      "letter": "A",
-      "author": "Mario Silva, Brasil"
     },
     "imagesQuant": 0
   },
@@ -6774,7 +6350,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -6801,7 +6377,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "J",
@@ -6824,7 +6400,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "I",
@@ -6847,7 +6423,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -6866,7 +6442,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -6897,7 +6473,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2018",
+      "year": 2018,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -6924,7 +6500,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -6951,7 +6527,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -6974,7 +6550,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -6997,7 +6573,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -7020,7 +6596,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -7051,7 +6627,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -7082,7 +6658,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -7109,7 +6685,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -7144,7 +6720,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -7167,7 +6743,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -7206,7 +6782,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -7229,7 +6805,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -7252,121 +6828,13 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 1,
       "warmup": false,
       "letter": "M",
       "author": null
     },
     "imagesQuant": 1
-  },
-  {
-    "name": "Donuts não inteiros",
-    "description": "Neil é um advogado muito importante, com uma conta bancária muito importante. Como Neil é um advogado de sucesso com muitos clientes, ele deposita dinheiro em sua conta todas as manhãs.\nDepois de ir ao banco e depositar o dinheiro, Neil vai trabalhar. E aí reside o grande ponto fraco de Neil: uma loja de donuts. Veja bem, Neil é um viciado em donuts em recuperação e, embora não coma um donut há anos, ele não consegue deixar de se perguntar quantos donuts de US$ 1,00 ele poderia comprar com o dinheiro de sua conta se tivesse uma recaída.\nTer $ 5,00 em sua conta significa 5 donuts que Neil poderia ter, mas e quanto a $ 4,50? Bem, isso é mais de 4 donuts com certeza, mas definitivamente menos de 5. Como alguém compraria uma quantidade não inteira de donuts? Esse conceito confunde Neil, então toda vez que o saldo de sua conta não é um número inteiro, ele para para refletir sobre a natureza dos donuts não inteiros e acaba se atrasando para o trabalho.\nAgora Neil já se atrasou muitas vezes e está começando a temer que perderá o emprego. Ele quer saber quantas vezes se atrasará para o trabalho durante os próximos N dias, dado o saldo inicial de sua conta e a quantidade de dinheiro que depositará a cada dia. Por favor, responda isso para ele, ou então Neil começará a ponderar novamente.\nEntrada\nA primeira linha contém um inteiro N (1 ≤ N ≤ 1000), o número de dias em que Neil está interessado. Cada uma das próximas N + 1 linhas contém uma string que representa uma quantia em dinheiro. A primeira string é o saldo inicial da conta de Neil, enquanto as N strings seguintes são os valores que Neil depositará em sua conta nos diferentes dias. Cada string tem o formato $X.Y onde X é uma substring de comprimento 1 ou 2 indicando todo o dinheiro no valor $X.Y , enquanto Y é uma substring de comprimento exatamente 2 denotando os centavos no valor $X.Y . Tanto X quanto Y são compostos de dígitos, pelo menos um deles contém um dígito diferente de zero e X não possui zeros à esquerda.\nSaída\nProduza uma única linha com um número inteiro indicando quantas vezes Neil se atrasará para o trabalho durante os N dias seguintes.",
-    "examples": [
-      [
-        "1\n$1.57\n$3.14",
-        "1"
-      ],
-      [
-        "4\n$1.00\n$0.01\n$0.99\n$10.00\n$98.76",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2022",
-      "phase": 2,
-      "warmup": true,
-      "letter": "C",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Dinheiro investido",
-    "description": "Hoje em dia suas habilidades de programação são incríveis e você recebe regularmente muito dinheiro pelo seu trabalho.\nInfelizmente, suas habilidades financeiras não evoluíram da mesma forma. Assim, cada vez que você ganha algum dinheiro, basta investi-lo em um banco em um depósito a prazo de 30 dias com cláusula de renovação automática. Isso significa que 30 dias depois de você investir o dinheiro, ele será investido por mais 30 dias, repetidamente, até que você informe ao banco que deseja interromper a renovação e receber seu dinheiro de volta. Os depósitos a prazo não podem ser criados nem renovados durante finais de semana; se o período de 30 dias terminar num fim de semana, a renovação ocorre na segunda-feira imediatamente seguinte.\nComo o banco detém quase todo o seu dinheiro, você deve esperar até a renovação mais próxima sempre que quiser comprar algo que não seja comida diária. Hoje você decidiu comprar um novo smartphone para substituir seu aparelho de seis meses. Dadas as datas em que você criou cada depósito a prazo, você deve determinar o número mínimo de dias que deve esperar para receber algum dinheiro do banco.\nPor exemplo, suponha que hoje seja sábado e que você criou cinco depósitos a prazo: um depósito a prazo na segunda-feira passada, outro depósito a prazo na terça-feira passada, outro depósito a prazo na quarta-feira passada e dois depósitos a prazo ontem. O primeiro depósito (segunda-feira) seria renovado na quarta-feira, após 25 dias a partir de hoje. O segundo depósito a prazo (terça-feira) seria renovado na quinta-feira, após 26 dias a partir de hoje. O terceiro depósito a prazo (quarta-feira) seria renovado em uma sexta-feira após 27 dias a partir de hoje. Por fim, os dois últimos depósitos a prazo (sexta-feira) seriam renovados na segunda-feira após 30 dias de hoje, pois a renovação no domingo não é permitida. Assim, neste caso, você deve esperar 25 dias para retirar algum dinheiro do banco.\nEntrada\nA primeira linha contém uma string T e um inteiro N (1 ≤ N ≤ 105), indicando respectivamente o dia da semana de hoje e a quantidade de depósitos a prazo. A string é “Seg”, “Ter”, “Qua”, “Qui”, “Sex”, “Sábado” ou “Dom”, representando respectivamente que hoje é segunda, terça, quarta, quinta, sexta, sábado, ou domingo. A segunda linha contém N inteiros D1,D2,...,DN (0 ≤ Di ≤ 109 para i = 1,2,...,N), indicando o número de dias decorridos desde a criação de cada depósito a prazo. É garantido que os depósitos a prazo não foram criados nos finais de semana.\nSaída\nProduza uma única linha com um número inteiro indicando o número mínimo de dias que você deve esperar para receber algum dinheiro do banco.",
-    "examples": [
-      [
-        "Sat 5\n5 4 3 1 1",
-        "25"
-      ],
-      [
-        "Sat 5\n3 1 4 1 5",
-        "25"
-      ],
-      [
-        "Thu 1\n0",
-        "32"
-      ],
-      [
-        "Thu 1\n30",
-        "0"
-      ],
-      [
-        "Fri 1\n31",
-        "31"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2022",
-      "phase": 2,
-      "warmup": true,
-      "letter": "B",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Quase origami",
-    "description": "Você tem uma folha de papel retangular de altura 1 e deseja localizar qualquer ponto na altura H medida a partir da borda inferior da folha. Como você não conhece os teoremas de Haga, planeja repetir o passo seguinte. Suponha que você já localizou um ponto PL na altura L na borda esquerda da folha e um ponto PR na altura R na borda direita da folha. Em seguida, você desenha uma linha do canto inferior esquerdo da folha até PR e outra linha do canto inferior direito da folha até PL. Se o ponto de cruzamento estiver na altura H, então está tudo pronto. Caso contrário, você traça uma linha horizontal que passa pelo ponto de cruzamento e dá outro passo.\nComo exemplo, considere o caso H = 1/3. Durante a primeira etapa, a única possibilidade é escolher os cantos superiores da folha (ou seja, L = R = 1). Então você desenha as duas diagonais da folha, e o ponto de cruzamento fica na altura 1/2. Como H (cid:54)= 1/2, você desenha uma linha horizontal que passa pelo ponto de cruzamento. Esta linha fornece dois novos pontos com altura conhecida 1/2 nas bordas da folha, um na borda esquerda e outro na borda direita. Para o segundo passo você pode escolher entre usar os pontos originais conhecidos na altura 1 ou os pontos que você acabou de localizar na altura 1/2. Ou seja, você pode escolher L = 1 ou L = 1/2 e, claro, R = 1 ou R = 1/2. É fácil ver que se você escolher L = R = 1/2, então o ponto de cruzamento estaria na altura 1/4. Porém, se você escolher L = 1/2 e R = 1, então o ponto de cruzamento estaria na altura desejada H = 1/3. Por simetria, o mesmo ocorre se escolher L = 1 e R = 1/2.\nDada uma altura racional H, deve-se determinar uma sequência mais curta de alturas nas bordas da folha que permita localizar um ponto na altura H.\nComo mostra o exemplo acima, apenas um ponto na altura 1/2 pode ser localizado em uma única etapa e, portanto, uma possível sequência mais curta para H = 1/3 é S = (1,1,1/2,1). As duas primeiras alturas devem ser escolhidas durante a primeira etapa, e as duas alturas restantes devem ser escolhidas durante a segunda etapa.\nEntrada\nA entrada consiste em uma única linha que contém dois inteiros M e N (1 ≤ M < N ≤ 100) tais que H = M/N é uma fração irredutível.\nSaída\nProduza uma única linha com o caracter “*” (asterisco) se um ponto na altura H não puder ser localizado por meio do procedimento descrito. Caso contrário, produza uma sequência mais curta de alturas S1,S2,...,SK que permita localizar um ponto na altura H, se forem escolhidas na ordem em que aparecem na sequência. A altura Si deve ser escrita na i-ésima linha usando dois inteiros Ai e Bi tais que Si = Ai/Bi é uma fração irredutível (i = 1,2,...,K). É garantido que quando um ponto na altura H pode ser localizado, ele pode ser localizado de forma ideal escolhendo apenas alturas racionais.",
-    "examples": [
-      [
-        "1 3",
-        "1 1\n1 1\n1 2\n1 1"
-      ],
-      [
-        "1 3",
-        "1 1\n1 1\n1 1\n1 2"
-      ],
-      [
-        "3 4",
-        "*"
-      ],
-      [
-        "1 4",
-        "1 1\n1 1\n1 2\n1 2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2022",
-      "phase": 2,
-      "warmup": true,
-      "letter": "A",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Viagens Diárias",
-    "description": "Bella é uma garota simples com uma vida simples: acorda, vai trabalhar, trabalha, vai para casa, descansa, dorme e repete. Bella viaja de ônibus e chove muito em sua cidade, então às vezes ela precisa de um guarda-chuva. No entanto, a previsão do tempo local não é confiável, então Bella não pode ter certeza se vai chover ou não até pouco antes de começar a viagem. Para evitar ser pega desprevenida, Bella criou um sistema.\nEla possui um ou mais guarda-chuvas, guardando-os em casa ou no local de trabalho. Antes de qualquer viagem (de casa para o trabalho, ou vice-versa), Bella olha para fora para decidir se leva guarda-chuva naquela viagem: • se estiver chovendo, ela traz guarda-chuva; • caso contrário, se não houver guarda-chuvas no seu destino (seja no trabalho ou em casa), ela ainda traz um guarda-chuva, por precaução; • caso contrário, ela não traz guarda-chuva.\nA segunda regra acima tem como objetivo evitar uma situação em que Bella precise de um guarda-chuva, mas não tenha nenhum em sua localização atual (uma lembrança ruim sobre a qual ela falará para qualquer um que perguntar). Isso garante que Bella nunca pegará chuva e ficará doente.\nAgora precisamos que você simule o método de Bella por um determinado período. A simulação começa com Bella em casa. Todos os dias ela faz duas viagens de ônibus: de ida e volta do trabalho. Dado o número inicial de guarda-chuvas em sua casa e local de trabalho, e os boletins meteorológicos durante N dias consecutivos, descubra se Bella trouxe ou não um guarda-chuva em cada uma de suas 2N viagens de ônibus.\nEntrada\nA primeira linha contém três inteiros N (1 ≤ N ≤ 104), H (1 ≤ H ≤ 100) e W (0 ≤ W ≤ 100), indicando respectivamente a duração do período de simulação em dias, e os números iniciais de guarda-chuvas na casa e no local de trabalho de Bella. Para i = 1,2,...,N, a i-ésima das próximas N linhas contém dois caracteres representando se choveu em cada viagem do i-ésimo dia. O primeiro caractere refere-se à primeira viagem do dia (de casa para o trabalho), enquanto o segundo caractere refere-se à segunda viagem do dia (do trabalho para casa). Cada caractere é a letra maiúscula “Y” se choveu, e a letra maiúscula “N” caso contrário.\nSaída\nSaída de N linhas. Para i = 1,2,...,N, a i-ésima linha deve conter dois caracteres indicando se Bella trouxe guarda-chuva em cada viagem do i-ésimo dia. O primeiro caractere refere-se à primeira viagem enquanto o segundo caractere refere-se à segunda viagem. Cada caractere deve ter a letra “Y” maiúscula se Bella trouxe um guarda-chuva, e a letra “N” maiúscula caso contrário.",
-    "examples": [
-      [
-        "5 2 1\nY N\nN N\nY N\nN Y\nY Y",
-        "Y N\nN N\nY Y\nN Y\nY Y"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2022",
-      "phase": 2,
-      "warmup": false,
-      "letter": "D",
-      "author": null
-    },
-    "imagesQuant": 0
   },
   {
     "name": "Detector de Ondas Gravitacionais",
@@ -7383,7 +6851,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -7406,7 +6874,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -7433,7 +6901,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -7456,7 +6924,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -7479,7 +6947,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -7502,7 +6970,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -7525,7 +6993,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -7544,37 +7012,10 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "J",
-      "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Calzone italiano e canto de massas",
-    "description": "O restaurante italiano Calzone & Pasta Corner desenhou seu cardápio tendo seus pratos em uma grade bidimensional R×C, mantendo os pratos que combinam bem próximos uns dos outros. Para comer, você escolhe uma célula inicial e, em seguida, move-se repetidamente para cima, para baixo, para a esquerda ou para a direita para qualquer uma das quatro células adjacentes, pegando todos os pratos pelos quais você passa. É permitido entrar em células já visitadas, mas você não receberá o mesmo prato novamente.\nUm dia, Pierre, um cliente estrangeiro, apareceu com muita fome e com uma etiqueta muito rígida. Ele tem uma ordem bem específica em que os pratos devem ser consumidos. Por exemplo, um aperitivo, depois uma entrada, depois um prato principal, depois uma salada, etc. Então ele atribuiu um número inteiro distinto de 1 a R × C para cada prato na grade do menu, indicando a ordem em que comeria o todo cardápio. Agora ele quer escolher e comer os pratos seguindo seu pedido. Como as regras do restaurante podem impedi-lo de escolher todo o cardápio, ele pode pular algumas etapas do pedido. Você pode ajudá-lo a escolher uma refeição com tantos pratos quanto possível? Entrada\nA primeira linha contém dois inteiros R e C (1 ≤ R,C ≤ 100), indicando que a grade do menu possui R linhas e C colunas. As próximas R linhas contêm C inteiros cada, representando a grade do menu. Cada um desses números é um número inteiro distinto de 1 a R × C atribuído por Pierre ao prato correspondente na grade do menu.\nSaída\nProduza uma única linha com um número inteiro indicando a quantidade máxima de pratos que Pierre pode comer.",
-    "examples": [
-      [
-        "1 5\n5 3 2 1 4",
-        "5"
-      ],
-      [
-        "1 5\n1 5 4 3 2",
-        "4"
-      ],
-      [
-        "3 3\n4 1 3\n8 5 9\n7 2 6",
-        "6"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2022",
-      "phase": 2,
-      "warmup": false,
-      "letter": "I",
       "author": null
     },
     "imagesQuant": 0
@@ -7594,7 +7035,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -7621,7 +7062,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -7656,7 +7097,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2022",
+      "year": 2022,
       "phase": 2,
       "warmup": false,
       "letter": "M",
@@ -7683,7 +7124,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "D",
@@ -7710,7 +7151,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "G",
@@ -7745,7 +7186,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "K",
@@ -7768,7 +7209,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "N",
@@ -7791,7 +7232,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "F",
@@ -7830,7 +7271,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "C",
@@ -7857,7 +7298,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "B",
@@ -7880,7 +7321,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "A",
@@ -7907,7 +7348,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "E",
@@ -7926,7 +7367,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "J",
@@ -7965,7 +7406,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "I",
@@ -7992,7 +7433,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "H",
@@ -8019,7 +7460,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "L",
@@ -8042,92 +7483,11 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 1,
       "warmup": false,
       "letter": "M",
       "author": null
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Donuts não inteiros",
-    "description": "Neil é um advogado muito importante, com uma conta bancária muito importante. Como Neil é um advogado de sucesso com muitos clientes, ele deposita dinheiro em sua conta todas as manhãs.\nDepois de ir ao banco e depositar o dinheiro, Neil vai trabalhar. E aí reside o grande ponto fraco de Neil: uma loja de donuts. Veja bem, Neil é um viciado em donuts em recuperação e, embora não coma um donut há anos, ele não consegue deixar de se perguntar quantos donuts de US$ 1,00 ele poderia comprar com o dinheiro de sua conta se tivesse uma recaída.\nTer $ 5,00 em sua conta significa 5 donuts que Neil poderia ter, mas e quanto a $ 4,50? Bem, isso é mais de 4 donuts com certeza, mas definitivamente menos de 5. Como alguém compraria uma quantidade não inteira de donuts? Esse conceito confunde Neil, então toda vez que o saldo de sua conta não é um número inteiro, ele para para refletir sobre a natureza dos donuts não inteiros e acaba se atrasando para o trabalho.\nAgora Neil já se atrasou muitas vezes e está começando a temer que perderá o emprego. Ele quer saber quantas vezes se atrasará para o trabalho durante os próximos N dias, dado o saldo inicial de sua conta e a quantidade de dinheiro que depositará a cada dia. Por favor, responda isso para ele, ou então Neil começará a ponderar novamente.\nEntrada\nA primeira linha contém um inteiro N (1 ≤ N ≤ 1000), o número de dias em que Neil está interessado. Cada uma das próximas N + 1 linhas contém uma string que representa uma quantia em dinheiro. A primeira string é o saldo inicial da conta de Neil, enquanto as N strings seguintes são os valores que Neil depositará em sua conta nos diferentes dias. Cada string tem o formato $X.Y onde X é uma substring de comprimento 1 ou 2 indicando todo o dinheiro no valor $X.Y , enquanto Y é uma substring de comprimento exatamente 2 denotando os centavos no valor $X.Y . Tanto X quanto Y são compostos de dígitos, pelo menos um deles contém um dígito diferente de zero e X não possui zeros à esquerda.\nSaída\nProduza uma única linha com um número inteiro indicando quantas vezes Neil se atrasará para o trabalho durante os N dias seguintes.",
-    "examples": [
-      [
-        "1\n$1.57\n$3.14",
-        "1"
-      ],
-      [
-        "4\n$1.00\n$0.01\n$0.99\n$10.00\n$98.76",
-        "2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2021",
-      "phase": 2,
-      "warmup": true,
-      "letter": "C",
-      "author": "Paulo Cezar Pereira Costa, Brasil"
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Cordilheiras",
-    "description": "Famosa pelas suas cadeias de montanhas, a Nlogónia atrai milhões de turistas todos os anos. O governo dispõe de um orçamento dedicado à manutenção contínua dos percursos pedestres espalhados por todo o país e a maioria deles está repleta de miradouros panorâmicos, acessíveis através de passadiços e escadas de madeira.\nAtualmente em viagem pela Nlogônia e com esperança de voltar para casa com muitas fotos de tirar o fôlego, Lola e seu marido querem visitar o maior número possível de mirantes. Eles planejam percorrer uma trilha diferente a cada dia e explorar seus mirantes. No entanto, para não ficarem exaustos no final do dia, se a passagem de um miradouro para outro necessitar de subir mais de X metros, basta encerrar o dia e regressar ao hotel para descansar um pouco. Felizmente, todas as trilhas para caminhadas na Nlogônia estão equipadas com teleféricos modernos, para que o casal possa começar a caminhar em qualquer ponto de vista que desejar.\nIniciada a caminhada o casal só se dirige ao pico da montanha.\nPara não perder um dia, Lola só quer caminhar por trilhas onde possa chegar a um número razoável de mirantes. Dadas as altitudes dos mirantes panorâmicos de um percurso pedestre, deve-se determinar o número máximo de mirantes que o casal pode visitar.\nEntrada\nA primeira linha contém dois inteiros N (1 ≤ N ≤ 1000) e X (0 ≤ X ≤ 8848), indicando respectivamente o número de mirantes panorâmicos na trilha e o número máximo de metros que Lola e seu marido estão dispostos a percorrer. subir de um ponto de vista para o outro. A segunda linha contém N inteiros A1,A2,...,AN (1 ≤ Ai ≤ 8848 para i = 1,2,...,N), onde Ai é a altitude (em metros) do i-ésimo ponto de vista . Os pontos de vista são dados na ordem em que aparecem na trilha e suas altitudes não são decrescentes, ou seja, Ai ≤ Ai+1 para i = 1,2,...,N − 1.\nSaída\nProduza uma única linha com um número inteiro indicando o número máximo de mirantes panorâmicos que podem ser visitados sem subir mais de X metros de um mirante a outro, e considerando que a jornada pode ser iniciada em qualquer mirante.",
-    "examples": [
-      [
-        "9 2\n3 14 15 92 653 5897 5897 5898 5900",
-        "4"
-      ],
-      [
-        "9 0\n3 14 15 92 653 5897 5897 5898 5900",
-        "2"
-      ],
-      [
-        "9 8848\n3 14 15 92 653 5897 5897 5898 5900",
-        "9"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2021",
-      "phase": 2,
-      "warmup": true,
-      "letter": "B",
-      "author": "Vinicius Santos, Brasil"
-    },
-    "imagesQuant": 0
-  },
-  {
-    "name": "Quase origami",
-    "description": "Você tem uma folha de papel retangular de altura 1 e deseja localizar qualquer ponto na altura H medida a partir da borda inferior da folha. Como você não conhece os teoremas de Haga, planeja repetir o passo seguinte. Suponha que você já localizou um ponto PL na altura L na borda esquerda da folha e um ponto PR na altura R na borda direita da folha. Em seguida, você desenha uma linha do canto inferior esquerdo da folha até PR e outra linha do canto inferior direito da folha até PL. Se o ponto de cruzamento estiver na altura H, então está tudo pronto. Caso contrário, você traça uma linha horizontal que passa pelo ponto de cruzamento e dá outro passo.\nComo exemplo, considere o caso H = 1/3. Durante a primeira etapa, a única possibilidade é escolher os cantos superiores da folha (ou seja, L = R = 1). Então você desenha as duas diagonais da folha, e o ponto de cruzamento fica na altura 1/2. Como H (cid:54)= 1/2, você desenha uma linha horizontal que passa pelo ponto de cruzamento. Esta linha fornece dois novos pontos com altura conhecida 1/2 nas bordas da folha, um na borda esquerda e outro na borda direita. Para o segundo passo você pode escolher entre usar os pontos originais conhecidos na altura 1 ou os pontos que você acabou de localizar na altura 1/2. Ou seja, você pode escolher L = 1 ou L = 1/2 e, claro, R = 1 ou R = 1/2. É fácil ver que se você escolher L = R = 1/2, então o ponto de cruzamento estaria na altura 1/4. Porém, se você escolher L = 1/2 e R = 1, então o ponto de cruzamento estaria na altura desejada H = 1/3. Por simetria, o mesmo ocorre se escolher L = 1 e R = 1/2.\nDada uma altura racional H, deve-se determinar uma sequência mais curta de alturas nas bordas da folha que permita localizar um ponto na altura H.\nComo mostra o exemplo acima, apenas um ponto na altura 1/2 pode ser localizado em uma única etapa e, portanto, uma possível sequência mais curta para H = 1/3 é S = (1,1,1/2,1). As duas primeiras alturas devem ser escolhidas durante a primeira etapa, e as duas alturas restantes devem ser escolhidas durante a segunda etapa.\nEntrada\nA entrada consiste em uma única linha que contém dois inteiros M e N (1 ≤ M < N ≤ 100) tais que H = M/N é uma fração irredutível.\nSaída\nProduza uma única linha com o caracter “*” (asterisco) se um ponto na altura H não puder ser localizado por meio do procedimento descrito. Caso contrário, produza uma sequência mais curta de alturas S1,S2,...,SK que permita localizar um ponto na altura H, se forem escolhidas na ordem em que aparecem na sequência. A altura Si deve ser escrita na i-ésima linha usando dois inteiros Ai e Bi tais que Si = Ai/Bi é uma fração irredutível (i = 1,2,...,K). É garantido que quando um ponto na altura H pode ser localizado, ele pode ser localizado de forma ideal escolhendo apenas alturas racionais.",
-    "examples": [
-      [
-        "1 3",
-        "1 1\n1 1\n1 2\n1 1"
-      ],
-      [
-        "1 3",
-        "1 1\n1 1\n1 1\n1 2"
-      ],
-      [
-        "3 4",
-        "*"
-      ],
-      [
-        "1 4",
-        "1 1\n1 1\n1 2\n1 2"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2021",
-      "phase": 2,
-      "warmup": true,
-      "letter": "A",
-      "author": "Alejandro Strejilevich de Loma, Argentina"
     },
     "imagesQuant": 0
   },
@@ -8146,7 +7506,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "D",
@@ -8165,7 +7525,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "G",
@@ -8196,7 +7556,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "K",
@@ -8219,7 +7579,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "F",
@@ -8258,7 +7618,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "C",
@@ -8281,7 +7641,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "B",
@@ -8312,7 +7672,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "A",
@@ -8335,7 +7695,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "E",
@@ -8358,48 +7718,13 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "J",
       "author": "Giovanna Kobus Conrado, Brasil"
     },
     "imagesQuant": 3
-  },
-  {
-    "name": "Dinheiro investido",
-    "description": "Hoje em dia suas habilidades de programação são incríveis e você recebe regularmente muito dinheiro pelo seu trabalho. Infelizmente, suas habilidades financeiras não evoluíram da mesma forma. Assim, cada vez que você ganha algum dinheiro, basta investi-lo em um banco em um depósito a prazo de 30 dias com cláusula de renovação automática. Isso significa que 30 dias depois de você investir o dinheiro, ele será investido por mais 30 dias, repetidamente, até que você informe ao banco que deseja interromper a renovação e receber seu dinheiro de volta. Os depósitos a prazo não podem ser criados nem renovados durante finais de semana; se o período de 30 dias terminar num fim de semana, a renovação ocorre na segunda-feira imediatamente seguinte.\nComo o banco detém quase todo o seu dinheiro, você deve esperar até a renovação mais próxima sempre que quiser comprar algo que não seja comida diária. Hoje você decidiu comprar um novo smartphone para substituir seu aparelho de seis meses. Dadas as datas em que você criou cada depósito a prazo, você deve determinar o número mínimo de dias que deve esperar para receber algum dinheiro do banco.\nPor exemplo, suponha que hoje seja sábado e que você criou cinco depósitos a prazo: um depósito a prazo na segunda-feira passada, outro depósito a prazo na terça-feira passada, outro depósito a prazo na quarta-feira passada e dois depósitos a prazo ontem. O primeiro depósito (segunda-feira) seria renovado na quarta-feira, após 25 dias a partir de hoje. O segundo depósito a prazo (terça-feira) seria renovado na quinta-feira, após 26 dias a partir de hoje. O terceiro depósito a prazo (quarta-feira) seria renovado em uma sexta-feira após 27 dias a partir de hoje. Por fim, os dois últimos depósitos a prazo (sexta-feira) seriam renovados na segunda-feira após 30 dias de hoje, pois a renovação no domingo não é permitida. Assim, neste caso, você deve esperar 25 dias para retirar algum dinheiro do banco.\nEntrada\nA primeira linha contém uma string T e um inteiro N (1 ≤ N ≤ 105), indicando respectivamente o dia da semana de hoje e a quantidade de depósitos a prazo. A string é “Seg”, “Ter”, “Qua”, “Qui”, “Sex”, “Sábado” ou “Dom”, representando respectivamente que hoje é segunda, terça, quarta, quinta, sexta, sábado , ou domingo. A segunda linha contém N inteiros D1,D2,...,DN (0 ≤ Di ≤ 109 para i = 1,2,...,N), indicando o número de dias decorridos desde a criação de cada depósito a prazo. É garantido que os depósitos a prazo não foram criados nos finais de semana.\nSaída\nProduza uma única linha com um número inteiro indicando o número mínimo de dias que você deve esperar para receber algum dinheiro do banco.",
-    "examples": [
-      [
-        "Sat 5\n5 4 3 1 1",
-        "25"
-      ],
-      [
-        "Sat 5\n3 1 4 1 5",
-        "25"
-      ],
-      [
-        "Thu 1\n0",
-        "32"
-      ],
-      [
-        "Thu 1\n30",
-        "0"
-      ],
-      [
-        "Fri 1\n31",
-        "31"
-      ]
-    ],
-    "source": {
-      "competition": "MP-SBC",
-      "year": "2021",
-      "phase": 2,
-      "warmup": false,
-      "letter": "I",
-      "author": "Alejandro Strejilevich de Loma, Argentina"
-    },
-    "imagesQuant": 0
   },
   {
     "name": "Hamilton - O Musical",
@@ -8412,7 +7737,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "H",
@@ -8439,7 +7764,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "L",
@@ -8470,7 +7795,7 @@
     ],
     "source": {
       "competition": "MP-SBC",
-      "year": "2021",
+      "year": 2021,
       "phase": 2,
       "warmup": false,
       "letter": "M",

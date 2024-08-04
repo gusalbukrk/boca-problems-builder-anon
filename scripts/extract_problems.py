@@ -7,6 +7,8 @@ from pypdf import PdfReader, PdfWriter
 from format_examples import format_examples
 import json
 from googletrans import Translator
+from collections import Counter
+from fuzzywuzzy import fuzz
 
 translator = Translator()
 
@@ -21,6 +23,11 @@ pdfsToIgnore = [
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase1/contest/B/B.pdf',
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/phase1/warmup/B/B.pdf',
   '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/C/C.pdf',
+
+  # there're 3 PDFS that contain the same problem, two of them have code solutions after the examples
+  # ignore them and keep the one without code solutions (i.e. 2020/phase1/warmup/A/A.pdf)
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2017/phase1/warmup/C/C.pdf',
+  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/warmup/A/A.pdf',
 ]
 
 # despite their description containing words like 'figure', 'figura', 'picture', ...
@@ -183,7 +190,7 @@ def extract_problem_from_pdf(pdfPath):
   year, phase, warmup, letter = pdfPath.split("/")[-5:-3] + [pdfPath.split("/")[-3] == 'warmup'] + [pdfPath.split("/")[-2]]
   source = {
     'competition': 'MP-SBC',
-    'year': year,
+    'year': int(year),
     'phase': 1 if phase == 'phase1' else 2,
     'warmup': warmup,
     'letter': letter,
@@ -354,6 +361,31 @@ def save_samples_json(pdfPath, abridged = True):
   with open(samplesFile, 'w') as f:
     json.dump(samples, f, ensure_ascii=False, indent=2)
 
+def remove_duplicate_problems(ps):
+  names = [p['name'] for p in ps]
+
+  for name, count in Counter(names).items():
+    if count > 1:
+      occurrencesIndexes = [index for index, value in enumerate(names) if value == name]
+      # print(name, count, occurrencesIndexes)
+
+      for index in occurrencesIndexes[1:]:
+        firstOccurrenceDescription = ps[occurrencesIndexes[0]]['description']
+        possibleDuplicatedDescription = ps[index]['description']
+
+        # there're 2 pairs of distinct problems that share the same name
+        # Enigma - 2017/phase2/contest/E/E.pdf, 2018/phase1/contest/E/E.pdf
+        # Baralho Embaralhado - 2023/phase1/contest/B/B.pdf, 2014/phase1/contest/B/B.pdf
+        similarity = fuzz.ratio(firstOccurrenceDescription, possibleDuplicatedDescription)
+        
+        if similarity > 90:
+          # print('deleting', index, ps[index]['name'])
+          ps[index] = None
+
+  ps = [p for p in ps if p is not None]
+
+  return ps
+
 pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
 
 ps = []
@@ -369,6 +401,8 @@ for path in pdf_files_paths:
   # save_samples_json(path)
 
   # break
+
+ps = remove_duplicate_problems(ps)
 
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
