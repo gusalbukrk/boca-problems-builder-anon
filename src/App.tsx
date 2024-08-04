@@ -3,10 +3,10 @@ import { useState } from 'react';
 import './App.css';
 import ContestSettings from './components/ContestSettings';
 import DataManagement from './components/DataManagement';
+import ExistingProblems from './components/ExistingProblems';
 import Instructions from './components/Instructions';
 import Menu from './components/Menu';
 import ProblemForm from './components/ProblemForm';
-import SelectExistingProblem from './components/SelectExistingProblem';
 
 function App() {
   const [selectedComponent, setSelectedComponent] = useState('instructions');
@@ -22,7 +22,7 @@ function App() {
           setSelectedComponent={setSelectedComponent}
           setSelectedProblemID={setSelectedProblemID}
         />
-        <main className="flex-grow-1 p-3">
+        <main className="p-3" style={{ width: '65%' }}>
           {selectedComponent === 'instructions' && <Instructions />}
 
           {selectedComponent === 'contestSettings' && <ContestSettings />}
@@ -53,7 +53,7 @@ function App() {
           )}
 
           {selectedComponent === 'select' && (
-            <SelectExistingProblem
+            <ExistingProblems
               setSelectedProblemID={(id) => {
                 setSelectedComponent('view');
                 setSelectedProblemID(id);

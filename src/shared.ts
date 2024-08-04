@@ -15,27 +15,28 @@ import {
 
 import db from './db';
 
+export interface Source {
+  competition: string;
+  year: number;
+  phase: number;
+  warmup: boolean;
+  letter: string;
+  author: string | null;
+}
+
 export interface ExistingProblem {
   name: string;
   description: string;
-  source: {
-    competition: string;
-    year: number;
-    phase: number;
-    warmup: boolean;
-    letter: string;
-    author: string | null;
-  };
-  imagesQuant?: number;
+  source: Source;
+  imagesQuant: number;
   examples: [string, string][];
 }
 
 export interface UserProblem {
   name: string;
   description: string;
-  source: {
-    author: string | null;
-  };
+  // only problems created from existing problem have these properties
+  source: { author: string | null } | Source;
   examples: [string, string][];
 
   id: string;
@@ -71,7 +72,18 @@ export const createProblem = async (
 
   await db.problems.add({
     id,
-    ...problem,
+    name: problem.name,
+    description: problem.description,
+    examples: problem.examples,
+
+    // problems created from existing problem will have all source properties
+    // while user-created problems will have only author
+    source: problem.source,
+
+    images:
+      'images' in problem
+        ? problem.images
+        : generateImagesUrlsArray(problem.imagesQuant, problem.source),
   } as UserProblem);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -234,7 +246,21 @@ const generateDocDefinitionCoverPageContent = async (problemsQuant: number) => {
   ];
 };
 
-const generateDocDefinitionProblemContent = (
+// convert image stored online to base64
+const convertImageInUrlToDataUrl = async (url: string) => {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      resolve(reader.result as string);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+};
+
+const generateDocDefinitionProblemContent = async (
   problem: ExistingProblem | UserProblem | Omit<UserProblem, 'id'>,
   index?: number,
 ) => {
@@ -247,17 +273,23 @@ const generateDocDefinitionProblemContent = (
       style: 'header',
       margin: [0, 0, 0, 18] as Margins,
     },
-    ...('images' in problem ? problem.images : []).map((image) => ({
-      image: image,
-      width: 250,
-      margin: [0, 0, 0, 18] as Margins,
-      alignment: 'center' as Alignment,
-      //
-      // couldn't make it work by storing image files in `src/assets/` or `public/`
-      // it may be that converting it to base64 (as it is being done right now) is the only way
-      // https://stackoverflow.com/a/68010094
-      // image: '../assets/problem-image.png',
-    })),
+    ...(await Promise.all(
+      ('images' in problem ? problem.images : []).map(async (image) => {
+        // couldn't make it work by storing image files in `src/assets/` or `public/`
+        // it may be that converting it to base64 (as it is being done right now) is the only way
+        // https://stackoverflow.com/a/68010094
+        // image: '../assets/problem-image.png',
+
+        return {
+          image: image.startsWith('https')
+            ? await convertImageInUrlToDataUrl(image)
+            : image,
+          width: 250,
+          margin: [0, 0, 0, 18] as Margins,
+          alignment: 'center' as Alignment,
+        };
+      }),
+    )),
     ...problem.description
       .split('\n')
       .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
@@ -317,7 +349,7 @@ export async function generateProblemPDF(
   const docDefinition = {
     ...(await docDefinitionGeneralSettings()),
 
-    content: generateDocDefinitionProblemContent(problem, index),
+    content: await generateDocDefinitionProblemContent(problem, index),
   };
 
   const pdf = pdfMake.createPdf(docDefinition, undefined, fonts);
@@ -340,13 +372,18 @@ export async function generateProblemsBookletPDF(problems: UserProblem[]) {
     content: [
       ...(await generateDocDefinitionCoverPageContent(problems.length)),
 
-      ...problems
-        .map((problem, index) => {
-          const content = generateDocDefinitionProblemContent(problem, index);
-          if (index !== 0) (content[0] as ContentText).pageBreak = 'before';
-          return content;
-        })
-        .flat(),
+      ...(
+        await Promise.all(
+          problems.map(async (problem, index) => {
+            const content = await generateDocDefinitionProblemContent(
+              problem,
+              index,
+            );
+            if (index !== 0) (content[0] as ContentText).pageBreak = 'before';
+            return content;
+          }),
+        )
+      ).flat(),
     ],
   };
 
@@ -448,4 +485,26 @@ export function getCurrentDateTime() {
   // return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`; // USA format
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   return `${day}-${month}-${year}-${hours}-${minutes}-${seconds}`;
+}
+
+const archiveRoot = 'https://archive.org/download/mp-sbc-archive/SBC.zip/';
+export function generateArchiveUrl(
+  source: { year: number; phase: number; warmup: boolean; letter: string },
+  filename: string,
+) {
+  // encoding replaces slash with `%2F`
+  const path = encodeURIComponent(
+    `${source.year.toString()}/phase${source.phase.toString()}/${source.warmup ? 'warmup' : 'contest'}/${source.letter}/${filename}`,
+  );
+  return archiveRoot + path;
+}
+
+// return example: `['https://archive.org/download/mp-sbc-archive/SBC.zip/2019/phase1/contest/A/1.png', ...]`
+export function generateImagesUrlsArray(
+  imagesQuant: number,
+  source: { year: number; phase: number; warmup: boolean; letter: string },
+) {
+  return Array.from({ length: imagesQuant }).map((_, i) =>
+    generateArchiveUrl(source, `${(i + 1).toString()}.png`),
+  );
 }

@@ -24,7 +24,7 @@ function Menu({
   setSelectedProblemID: (id: string) => void;
 }) {
   return (
-    <aside className="flex-shrink-0 p-4">
+    <aside className="p-4" style={{ width: '35%' }}>
       <p
         className="btn btn-link text-decoration-none ps-0 d-flex column-gap-3 align-items-center"
         style={{ fontSize: '1.1rem' }}
@@ -152,9 +152,9 @@ function Problems({
                 <span title={problem.name}>
                   {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                   <strong>{numberToLetter(index!)}</strong> –{' '}
-                  {problem.name.length <= 15
+                  {problem.name.length <= 12
                     ? problem.name
-                    : problem.name.slice(0, 15) + '...'}
+                    : problem.name.slice(0, 12) + '...'}
                 </span>
               </span>
               <span>

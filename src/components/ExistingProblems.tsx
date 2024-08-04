@@ -7,7 +7,7 @@ import { ExistingProblem, createProblem } from '../shared';
 // fix `Types of property 'examples' are incompatible. Type 'string[][]' is not comparable to type '[string, string][]'`
 const existingProblems = existingProblemsJson as unknown as ExistingProblem[];
 
-function SelectExistingProblem({
+function ExistingProblems({
   setSelectedProblemID,
 }: {
   setSelectedProblemID: (id: string) => void;
@@ -19,7 +19,7 @@ function SelectExistingProblem({
         <thead>
           <tr>
             <th>Name</th>
-            <th>Author</th>
+            <th>Source</th>
             <th></th>
             <th></th>
           </tr>
@@ -28,7 +28,20 @@ function SelectExistingProblem({
           {existingProblems.map((problem, i) => (
             <tr key={i}>
               <td>{problem.name}</td>
-              <td>{problem.source.author}</td>
+              {problem.source.competition === 'MP-SBC' ? (
+                <td>
+                  <span title="Maratona SBC de Programação">
+                    {problem.source.competition}
+                  </span>{' '}
+                  {problem.source.year} / phase {problem.source.phase} /{' '}
+                  {problem.source.warmup ? 'warmup / ' : ''}
+                  {problem.source.letter}
+                </td>
+              ) : (
+                <td>
+                  {problem.source.competition} {problem.source.year}
+                </td>
+              )}
               <td>
                 <button
                   className="btn btn-link"
@@ -58,4 +71,4 @@ function SelectExistingProblem({
   );
 }
 
-export default SelectExistingProblem;
+export default ExistingProblems;

@@ -407,7 +407,7 @@ ps = remove_duplicate_problems(ps)
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-with open('output.json', 'w') as f:
+with open('../src/assets/problems.json', 'w') as f:
   json.dump(ps, f, ensure_ascii=False, indent=2)
 
 # create a JSON file for each problem in the SBC directory

@@ -16,8 +16,11 @@ import db from '../db';
 import {
   UserProblem,
   ExistingProblem,
+  Source,
   createProblem,
   generateProblemPDF,
+  generateImagesUrlsArray,
+  generateArchiveUrl,
 } from '../shared';
 
 function ProblemForm({
@@ -32,6 +35,7 @@ function ProblemForm({
   const [description, setDescription] = useState<string>('');
   const [examples, setExamples] = useState<[string, string][]>([['', '']]);
   const [images, setImages] = useState([] as string[]);
+  const [source, setSource] = useState<Source | null>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const imagesInputRef = useRef<HTMLInputElement>(null);
 
@@ -39,12 +43,6 @@ function ProblemForm({
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     (async () => {
       if (selectedProblemID !== undefined) {
-        // const problem =
-        //   (await db.problems.get(selectedProblemID)) ??
-        //   (existingProblems.find(
-        //     (problem) => problem.name === selectedProblemID,
-        //   ) as UserProblem | undefined);
-
         const problem =
           (await db.problems.get(selectedProblemID)) ??
           (existingProblems.find(
@@ -57,7 +55,20 @@ function ProblemForm({
           setDescription(problem.description);
           setExamples(problem.examples);
 
-          if ('images' in problem) setImages(problem.images);
+          if ('images' in problem)
+            setImages(problem.images); // problem is of type UserProblem
+          else if (problem.imagesQuant !== 0) {
+            // problem is of type ExistingProblem
+            setImages(
+              generateImagesUrlsArray(problem.imagesQuant, problem.source),
+            );
+          }
+
+          // both existing problems and user problems created from existing problems have a source with multiple properties
+          // user problems created from scratch, only have the author property
+          if (Object.keys(problem.source).length > 1) {
+            setSource(problem.source as Source);
+          }
         }
       }
     })();
@@ -168,6 +179,12 @@ function ProblemForm({
         <div className="mb-4">
           <label htmlFor="images" className="form-label fw-medium d-block">
             Images
+            {
+              <span className="text-secondary ms-2">
+                {/* eslint-disable-next-line no-irregular-whitespace */}(
+                {` ${images.length.toString()} `})
+              </span>
+            }
           </label>
           {/* https://stackoverflow.com/a/17949302 */}
           {!readonly && (
@@ -209,18 +226,35 @@ function ProblemForm({
             disabled={readonly}
             // required
           />
-          <div className="d-flex column-gap-3 mt-3 align-items-center">
+          <div className="d-flex column-gap-3 mt-3 align-items-center overflow-x-auto pb-2">
             {images.length === 0 ? (
               <p>No images yet.</p>
             ) : (
               images.map((image, index) => {
-                return <img key={index} width="150" src={image} />;
+                return (
+                  <>
+                    <img key={index} src={image} style={{ height: '150px' }} />
+                    {index !== images.length - 1 && (
+                      <div
+                        className="bg-dark-subtle align-self-stretch"
+                        style={{
+                          // width: '2px', // not working
+                          border: '2px solid lightgray',
+                        }}
+                      ></div>
+                    )}
+                  </>
+                );
               })
             )}
           </div>
         </div>
         <label htmlFor="example-input-1" className="form-label mb-3 fw-medium">
           Examples
+          <span className="text-secondary ms-2">
+            {/* eslint-disable-next-line no-irregular-whitespace */}(
+            {` ${examples.length.toString()} `})
+          </span>
         </label>
         <div className="mb-4">
           {examples.map(([input, output], index) => (
@@ -297,7 +331,7 @@ function ProblemForm({
             }}
           >
             <FontAwesomeIcon icon={faFilePdf} className="me-2" />
-            View PDF
+            Generate PDF
           </button>
         ) : (
           <>
@@ -322,6 +356,17 @@ function ProblemForm({
               {selectedProblemID === undefined ? 'Create' : 'Update'}
             </button>
           </>
+        )}
+        {source !== null && (
+          <a
+            className="btn btn-primary fw-medium ms-3"
+            href={generateArchiveUrl(source, `${source.letter}.pdf`)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faFilePdf} className="me-2" />
+            View original PDF
+          </a>
         )}
       </form>
     </>
