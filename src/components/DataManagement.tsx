@@ -41,10 +41,7 @@ function DataManagement() {
           For later editing or continuing on another computer
         </p>
         <div className="ps-4">
-          <label
-            htmlFor="upload"
-            className="btn btn-link text-decoration-none fw-medium"
-          >
+          <label htmlFor="upload" className="btn btn-link fw-medium">
             <FontAwesomeIcon
               icon={faFileArrowUp}
               className="me-3"
@@ -69,7 +66,7 @@ function DataManagement() {
           />
           <div>
             <button
-              className="btn btn-link text-decoration-none fw-medium"
+              className="btn btn-link fw-medium"
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={async () => {
                 const blob = await db.export();
@@ -95,7 +92,7 @@ function DataManagement() {
         <div className="ps-4">
           <p className="mb-1">
             <button
-              className="btn btn-link text-decoration-none fw-medium"
+              className="btn btn-link fw-medium"
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={async () => {
                 await generateAllProblemsZip(orderedProblems);
@@ -115,7 +112,7 @@ function DataManagement() {
             {orderedProblems.map((problem, index) => (
               <li key={problem.id}>
                 <button
-                  className="btn btn-link text-decoration-none fw-medium"
+                  className="btn btn-link fw-medium"
                   // eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={async () => {
                     await generateProblemZip(problem, index, true);
@@ -129,7 +126,7 @@ function DataManagement() {
         </div>
       </div>
       <button
-        className="btn btn-link text-decoration-none fw-medium"
+        className="btn btn-link fw-medium"
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={async () => {
           await db.delete();

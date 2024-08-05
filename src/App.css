@@ -4,6 +4,10 @@ body {
   padding: 2rem;
 }
 
+a, .btn {
+  text-decoration: none;
+}
+
 aside {
   background-color: hsl(0, 0%, 95%);
 }

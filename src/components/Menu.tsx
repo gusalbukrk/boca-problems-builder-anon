@@ -26,7 +26,7 @@ function Menu({
   return (
     <aside className="p-4" style={{ width: '35%' }}>
       <p
-        className="btn btn-link text-decoration-none ps-0 d-flex column-gap-3 align-items-center"
+        className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
         style={{ fontSize: '1.1rem' }}
         onClick={() => {
           setSelectedComponent('instructions');
@@ -44,7 +44,7 @@ function Menu({
       <h3 className="h6 fw-bold">Menu</h3>
       <div className="ps-4">
         <button
-          className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
             setSelectedComponent('contestSettings');
@@ -54,7 +54,7 @@ function Menu({
           Contest settings
         </button>
         <button
-          className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
             setSelectedComponent('create');
@@ -64,7 +64,7 @@ function Menu({
           Create new problem
         </button>
         <button
-          className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
             setSelectedComponent('select');
@@ -74,7 +74,7 @@ function Menu({
           Select existing problem
         </button>
         <button
-          className="btn btn-link text-decoration-none d-flex column-gap-3 align-items-center ps-0"
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
             setSelectedComponent('dataManagement');
