@@ -117,7 +117,7 @@ def extract_problem_from_pdf(pdfPath):
         raise e
 
   # REMOVE HYPHENATION
-  description = description.replace('-\n', '\n')
+  description = description.replace('-\n+', '')
 
   # FIX DIACRITICS (tilde, circumflex, ç, etc.)
   # must be done before extract title, because it may contain punctuation
@@ -147,7 +147,7 @@ def extract_problem_from_pdf(pdfPath):
   for pattern, replacement in patterns:
     description = description.replace(pattern, replacement)
 
-  # EXTRACT PROBLEM NAME
+  # EXTRACT PROBLEM NAME AND AUTHOR
   firstLine = re.match('^.*\n', description).group(0).strip()
   description = re.sub('^.*\n', '', description)
   if re.search('–', firstLine):
@@ -407,7 +407,7 @@ ps = remove_duplicate_problems(ps)
 # when serializing JSON, `json.dumps()` use by default  Unicode escape sequences (e.g. \u00f3 for "ó")
 # for characters outside the ASCII range; `ensure_ascii=False` prevent such behavior
 # which is opportune because the size of the JSON file will be reduced without the escape sequences
-with open('../src/assets/problems.json', 'w') as f:
+with open('../src/assets/MP-SBC_problems.json', 'w') as f:
   json.dump(ps, f, ensure_ascii=False, indent=2)
 
 # create a JSON file for each problem in the SBC directory
