@@ -15,14 +15,25 @@ import {
 
 import db from './db';
 
-export interface Source {
-  competition: string;
+interface ObiSource {
+  competition: 'OBI';
+  year: number;
+  phase: number;
+  author: string | null;
+  level: number;
+  codename: string;
+}
+
+export interface MpSbcSource {
+  competition: 'MP-SBC';
   year: number;
   phase: number;
   warmup: boolean;
   letter: string;
   author: string | null;
 }
+
+export type Source = ObiSource | MpSbcSource;
 
 export interface ExistingProblem {
   name: string;
@@ -35,7 +46,7 @@ export interface ExistingProblem {
 export interface UserProblem {
   name: string;
   description: string;
-  // only problems created from existing problem have these properties
+  // only problems created from existing problem have source with multiple properties (otherwise, only author)
   source: { author: string | null } | Source;
   examples: [string, string][];
 
@@ -294,7 +305,13 @@ const generateDocDefinitionProblemContent = async (
       .split('\n')
       .map((p) => ({ text: p, margin: [0, 0, 0, 12] as Margins }))
       .map((obj) =>
-        ['Entrada', 'Saída', 'Restrições', 'Exemplos'].includes(obj.text)
+        [
+          'Entrada',
+          'Saída',
+          'Restrições',
+          'Informações sobre a pontuação',
+          'Exemplos',
+        ].includes(obj.text)
           ? { ...obj, style: 'subheader' }
           : obj,
       ),
@@ -487,24 +504,30 @@ export function getCurrentDateTime() {
   return `${day}-${month}-${year}-${hours}-${minutes}-${seconds}`;
 }
 
-const archiveRoot = 'https://archive.org/download/mp-sbc-archive/SBC.zip/';
-export function generateArchiveUrl(
-  source: { year: number; phase: number; warmup: boolean; letter: string },
-  filename: string,
-) {
+// const archiveRoot = 'https://archive.org/download/mp-sbc-archive/SBC.zip/';
+const mpArchiveRoot =
+  'https://archive.org/download/programming-marathon/Programming%20Marathon.zip/';
+const obiArchiveRoot = 'https://archive.org/download/obi_archive/OBI.zip/';
+export function generateArchiveUrl(source: Source, filename: string) {
   // encoding replaces slash with `%2F`
   const path = encodeURIComponent(
-    `${source.year.toString()}/phase${source.phase.toString()}/${source.warmup ? 'warmup' : 'contest'}/${source.letter}/${filename}`,
+    source.competition === 'MP-SBC'
+      ? `${source.year.toString()}/phase${source.phase.toString()}/${source.warmup ? 'warmup' : 'contest'}/${source.letter}/${filename}`
+      : `${source.year.toString()}/${filename}`,
   );
-  return archiveRoot + path;
+  return (
+    (source.competition === 'MP-SBC' ? mpArchiveRoot : obiArchiveRoot) + path
+  );
 }
 
 // return example: `['https://archive.org/download/mp-sbc-archive/SBC.zip/2019/phase1/contest/A/1.png', ...]`
-export function generateImagesUrlsArray(
-  imagesQuant: number,
-  source: { year: number; phase: number; warmup: boolean; letter: string },
-) {
+export function generateImagesUrlsArray(imagesQuant: number, source: Source) {
   return Array.from({ length: imagesQuant }).map((_, i) =>
-    generateArchiveUrl(source, `${(i + 1).toString()}.png`),
+    generateArchiveUrl(
+      source,
+      source.competition === 'MP-SBC'
+        ? `${(i + 1).toString()}.png`
+        : `f${source.phase.toString()}p${source.level.toString()}_${source.codename}_${(i + 1).toString()}.png`,
+    ),
   );
 }

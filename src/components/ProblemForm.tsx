@@ -360,7 +360,12 @@ function ProblemForm({
         {source !== null && (
           <a
             className="btn btn-primary fw-medium ms-3"
-            href={generateArchiveUrl(source, `${source.letter}.pdf`)}
+            href={generateArchiveUrl(
+              source,
+              source.competition === 'MP-SBC'
+                ? `${source.letter}.pdf`
+                : `f${source.phase.toString()}p${source.level.toString()}_${source.codename}.pdf`,
+            )}
             target="_blank"
             rel="noreferrer"
           >

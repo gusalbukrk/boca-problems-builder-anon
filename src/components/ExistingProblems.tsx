@@ -2,7 +2,7 @@ import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import existingProblemsJson from '../assets/problems.json';
-import { ExistingProblem, createProblem } from '../shared';
+import { ExistingProblem, Source, createProblem } from '../shared';
 
 // fix `Types of property 'examples' are incompatible. Type 'string[][]' is not comparable to type '[string, string][]'`
 const existingProblems = existingProblemsJson as unknown as ExistingProblem[];
@@ -14,7 +14,16 @@ function ExistingProblems({
 }) {
   return (
     <>
-      <h2 className="h4 mb-4">Select existing problem</h2>
+      <div className="mb-4 d-flex align-items-center column-gap-3">
+        <h2 className="mb-0 h4">Select existing problem</h2>
+        <span
+          className="text-secondary fw-bold"
+          title="Total number of existing problems"
+        >
+          {/* eslint-disable-next-line no-irregular-whitespace */}(
+          {` ${existingProblems.length.toString()} `})
+        </span>
+      </div>
       <table className="table table-hover align-middle">
         <thead>
           <tr>
@@ -28,20 +37,7 @@ function ExistingProblems({
           {existingProblems.map((problem, i) => (
             <tr key={i}>
               <td>{problem.name}</td>
-              {problem.source.competition === 'MP-SBC' ? (
-                <td>
-                  <span title="Maratona SBC de Programação">
-                    {problem.source.competition}
-                  </span>{' '}
-                  {problem.source.year} / phase {problem.source.phase} /{' '}
-                  {problem.source.warmup ? 'warmup / ' : ''}
-                  {problem.source.letter}
-                </td>
-              ) : (
-                <td>
-                  {problem.source.competition} {problem.source.year}
-                </td>
-              )}
+              <SourceTd problemSource={problem.source} />
               <td>
                 <button
                   className="btn btn-link"
@@ -68,6 +64,32 @@ function ExistingProblems({
         </tbody>
       </table>
     </>
+  );
+}
+
+function SourceTd({ problemSource }: { problemSource: Source }) {
+  const obiLevelName = ['junior', '1', '2', 'senior'];
+  return (
+    <td className="source-td">
+      {problemSource.competition === 'MP-SBC' ? (
+        <>
+          <span title="Maratona SBC de Programação">
+            {problemSource.competition}
+          </span>
+          <span>{problemSource.year.toString()}</span>
+          <span>phase {problemSource.phase.toString()}</span>
+          {problemSource.warmup && <span>warmup</span>}
+          {/* <span title="Problem letter">{problemSource.letter}</span> */}
+        </>
+      ) : (
+        <>
+          <span>{problemSource.competition}</span>
+          <span>{problemSource.year.toString()}</span>
+          <span>phase {problemSource.phase.toString()}</span>
+          <span>level {obiLevelName[problemSource.level]}</span>
+        </>
+      )}
+    </td>
   );
 }
 

@@ -1,7 +1,7 @@
 body {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 a, .btn {
@@ -18,4 +18,11 @@ aside {
 
 .list-separators li:not(:last-of-type)::after {
   content: "・";
+}
+
+.source-td>span:not(:last-of-type)::after {
+  content: "/";
+  font-weight: 600;
+  color: #6c757d;
+  margin: 0 .3rem;
 }
