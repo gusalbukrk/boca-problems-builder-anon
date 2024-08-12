@@ -6,10 +6,6 @@ from pypdf import PdfReader, PdfWriter
 obi_dir = '/home/gusalbukrk/Dev/crawled/OBI_organized'
 years = sorted(os.listdir(obi_dir))
 
-# to match the contests PDFs (i.e. PDFs containing multiple problems)
-# the optional '-b' before the extension is to match four PDFs from 2020 (e.g. f1p1-b.pdf); in that year, phase 1 happened twice
-contest_pdf_regex = 'f[0-9]p[0-9js](-b)?\\.pdf$'
-
 # return an array of dictionaries, each containing the name of a problem and the starting and ending page numbers
 def find_pdf_problems(pdf_path):
   # repair is needed otherwise error when opening /home/gusalbukrk/Dev/crawled/OBI_organized/1999/f2p2.pdf
@@ -72,7 +68,11 @@ def extract_pages(pdf_path, starting_page, ending_page, output_path):
 for year in years:
   print(year)
   year_dir_path = os.path.join(obi_dir, year)
-  pdf_filenames = [ file for file in os.listdir(year_dir_path) if re.search(contest_pdf_regex, file) ]
+
+  # match the contests PDFs (i.e. PDFs containing multiple problems)
+  # the optional '-b' before the extension is to match four PDFs from 2020 (e.g. f1p1-b.pdf); in that year, phase 1 happened twice
+  contest_pdf_regex = '^f[123]p[0123](-b)?\\.pdf$'
+  pdf_filenames = sorted([ file for file in os.listdir(year_dir_path) if re.search(contest_pdf_regex, file) ])
 
   for pdf_filename in pdf_filenames:
     pdf_path = os.path.join(year_dir_path, pdf_filename)
@@ -84,6 +84,14 @@ for year in years:
       starting_page = problem['starting_page']
       ending_page = problem['ending_page']
 
-      output_path = os.path.join(year_dir_path, f"{pdf_filename.replace('.pdf', '')}_{problem_name}.pdf")
-      extract_pages(pdf_path, starting_page, ending_page, output_path)
+      problem_pdf_exists = any(re.search(f"^f[123]p[0123](-b)?_{problem_name}\\.pdf", file) for file in os.listdir(year_dir_path))
+
+      # a problem is often used in multiple levels of the same phase
+      # code below make sure only one individual problem PDF is created for each problem
+      # problem will be saved as a problem of the lowest level it appears in
+      # e.g. "ogro" problem from 2024 phase 1 in common of all 4 levels, but it will be saved as f1p1_ogro.pdf
+      if not problem_pdf_exists:
+        output_path = os.path.join(year_dir_path, f"{pdf_filename.replace('.pdf', '')}_{problem_name}.pdf")
+        extract_pages(pdf_path, starting_page, ending_page, output_path)
+
   print()
