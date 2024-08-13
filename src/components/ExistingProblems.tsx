@@ -14,11 +14,11 @@ function ExistingProblems({
 }) {
   return (
     <>
-      <div className="mb-4 d-flex align-items-center column-gap-3">
-        <h2 className="mb-0 h4">Select existing problem</h2>
+      <div className="mb-4dot5 d-flex align-items-center column-gap-3">
+        <h2 className="mb-0 h4">Selecionar problema existente</h2>
         <span
           className="text-secondary fw-bold"
-          title="Total number of existing problems"
+          title="Número total de problemas existentes"
         >
           {/* eslint-disable-next-line no-irregular-whitespace */}(
           {` ${existingProblems.length.toString()} `})
@@ -27,8 +27,8 @@ function ExistingProblems({
       <table className="table table-hover align-middle">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Source</th>
+            <th>Nome</th>
+            <th>Fonte</th>
             <th></th>
             <th></th>
           </tr>
@@ -44,6 +44,7 @@ function ExistingProblems({
                   onClick={() => {
                     setSelectedProblemID(problem.name); // using existing problem's name as ID
                   }}
+                  title="Visualizar problema"
                 >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
@@ -55,6 +56,7 @@ function ExistingProblems({
                   onClick={async () => {
                     await createProblem(problem);
                   }}
+                  title="Selecionar problema"
                 >
                   <FontAwesomeIcon icon={faPlus} />
                 </button>
@@ -68,7 +70,7 @@ function ExistingProblems({
 }
 
 function SourceTd({ problemSource }: { problemSource: Source }) {
-  const obiLevelName = ['junior', '1', '2', 'senior'];
+  const obiLevelName = ['júnior', '1', '2', 'sênior'];
   return (
     <td className="source-td">
       {problemSource.competition === 'MP-SBC' ? (
@@ -77,16 +79,18 @@ function SourceTd({ problemSource }: { problemSource: Source }) {
             {problemSource.competition}
           </span>
           <span>{problemSource.year.toString()}</span>
-          <span>phase {problemSource.phase.toString()}</span>
+          <span>fase {problemSource.phase.toString()}</span>
           {problemSource.warmup && <span>warmup</span>}
-          {/* <span title="Problem letter">{problemSource.letter}</span> */}
+          {/* <span title="Letra do problema">{problemSource.letter}</span> */}
         </>
       ) : (
         <>
-          <span>{problemSource.competition}</span>
+          <span title="Olimpíada Brasileira de Informática">
+            {problemSource.competition}
+          </span>
           <span>{problemSource.year.toString()}</span>
-          <span>phase {problemSource.phase.toString()}</span>
-          <span>level {obiLevelName[problemSource.level]}</span>
+          <span>fase {problemSource.phase.toString()}</span>
+          <span>nível {obiLevelName[problemSource.level]}</span>
         </>
       )}
     </td>

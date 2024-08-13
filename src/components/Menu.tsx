@@ -8,6 +8,7 @@ import {
   faMagnifyingGlass,
   faSquarePlus,
   faGear,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -33,7 +34,7 @@ function Menu({
         }}
       >
         <FontAwesomeIcon icon={faTriangleExclamation} />
-        Instructions
+        Instruções
       </p>
       <hr className="my-4" />
       <Problems
@@ -44,15 +45,22 @@ function Menu({
       <h3 className="h6 fw-bold">Menu</h3>
       <div className="ps-4">
         <button
-          className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
+          className="btn btn-link d-flex column-gap-3 align-items-center ps-0 mb-2"
           style={{ fontSize: '1.1rem' }}
           onClick={() => {
             setSelectedComponent('contestSettings');
           }}
         >
           <FontAwesomeIcon icon={faGear} />
-          Contest settings
+          Configurar competição
         </button>
+        <p
+          className="m-0 d-flex column-gap-3 align-items-center mb-2"
+          style={{ fontSize: '1.1rem' }}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+          Adicionar problema na competição
+        </p>
         <button
           className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
           style={{ fontSize: '1.1rem' }}
@@ -60,8 +68,9 @@ function Menu({
             setSelectedComponent('create');
           }}
         >
+          <span className="text-dark fw-bold text-secondary">└─</span>
           <FontAwesomeIcon icon={faSquarePlus} />
-          Create new problem
+          Criar novo problema
         </button>
         <button
           className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
@@ -70,8 +79,9 @@ function Menu({
             setSelectedComponent('select');
           }}
         >
+          <span className="text-dark fw-bold text-secondary">└─</span>
           <FontAwesomeIcon icon={faClone} />
-          Select existing problem
+          Selecionar problema existente
         </button>
         <button
           className="btn btn-link d-flex column-gap-3 align-items-center ps-0"
@@ -81,7 +91,7 @@ function Menu({
           }}
         >
           <FontAwesomeIcon icon={faDownload} />
-          Data management
+          Gerenciamento de dados
         </button>
       </div>
     </aside>
@@ -114,9 +124,9 @@ function Problems({
 
   return (
     <>
-      <h3 className="h6 fw-bold">Problems</h3>
+      <h3 className="h6 fw-bold">Problemas da competição</h3>
       {orderedProblems.length === 0 ? (
-        <p className="mt-3">No problems yet.</p>
+        <p className="mt-3">Nenhum problema foi adicionado.</p>
       ) : (
         <List
           values={orderedProblems}
@@ -158,7 +168,7 @@ function Problems({
                 </span>
               </span>
               <span>
-                <button className="btn btn-link">
+                <button className="btn btn-link" title="Visualizar problema">
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
                     onClick={() => {
@@ -167,7 +177,7 @@ function Problems({
                     }}
                   />
                 </button>
-                <button className="btn btn-link">
+                <button className="btn btn-link" title="Editar problema">
                   <FontAwesomeIcon
                     icon={faPenToSquare}
                     onClick={() => {
@@ -176,7 +186,7 @@ function Problems({
                     }}
                   />
                 </button>
-                <button className="btn btn-link">
+                <button className="btn btn-link" title="Deletar problema">
                   <FontAwesomeIcon
                     icon={faTrashCan}
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises

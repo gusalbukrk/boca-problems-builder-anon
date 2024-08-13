@@ -34,11 +34,11 @@ function DataManagement() {
 
   return (
     <>
-      <h2 className="h4 mb-4dot5">Data management</h2>
+      <h2 className="h4 mb-4dot5">Gerenciamento de dados</h2>
       <div className="mb-4dot5">
-        <h4 className="h5">Backup in JSON format</h4>
+        <h4 className="h5">Backup no formato JSON</h4>
         <p className="mb-2 text-secondary fw-medium">
-          For later editing or continuing on another computer
+          Para salvar cópia permanente ou continuar em outro computador
         </p>
         <div className="ps-4">
           <label htmlFor="upload" className="btn btn-link fw-medium">
@@ -47,7 +47,7 @@ function DataManagement() {
               className="me-3"
               style={{ fontSize: '1.25rem' }}
             />
-            Upload
+            Importar
           </label>
           <input
             id="upload"
@@ -79,15 +79,15 @@ function DataManagement() {
                 className="me-3"
                 style={{ fontSize: '1.25rem' }}
               />
-              Download
+              Exportar
             </button>
           </div>
         </div>
       </div>
       <div className="mb-4 dot5">
-        <h4 className="h5">Export as BOCA-compatible ZIP files</h4>
+        <h4 className="h5">Gerar os pacotes de problemas</h4>
         <p className="mb-2 text-secondary fw-medium">
-          Problems packages ready to be used in programming competitions
+          Pacotes de problemas prontos para serem usados no BOCA
         </p>
         <div className="ps-4">
           <p className="mb-1">
@@ -104,9 +104,9 @@ function DataManagement() {
                 className="me-3"
                 style={{ fontSize: '1.25rem' }}
               />
-              Download All
+              Baixar todos
             </button>
-            or download each problem individually
+            ou baixar cada problema individualmente
           </p>
           <ul className="ps-0" style={{ listStyle: 'none' }}>
             {orderedProblems.map((problem, index) => (
@@ -138,7 +138,7 @@ function DataManagement() {
           className="me-3"
           style={{ fontSize: '1.25rem' }}
         />
-        Erase all data
+        Deletar todos os dados
       </button>
     </>
   );

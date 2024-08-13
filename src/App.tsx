@@ -1,3 +1,5 @@
+import { faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
 import './App.css';
@@ -16,7 +18,12 @@ function App() {
 
   return (
     <>
-      <h1 className="h2 mb-4 fw-semibold">BOCA Problems Archive</h1>
+      <h1 className="h2 mb-4dot5 fw-semibold">
+        <span className="text-primary me-3">
+          <FontAwesomeIcon icon={faPuzzlePiece} />
+        </span>
+        BOCA Problems Archive
+      </h1>
       <div id="wrapper" className="d-flex" style={{ gap: '1.5rem' }}>
         <Menu
           setSelectedComponent={setSelectedComponent}

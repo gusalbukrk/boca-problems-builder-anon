@@ -5,7 +5,6 @@ import {
   faImages,
   faPenToSquare,
   faFilePdf,
-  // faSquarePlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
@@ -115,21 +114,21 @@ function ProblemForm({
 
   return (
     <>
-      <h2 className="h4 mb-4">
+      <h2 className="h4 mb-4dot5">
         {selectedProblemID === undefined
-          ? 'Create new problem'
+          ? 'Criar novo problema'
           : readonly
-            ? 'View problem'
-            : 'Update problem'}
+            ? 'Visualizar problema'
+            : 'Editar problema'}
       </h2>
       <form
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleClick}
         className="container mt-4"
       >
-        <div className="mb-4">
+        <div className="mb-4dot5">
           <label htmlFor="name" className="form-label fw-medium">
-            Name
+            Nome
           </label>
           <input
             id="name"
@@ -141,12 +140,12 @@ function ProblemForm({
               setName(e.target.value);
             }}
             readOnly={readonly}
-            // required
+            required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4dot5">
           <label htmlFor="author" className="form-label fw-medium">
-            Author
+            Autor
           </label>
           <input
             id="author"
@@ -157,28 +156,27 @@ function ProblemForm({
               setAuthor(e.target.value);
             }}
             readOnly={readonly}
-            // required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4dot5">
           <label htmlFor="description" className="form-label fw-medium">
-            Description
+            Descrição
           </label>
           <textarea
             id="description"
-            rows={5}
+            rows={10}
             className="form-control"
             value={description}
             onChange={(e) => {
               setDescription(e.target.value);
             }}
             readOnly={readonly}
-            // required
+            required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4dot5">
           <label htmlFor="images" className="form-label fw-medium d-block">
-            Images
+            Imagens
             {
               <span className="text-secondary ms-2">
                 {/* eslint-disable-next-line no-irregular-whitespace */}(
@@ -188,9 +186,12 @@ function ProblemForm({
           </label>
           {/* https://stackoverflow.com/a/17949302 */}
           {!readonly && (
-            <label htmlFor="images" className="btn btn-outline-primary btn-sm">
+            <label
+              htmlFor="images"
+              className="btn btn-outline-primary btn-sm mt-2"
+            >
               <FontAwesomeIcon icon={faImages} className="me-2" />
-              Choose images
+              Escolher imagens
             </label>
           )}
           <input
@@ -224,11 +225,10 @@ function ProblemForm({
             multiple
             hidden
             disabled={readonly}
-            // required
           />
           <div className="d-flex column-gap-3 mt-3 align-items-center overflow-x-auto pb-2">
             {images.length === 0 ? (
-              <p>No images yet.</p>
+              <p>Nenhuma imagem adicionada.</p>
             ) : (
               images.map((image, index) => {
                 return (
@@ -249,67 +249,84 @@ function ProblemForm({
             )}
           </div>
         </div>
-        <label htmlFor="example-input-1" className="form-label mb-3 fw-medium">
-          Examples
-          <span className="text-secondary ms-2">
-            {/* eslint-disable-next-line no-irregular-whitespace */}(
-            {` ${examples.length.toString()} `})
-          </span>
-        </label>
-        <div className="mb-4">
-          {examples.map(([input, output], index) => (
-            <div key={index} className="mb-3 row">
-              <p className="col-1 mb-0 text-secondary fw-bold mt-1">
-                {index + 1}
-              </p>
-              <div className="col">
-                <TextareaAutosize
-                  id={index === 0 ? 'example-input-1' : undefined}
-                  className="form-control"
-                  style={{ resize: 'none' }}
-                  value={input}
-                  onChange={(e) => {
-                    const newExamples = [...examples];
-                    newExamples[index][0] = e.target.value;
-                    setExamples(newExamples);
-                  }}
-                  readOnly={readonly}
-                  // required
-                />
-              </div>
-              <div className="col">
-                <TextareaAutosize
-                  className="form-control"
-                  style={{ resize: 'none' }}
-                  value={output}
-                  onChange={(e) => {
-                    const newExamples = [...examples];
-                    newExamples[index][1] = e.target.value;
-                    setExamples(newExamples);
-                  }}
-                  readOnly={readonly}
-                  // required
-                />
-              </div>
-              {!readonly && (
-                <div className="col-1 text-center">
-                  <button
-                    type="button"
-                    className="btn btn-link"
-                    onClick={() => {
-                      const newExamples = examples.filter(
-                        (_, i) => i !== index,
-                      );
+        <div className="mb-4dot5">
+          <label
+            htmlFor="example-input-1"
+            className="form-label mb-3 fw-medium"
+          >
+            Exemplos de entrada e saída
+            <span className="text-secondary ms-2">
+              {/* eslint-disable-next-line no-irregular-whitespace */}(
+              {` ${examples.length.toString()} `})
+            </span>
+          </label>
+          <div className="mb-4dot5">
+            {examples.map(([input, output], index) => (
+              <div key={index} className="mb-3 row">
+                <p className="col-1 mb-0 text-secondary fw-bold mt-1">
+                  {index + 1}
+                </p>
+                <div className="col">
+                  <TextareaAutosize
+                    id={index === 0 ? 'example-input-1' : undefined}
+                    className="form-control"
+                    style={{ resize: 'none' }}
+                    value={input}
+                    onChange={(e) => {
+                      const newExamples = [...examples];
+                      newExamples[index][0] = e.target.value;
                       setExamples(newExamples);
                     }}
-                    disabled={examples.length === 1}
-                  >
-                    <FontAwesomeIcon icon={faTrashCan} />
-                  </button>
+                    readOnly={readonly}
+                    required
+                  />
                 </div>
-              )}
-            </div>
-          ))}
+                <div className="col">
+                  <TextareaAutosize
+                    className="form-control"
+                    style={{ resize: 'none' }}
+                    value={output}
+                    onChange={(e) => {
+                      const newExamples = [...examples];
+                      newExamples[index][1] = e.target.value;
+                      setExamples(newExamples);
+                    }}
+                    readOnly={readonly}
+                    required
+                  />
+                </div>
+                {!readonly && (
+                  <div className="col-1 text-center">
+                    <button
+                      type="button"
+                      className="btn btn-link"
+                      onClick={() => {
+                        const newExamples = examples.filter(
+                          (_, i) => i !== index,
+                        );
+                        setExamples(newExamples);
+                      }}
+                      disabled={examples.length === 1}
+                    >
+                      <FontAwesomeIcon icon={faTrashCan} />
+                    </button>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          {!readonly && (
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => {
+                setExamples([...examples, ['', '']]);
+              }}
+            >
+              <FontAwesomeIcon icon={faPlus} className="me-2" />
+              Adicionar exemplo
+            </button>
+          )}
         </div>
         {readonly ? (
           <button
@@ -331,21 +348,10 @@ function ProblemForm({
             }}
           >
             <FontAwesomeIcon icon={faFilePdf} className="me-2" />
-            Generate PDF
+            Gerar PDF
           </button>
         ) : (
           <>
-            <button
-              type="button"
-              className="btn btn-outline-primary btn-sm mb-4"
-              onClick={() => {
-                setExamples([...examples, ['', '']]);
-              }}
-            >
-              <FontAwesomeIcon icon={faPlus} className="me-2" />
-              Add example
-            </button>
-            <br />
             <button type="submit" className="btn btn-primary fw-medium">
               <FontAwesomeIcon
                 icon={
@@ -353,13 +359,15 @@ function ProblemForm({
                 }
                 className="me-2"
               />
-              {selectedProblemID === undefined ? 'Create' : 'Update'}
+              {selectedProblemID === undefined
+                ? 'Criar problema'
+                : 'Salvar problema'}
             </button>
           </>
         )}
         {source !== null && (
           <a
-            className="btn btn-primary fw-medium ms-3"
+            className=" fw-medium ms-4"
             href={generateArchiveUrl(
               source,
               source.competition === 'MP-SBC'
@@ -368,9 +376,10 @@ function ProblemForm({
             )}
             target="_blank"
             rel="noreferrer"
+            title="Visualizar o PDF do qual o problema foi extraído"
           >
             <FontAwesomeIcon icon={faFilePdf} className="me-2" />
-            View original PDF
+            Visualizar PDF original
           </a>
         )}
       </form>
