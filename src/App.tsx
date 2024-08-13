@@ -18,7 +18,13 @@ function App() {
 
   return (
     <>
-      <h1 className="h2 mb-4dot5 fw-semibold">
+      <h1
+        className="h2 mb-4dot5 fw-semibold"
+        style={{ cursor: 'pointer' }}
+        onClick={() => {
+          location.reload();
+        }}
+      >
         <span className="text-primary me-3">
           <FontAwesomeIcon icon={faPuzzlePiece} />
         </span>

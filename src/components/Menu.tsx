@@ -4,7 +4,6 @@ import {
   faBars,
   faPenToSquare,
   faTrashCan,
-  faTriangleExclamation,
   faMagnifyingGlass,
   faSquarePlus,
   faGear,
@@ -26,7 +25,7 @@ function Menu({
 }) {
   return (
     <aside className="p-4" style={{ width: '35%' }}>
-      <p
+      {/* <p
         className="btn btn-link ps-0 d-flex column-gap-3 align-items-center"
         style={{ fontSize: '1.1rem' }}
         onClick={() => {
@@ -35,8 +34,7 @@ function Menu({
       >
         <FontAwesomeIcon icon={faTriangleExclamation} />
         Instruções
-      </p>
-      <hr className="my-4" />
+      </p> */}
       <Problems
         setSelectedComponent={setSelectedComponent}
         setSelectedProblemID={setSelectedProblemID}
@@ -124,7 +122,7 @@ function Problems({
 
   return (
     <>
-      <h3 className="h6 fw-bold">Problemas da competição</h3>
+      <h3 className="h6 fw-bold mt-3 mb-3">Problemas da competição</h3>
       {orderedProblems.length === 0 ? (
         <p className="mt-3">Nenhum problema foi adicionado.</p>
       ) : (
@@ -162,9 +160,9 @@ function Problems({
                 <span title={problem.name}>
                   {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                   <strong>{numberToLetter(index!)}</strong> –{' '}
-                  {problem.name.length <= 12
+                  {problem.name.length <= 22
                     ? problem.name
-                    : problem.name.slice(0, 12) + '...'}
+                    : problem.name.slice(0, 22) + '...'}
                 </span>
               </span>
               <span>

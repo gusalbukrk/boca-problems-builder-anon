@@ -26,3 +26,12 @@ aside {
   color: #6c757d;
   margin: 0 .3rem;
 }
+
+.ol-li-extra-padding li {
+  padding-left: .5rem;
+}
+
+.ol-li-extra-padding li::marker {
+  font-weight: bold;
+  color: #6c757d;
+}
