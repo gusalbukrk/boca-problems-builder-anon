@@ -4,7 +4,7 @@ function Instructions() {
       <h2 className="h4 mb-4dot5">Informações gerais</h2>
       <div className="mb-3">
         <p>
-          O BOCA Problems Archive é um aplicativo web projetado para simplificar
+          O BOCA Problems Builder é um aplicativo web projetado para simplificar
           a criação e curadoria de problemas para maratonas de programação
           gerenciadas pelo sistema de gerenciamento de competições{' '}
           <a href="https://github.com/cassiopc/boca">BOCA</a>. O aplicativo
@@ -127,7 +127,7 @@ function Instructions() {
       </div>
       <h2 className="h4 mb-4">Instruções</h2>
       <p>
-        Siga os passos abaixo para usar o BOCA Problems Archive na preparação
+        Siga os passos abaixo para usar o BOCA Problems Builder na preparação
         dos pacotes de problemas para uma maratona de programação.
       </p>
       <ol className="ps-5 ol-li-extra-padding" style={{ lineHeight: '1.8' }}>

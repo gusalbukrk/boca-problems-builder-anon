@@ -28,7 +28,7 @@ function App() {
         <span className="text-primary me-3">
           <FontAwesomeIcon icon={faPuzzlePiece} />
         </span>
-        BOCA Problems Archive
+        BOCA Problems Builder
       </h1>
       <div id="wrapper" className="d-flex" style={{ gap: '1.5rem' }}>
         <Menu
