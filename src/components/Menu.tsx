@@ -160,9 +160,9 @@ function Problems({
                 <span title={problem.name}>
                   {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                   <strong>{numberToLetter(index!)}</strong> –{' '}
-                  {problem.name.length <= 22
+                  {problem.name.length <= 16
                     ? problem.name
-                    : problem.name.slice(0, 22) + '...'}
+                    : problem.name.slice(0, 16) + '...'}
                 </span>
               </span>
               <span>

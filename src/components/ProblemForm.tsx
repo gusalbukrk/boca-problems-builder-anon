@@ -5,6 +5,7 @@ import {
   faImages,
   faPenToSquare,
   faFilePdf,
+  faClone,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
@@ -77,6 +78,36 @@ function ProblemForm({
     // @ts-expect-error Argument of type 'problem' is not assignable to parameter of type ...
     await db.problems.update(selectedProblemID, problem);
     // await db.problems.put({ id: selectedProblemID, ...problem });
+  };
+
+  const handleClick2 = async (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const problem = {
+      name,
+      source: {
+        author,
+      },
+      description,
+      images,
+      examples,
+    };
+
+    console.log('Problem:', problem);
+
+    await createProblem(problem);
+
+    setName('');
+    setAuthor('');
+    setDescription('');
+    setImages([]);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    imagesInputRef.current!.value = '';
+    setExamples([['', '']]);
+
+    // nameInputRef.current?.focus();
+    // window.scroll({ top: 0 });
+    location.reload();
   };
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -328,6 +359,16 @@ function ProblemForm({
             </button>
           )}
         </div>
+        {source !== null && (
+          <button
+            className="btn btn-primary fw-medium me-2"
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={handleClick2}
+          >
+            <FontAwesomeIcon icon={faClone} className="me-2" />
+            Selecionar problema
+          </button>
+        )}
         {readonly ? (
           <button
             type="button"
