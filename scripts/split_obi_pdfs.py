@@ -3,12 +3,12 @@ import re
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
 
-obi_dir = '/home/gusalbukrk/Dev/crawled/OBI_organized'
+obi_dir = '/home/redacted/Dev/crawled/OBI_organized'
 years = sorted(os.listdir(obi_dir))
 
 # return an array of dictionaries, each containing the name of a problem and the starting and ending page numbers
 def find_pdf_problems(pdf_path):
-  # repair is needed otherwise error when opening /home/gusalbukrk/Dev/crawled/OBI_organized/1999/f2p2.pdf
+  # repair is needed otherwise error when opening /home/redacted/Dev/crawled/OBI_organized/1999/f2p2.pdf
   pdf = pdfplumber.open(pdf_path, repair=True)
 
   problems = []

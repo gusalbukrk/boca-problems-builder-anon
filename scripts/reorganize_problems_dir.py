@@ -2,7 +2,7 @@ import re
 import os
 import shutil
 
-base_path = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/'  # Replace with your desired base path
+base_path = '/home/redacted/Dev/crawled/SBC/2013 onwards/'  # Replace with your desired base path
 
 # NOTE: rename first and second to phase1 and phase2
 
@@ -40,7 +40,7 @@ for path in pdfsPaths:
 
 # NOTE: move images to their respective directories
 
-imgsCurrentDir = '/home/gusalbukrk/Dev/images-scripts/imgs/'
+imgsCurrentDir = '/home/redacted/Dev/images-scripts/imgs/'
 
 def list_imgs_files(directory):
 	imgs_files = []
@@ -54,7 +54,7 @@ imgs = list_imgs_files(imgsCurrentDir)
 
 for img in imgs:
   ext = img.split('.')[-1]
-  m = re.search(r'^/home/gusalbukrk/Dev/images-scripts/imgs/(.*?)[0-9]+\.' + ext + '$', img).group(1).replace('first', 'phase1').replace('second', 'phase2')
+  m = re.search(r'^/home/redacted/Dev/images-scripts/imgs/(.*?)[0-9]+\.' + ext + '$', img).group(1).replace('first', 'phase1').replace('second', 'phase2')
 
   dirPathToMoveTo = base_path + m
   # print(img, dirPathToMoveTo)

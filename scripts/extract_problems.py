@@ -14,36 +14,36 @@ translator = Translator()
 
 pdfsToIgnore = [
   # white space problem, couldn't correct by tweaking x_tolerance and y_tolerance
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2015/phase1/contest/H/H.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/warmup/A/A.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/G/G.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/I/I.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2013/phase1/contest/B/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/F/F.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase1/contest/B/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/phase1/warmup/B/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/C/C.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2015/phase1/contest/H/H.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2016/phase1/warmup/A/A.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/G/G.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2016/phase1/contest/I/I.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2013/phase1/contest/B/B.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/F/F.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2020/phase1/contest/B/B.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2018/phase1/warmup/B/B.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/C/C.pdf',
 
   # there're 3 PDFS that contain the same problem, two of them have code solutions after the examples
   # ignore them and keep the one without code solutions (i.e. 2020/phase1/warmup/A/A.pdf)
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2017/phase1/warmup/C/C.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/warmup/A/A.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2017/phase1/warmup/C/C.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase1/warmup/A/A.pdf',
 ]
 
 # despite their description containing words like 'figure', 'figura', 'picture', ...
 # the PDFs of these problems doesn't actually contain any figures
 doesNotContainFigures = [
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/J/J.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/warmup/B/B.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/D/D.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/G/G.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/M/M.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase2/warmup/C/C.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2020/phase2/contest/K/K.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2018/phase2/contest/A/A.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/J/J.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf',
-  '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2021/phase2/warmup/B/B.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase1/contest/J/J.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase2/warmup/B/B.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/D/D.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/G/G.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2019/phase2/contest/M/M.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2020/phase2/warmup/C/C.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2020/phase2/contest/K/K.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2018/phase2/contest/A/A.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2022/phase1/contest/J/J.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2022/phase2/contest/H/H.pdf',
+  '/home/redacted/Dev/crawled/SBC/2013 onwards/2021/phase2/warmup/B/B.pdf',
 ]
 
 # names of Latin American countries in English and Portuguese
@@ -279,7 +279,7 @@ def extract_problem_from_pdf(pdfPath):
 
   # COUNT HOW MANY IMAGES THE PROBLEM HAS
   # raster images were extracted with code above and vector images were extracted manually
-  problemDirname = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/' + ("/".join(pdfPath.split("/")[-5:-1]))
+  problemDirname = '/home/redacted/Dev/crawled/SBC/2013 onwards/' + ("/".join(pdfPath.split("/")[-5:-1]))
   imagesInDir = list(filter(lambda filename: filename.endswith((".png", ".jpeg", ".jpg", ".gif", ".svg")), os.listdir(problemDirname)))
   # print(problemDirname, imagesInDir)
   imagesQuant = len(imagesInDir)
@@ -352,7 +352,7 @@ def save_samples_json(pdfPath, abridged = True):
   samples = get_problem_samples(path, abridged)
 
   components = path.split("/")[-4:]
-  samplesDir = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/' + ("/".join(components))
+  samplesDir = '/home/redacted/Dev/crawled/SBC/2013 onwards/' + ("/".join(components))
   # samplesFilename = 'samples' + ('_abridged' if abridged else '_full') + '.json'
   samplesFilename = 'samples.json'
   samplesFile = os.path.join(samplesDir, samplesFilename)
@@ -386,7 +386,7 @@ def remove_duplicate_problems(ps):
 
   return ps
 
-pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')))
+pdf_files_paths = list(filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/redacted/Dev/crawled/SBC/2013 onwards/')))
 
 ps = []
 for path in pdf_files_paths:
@@ -412,7 +412,7 @@ with open('../src/assets/MP-SBC_problems.json', 'w') as f:
 
 # create a JSON file for each problem in the SBC directory
 # print()
-# destBasePath = '/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/'
+# destBasePath = '/home/redacted/Dev/crawled/SBC/2013 onwards/'
 # for p in ps:
 #   problemPath = f'{p["source"]["year"]}/phase{p["source"]["phase"]}/{"warmup" if p["source"]["warmup"] else "contest"}/{p["source"]["letter"]}/'
 #   filename = destBasePath + problemPath + p['source']['letter'] + '.json'
@@ -420,5 +420,5 @@ with open('../src/assets/MP-SBC_problems.json', 'w') as f:
 #   with open(filename, 'w') as f:
 #     json.dump(p, f, ensure_ascii=False, indent=2)
 
-# e = extract_problem_from_pdf('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/2015/phase2/contest/H/H.pdf')
+# e = extract_problem_from_pdf('/home/redacted/Dev/crawled/SBC/2013 onwards/2015/phase2/contest/H/H.pdf')
 # print(e)

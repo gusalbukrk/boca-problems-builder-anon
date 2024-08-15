@@ -72,7 +72,7 @@ def extract_pages(pdf_path, start_page, end_page, output_path):
 
 # split each PDF into multiple PDFs, one for each problem
 def split_pdfs():
-	pdf_files_paths = list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')
+	pdf_files_paths = list_pdf_files('/home/redacted/Dev/crawled/SBC/2013 onwards/')
 
 	for path in pdf_files_paths:
 		print(path)

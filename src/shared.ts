@@ -133,7 +133,6 @@ const docDefinitionGeneralSettings = async () => {
             {
               columns: [
                 {
-                  // text: '1º Minimaratona de Programação do IF Goiano Catalão',
                   text: contestName,
                   marginLeft: 56,
                   width: 'auto',

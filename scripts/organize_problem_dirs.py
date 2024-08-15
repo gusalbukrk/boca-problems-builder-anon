@@ -10,7 +10,7 @@ def list_pdf_files(directory):
 				pdf_files.append(os.path.join(root, file))
 	return pdf_files
 
-pdf_files_paths = filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/gusalbukrk/Dev/crawled/SBC/2013 onwards/')) # only PDFs containing individual problems
+pdf_files_paths = filter(lambda path: re.search('^[A-Z]$', os.path.basename(path).replace('.pdf', '')), list_pdf_files('/home/redacted/Dev/crawled/SBC/2013 onwards/')) # only PDFs containing individual problems
 
 for path in pdf_files_paths:
   letter = os.path.basename(path).replace('.pdf', '')

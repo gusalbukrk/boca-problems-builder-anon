@@ -7,7 +7,7 @@ import json
 from collections import Counter
 from fuzzywuzzy import fuzz
 
-obi_dir = '/home/gusalbukrk/Dev/crawled/OBI_organized'
+obi_dir = '/home/redacted/Dev/crawled/OBI_organized'
 years = sorted(os.listdir(obi_dir))
 
 individual_problem_pdf_regex = '^f[0-9]p[0-9js](-b)?_.*\\.pdf$'
@@ -86,7 +86,7 @@ def extract_problem_from_pdf(pdfPath):
   if problem_author is not None:
     problem_author = problem_author.group(1).strip()
   #
-  # e.g. filename example `/home/gusalbukrk/Dev/crawled/OBI_organized/2023/f3p0_metronibus.pdf`
+  # e.g. filename example `/home/redacted/Dev/crawled/OBI_organized/2023/f3p0_metronibus.pdf`
   year, phase, level, codename =  re.search('/([0-9]{4})/f([123])p([0123])_(.*)\\.pdf$', pdfPath).groups()
   source = {
     'competition': 'OBI',

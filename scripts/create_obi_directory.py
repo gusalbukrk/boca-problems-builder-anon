@@ -4,9 +4,9 @@ import shutil
 
 # location of the files crawled from olimpiada.ic.unicamp.br/static/extras/
 # (which is where the PDF and test cases zip files are stored)
-src_dir = '/home/gusalbukrk/Dev/crawled/OBI/static/extras'
+src_dir = '/home/redacted/Dev/crawled/OBI/static/extras'
 
-dest_dir = '/home/gusalbukrk/Dev/crawled/OBI_organized'
+dest_dir = '/home/redacted/Dev/crawled/OBI_organized'
 
 # copy relevant files from source to destination directory
 # naming conventions are:
